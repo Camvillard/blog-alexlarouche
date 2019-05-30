@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby";
 // internal stuff
 import Header from "../components/header";
 import SEO from "../components/seo";
+import SocialIcons from "../components/social-icons"
 
 // styles & assets
 import '../styles/main.scss';
@@ -12,10 +13,15 @@ import '../styles/main.scss';
 
 const IndexPage = ({data}) => {
   return (
-    <div>
-      <SEO id="coming-soon-page" title="Home" keywords={data.seo} />
-      <Header siteTitle={data.site.siteMetadata.title} path="homepage" />
-      <Link to="/contact">contact</Link>
+    <div id="coming-soon-page">
+    <SEO title="Home" keywords={data.seo} />
+
+      <div className="coming-soon-content">
+        <Header siteTitle={data.site.siteMetadata.title} path="homepage" />
+        <h4>le blog arrive bientôt !</h4>
+      </div>
+
+      <SocialIcons id="social-icons-landing"/>
     </div>
   )
 }

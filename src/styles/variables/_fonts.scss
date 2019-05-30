@@ -10,9 +10,16 @@ body {
   font-family: $body-font;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h6 {
   font-family: $headers-font;
   font-weight: 700;
+  color: $dark-gray;
+}
+
+h4, h5 {
+  font-family: $body-font;
+  text-transform: uppercase;
+  color: $dark-gray;
 }
 
 a {
@@ -57,7 +64,7 @@ h3 {
 
 h4 {
   font-size: 3.2rem;
-  margin: 2.8rem auto 1.6rem;
+  margin: 2.4rem auto 1.6rem;
 }
 
 h5 {

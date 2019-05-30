@@ -1,0 +1,45 @@
+/*----- LAYOUTS : COMING SOON ----- */
+
+#coming-soon-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+  h4 {
+    color: $medium-gray;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: .8rem auto 0;
+  }
+}
+
+#social-icons-landing {
+  margin-top: 30px;
+  display: flex;
+  .social-icon-white {
+    margin: 0 8px;
+  }
+
+}
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+

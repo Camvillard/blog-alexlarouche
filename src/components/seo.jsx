@@ -16,7 +16,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 // styles & assets
 
-function SEO({ description, lang, meta, keywords, title, id }) {
+function SEO({ description, lang, meta, keywords, title}) {
   const { site } = useStaticQuery(
     graphql`
       query {

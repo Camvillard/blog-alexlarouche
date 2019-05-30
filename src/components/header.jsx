@@ -10,9 +10,7 @@ import React from "react";
 const Header = ({siteTitle, path}) => {
   return (
     <header id="site-header" >
-      <div>
-        {path === "homepage" ? <h1>{siteTitle}</h1> : <h1><Link to="/">{siteTitle}</Link></h1> }
-      </div>
+      {path === "homepage" ? <h1 className="logo-title">{siteTitle}</h1> : <h1 className="logo-title"><Link to="/">{siteTitle}</Link></h1> }
     </header>
   )
 }

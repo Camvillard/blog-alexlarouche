@@ -1,11 +1,11 @@
-/*----- INDEX FOR LAYOUTS ----- */
+/*----- COMPONENTS : HEADER ----- */
 
-@import "general";
-@import "coming-soon";
-@import "homepage";
-@import "contact";
-@import "about";
-
+h1.logo-title {
+  font-size: 3.6rem;
+  background: -webkit-linear-gradient(145deg, $rose-dawn, $old-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
