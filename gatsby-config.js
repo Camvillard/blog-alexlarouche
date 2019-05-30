@@ -5,7 +5,7 @@ module.exports = {
     title: `alexandra larouche`,
     description: `blog pour Alexandra Larouche`,
     author: `camilevillard | cdltbisou`,
-    seo: ['camille villard', 'web', 'créa']
+    seo: ['alexandra larouche', 'beauté', 'lifestyle', 'youtube', 'québec']
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
