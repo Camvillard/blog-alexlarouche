@@ -1,12 +1,10 @@
-/*----- INDEX FOR COMPONENTS ----- */
+/*----- COMPONENTS : SOCIAL ICONS ----- */
 
-@import "navbar";
-@import "header";
-@import "footer";
-@import "buttons";
-@import "forms";
-@import "containers";
-@import "social-icons";
+#social-icons-landing {
+  svg {
+    font-size: 2.4rem;
+  }
+}
 
 
 @media (min-width: $xsm-screen) {
@@ -16,9 +14,16 @@
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
+  #social-icons-landing {
+    svg {
+      font-size: 3.2rem;
+    }
+  }
+
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

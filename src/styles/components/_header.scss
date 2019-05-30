@@ -14,6 +14,10 @@ h1.logo-title {
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
+  h1.logo-title {
+    font-size: 8rem;
+  }
+
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
