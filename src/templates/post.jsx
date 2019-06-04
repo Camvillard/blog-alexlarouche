@@ -18,9 +18,9 @@ const Post = ({ data }) => {
     <div>
 
 
-    {/*<SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />*/}
+    <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
 
-      {/* featured image
+      {/* featured image*/}
       <img src={featuredImage} alt=""/>
 
       <h1 dangerouslySetInnerHTML={{__html: post.title}} />
@@ -31,7 +31,7 @@ const Post = ({ data }) => {
 
       </div>
 
-      <div dangerouslySetInnerHTML= {{__html: post.content}} />*/}
+      <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
 
     </div>
@@ -40,25 +40,25 @@ const Post = ({ data }) => {
 }
 export default Post;
 
-// export const query = graphql`
-//   query($id: String!) {
+export const query = graphql`
+  query($id: String!) {
 
-//     wordpressPost(id: { eq: $id }) {
+    wordpressPost(id: { eq: $id }) {
 
-//       featured_media {
-//         source_url
-//       }
+      featured_media {
+        source_url
+      }
 
-//       acf {
-//         seo_tags
-//       }
+      acf {
+        seo_tags
+      }
 
-//       title
-//       date(formatString: "Do MMMM YYYY")
-//       content
-//       slug
-//     }
-//   }
-// `
+      title
+      date(formatString: "Do MMMM YYYY")
+      content
+      slug
+    }
+  }
+`
 
 
