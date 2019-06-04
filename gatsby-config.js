@@ -38,7 +38,7 @@ module.exports = {
          "**/pages",
          "**/media",
        ],
-     },
+      },
      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
