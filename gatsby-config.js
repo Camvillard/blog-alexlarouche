@@ -21,8 +21,8 @@ module.exports = {
     {
      resolve: `gatsby-source-wordpress`,
      options: {
-       baseUrl: content.alexandralarouche.ca,
-       protocol: https,
+       baseUrl: 'content.alexandralarouche.ca',
+       protocol: 'https',
        hostingWPCOM: false,
        useACF: true,
        verboseOutput: true,
