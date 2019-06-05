@@ -67,6 +67,12 @@ query homePage {
         title
         sticky
         slug
+        date
+
+        categories {
+          name
+        }
+
         acf {
           seo_tags
         }
