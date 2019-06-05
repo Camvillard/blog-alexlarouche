@@ -21,8 +21,8 @@ module.exports = {
     {
      resolve: `gatsby-source-wordpress`,
      options: {
-       baseUrl: process.env.WORDPRESS_BASE_URL,
-       protocol: process.env.WORDPRESS_PROTOCOL,
+       baseUrl: 'content.alexandralarouche.ca',
+       protocol: 'https',
        hostingWPCOM: false,
        useACF: true,
        verboseOutput: true,
@@ -39,7 +39,7 @@ module.exports = {
          "**/favoris",
          "**/media",
        ],
-     },
+      },
      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
