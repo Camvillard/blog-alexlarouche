@@ -5,6 +5,7 @@
 $body-font: 'freight-sans-pro', sans-serif;
 $headers-font: 'ambroise-std', sans-serif;
 $accent-font: 'ambroise-std', serif;
+// amrboise: 400 - 700  & freight: 400, 500, 600
 
 body {
   font-family: $body-font;
@@ -20,6 +21,7 @@ h4, h5 {
   font-family: $body-font;
   text-transform: uppercase;
   color: $dark-gray;
+  font-weight: 600;
 }
 
 a {

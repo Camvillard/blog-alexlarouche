@@ -1,0 +1,60 @@
+/*----- COMPONENTS : POST CARD ----- */
+
+
+.last-post-card {
+
+  .post-description {
+    font-family: $headers-font;
+    font-size: 2.4rem;
+    color: $rose-dawn;
+  }
+
+  .post-card-meta {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .post-card-meta p {
+    margin: 0.4rem auto;
+  }
+
+  .post-card-meta span {
+    font-weight: 600;
+  }
+
+  .post-card-title {
+    text-align: center;
+  }
+
+  .post-card-content {
+    padding: 0 48px;
+  }
+
+  .btn-square {
+    display: block;
+    width: 40%;
+    margin: auto;
+  }
+
+
+
+
+}
+
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+
