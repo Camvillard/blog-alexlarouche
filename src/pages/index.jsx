@@ -35,11 +35,11 @@ class IndexPage extends React.Component {
 
         <div className="container">
 
-        {firstSectionPosts.map( p => {
-          return <RegularPostCard post={p.node} key={p.node.id} />
-        })}
-
-
+          <div id="first-posts-section">
+            {firstSectionPosts.map( p => {
+              return <RegularPostCard post={p.node} key={p.node.id} />
+            })}
+          </div>
 
         </div>
 

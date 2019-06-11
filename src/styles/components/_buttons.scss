@@ -29,3 +29,13 @@
     background: $light-gray;
   }
 }
+
+.btn-plain {
+  a {
+    font-size: 16px;
+    padding: 4px 16px;
+    background: $light-gray;
+    color: $rose-dawn;
+    text-transform: uppercase;
+  }
+}
