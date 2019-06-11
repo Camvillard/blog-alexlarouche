@@ -8,23 +8,24 @@ import { createExcerpt, createPrintedDate } from "../utilities/blog-cards"
 // styles & assets
 import '../styles/main.scss';
 
-const LastPostCard = ({post}) => {
+const RegularPostCard = ({post}) => {
 
   return(
-    <div className="last-post-card">
+    <div className="post-card">
 
-      <p className="post-description">Le dernier billet</p>
       <img src={post.featured_media.source_url} alt={post.title}/>
 
       <div className="post-card-meta">
-        <p className="published"><span> publié le :</span> {createPrintedDate(post.date)}  </p>
-        <p className="categories"><span> catégories :</span> {post.categories[0].name}  </p>
+        <p className="published">{createPrintedDate(post.date)}  </p>
+        <p className="categories">{post.categories[0].name}  </p>
+
       </div>
 
       <div className="post-card-content">
         <h3 className="post-card-title">{post.title}</h3>
         <div className="post-card-excerpt" dangerouslySetInnerHTML= {{__html: createExcerpt(post.content)}} />
         <Link to={`/${post.slug}`} className="btn-square">lire la suite</Link>
+
       </div>
 
     </div>
@@ -32,4 +33,4 @@ const LastPostCard = ({post}) => {
 
 }
 
-export default LastPostCard;
+export default RegularPostCard;

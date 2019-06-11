@@ -36,6 +36,7 @@ module.exports = {
          "**/categories",
          "**/posts",
          "**/pages",
+         "**/comments",
          "**/favoris",
          "**/media",
        ],
