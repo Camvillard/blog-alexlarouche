@@ -8,17 +8,15 @@ import { createExcerpt, createPrintedDate } from "../utilities/blog-cards"
 // styles & assets
 import '../styles/main.scss';
 
-const LastPostCard = ({post}) => {
+const FeaturedPost = ({post}) => {
 
   return(
-    <div className="last-post-card">
+    <div className="featured-post-card">
 
-      <p className="post-description">Le dernier billet</p>
-      <img src={post.featured_media.source_url} alt={post.title}/>
-
-      <div className="post-card-meta">
-        <p className="published"><span> publié le :</span> {createPrintedDate(post.date)}  </p>
-        <p className="categories"><span> catégories :</span> {post.categories[0].name}  </p>
+      <p className="post-description">en ce moment</p>
+      <div className="featured-post-images">
+        <img id="first-featured" src={post.acf.image_supplementaire.source_url} alt={post.title}/>
+        <img id="second-featured" src={post.featured_media.source_url} alt={post.title}/>
       </div>
 
       <div className="post-card-content">
@@ -28,10 +26,14 @@ const LastPostCard = ({post}) => {
           <Link to={`/${post.slug}`}>lire la suite</Link>
         </div>
       </div>
+      <div className="post-card-meta">
+        <p className="published">{createPrintedDate(post.date)}  </p>
+        <p className="categories">{post.categories[0].name}  </p>
+      </div>
 
     </div>
   )
 
 }
 
-export default LastPostCard;
+export default FeaturedPost;

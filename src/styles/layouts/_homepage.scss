@@ -1,5 +1,25 @@
 /*----- LAYOUTS: HOMEPAGE ----- */
 
+.read-more {
+  text-align: center;
+  a {
+    text-transform: uppercase;
+    border-bottom: 4px solid $rose-dawn;
+  }
+}
+
+#about-section {
+  margin: 48px auto;
+}
+
+#homepage-about-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
 
