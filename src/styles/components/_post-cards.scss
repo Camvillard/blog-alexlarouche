@@ -5,8 +5,17 @@
   margin-bottom: 64px;
 }
 
+.post-description {
+  font-family: $headers-font;
+  font-size: 2.4rem;
+}
+
 .post-card-meta {
   text-transform: uppercase;
+}
+
+.post-card-meta p {
+  margin: 0.4rem auto;
 }
 
 
@@ -14,17 +23,11 @@
 .last-post-card {
 
   .post-description {
-    font-family: $headers-font;
-    font-size: 2.4rem;
     color: $rose-dawn;
   }
 
   .post-card-meta {
     text-align: center;
-  }
-
-  .post-card-meta p {
-    margin: 0.4rem auto;
   }
 
   .post-card-meta span {
@@ -64,6 +67,53 @@
   }
 
 
+}
+
+
+// featured section
+
+#featured-post-section {
+  background: rgba(201, 144, 134, 0.1);
+  padding: 32px 0;
+
+  p.post-description {
+    margin-left: 2.4rem;
+    color: $dark-gray;
+    font-style: italic;
+  }
+
+  #first-featured {
+    width: 75%;
+    margin-left: 25%;
+  }
+
+  #second-featured {
+    position: relative;
+    top: -80px;
+    left: 24px;
+    width: 55vw;
+    height: 55vw;
+    object-fit: cover;
+    border: 8px solid white;
+  }
+
+  .post-card-content {
+    margin-top: -60px;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .btn-square {
+    display: block;
+    width: 34%;
+    margin: auto;
+  }
+
+  .post-card-meta {
+    margin-top: 32px;
+    text-align: center;
+    color: $rose-dawn;
+  }
 }
 
 
