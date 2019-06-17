@@ -1,0 +1,6 @@
+/*----- MIXINS : COLORS ----- */
+
+@mixin old-pink-transparent($transparency) {
+  background: rgba(232, 208, 204, $transparency);
+}
+

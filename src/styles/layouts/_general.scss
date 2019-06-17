@@ -61,6 +61,10 @@ html [type="button"] {
   -webkit-appearance: button;
 }
 
+a:hover, button:hover {
+  cursor: pointer;
+}
+
 
 
 @media (min-width: $xsm-screen) {

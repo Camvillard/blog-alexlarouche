@@ -24,6 +24,36 @@
 }
 
 
+// NEWSLETTER SECTION
+
+#newsletter-section {
+  @include old-pink-transparent(0.3);
+  padding: 24px;
+}
+
+#newsletter-container {
+  background: white;
+  padding: 8px;
+  h3 {
+    text-align: center;
+    color: $gray;
+    margin-top: 0;
+    font-size: 2.4rem;
+  }
+}
+
+
+#homepage-mailchimp-form {
+
+}
+
+#newsletter-thanks {
+  font-size: 3.2rem;
+  text-align: center;
+  font-family: $headers-font;
+  color: $rose-dawn;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px

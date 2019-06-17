@@ -9,9 +9,9 @@ import SocialIcons from "../components/social-icons"
 import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
+import MailchimpForm from "../components/mailchimp-form";
 
 // helpers
-import { createExcerpt, createPrintedDate } from "../utilities/blog-cards"
 
 
 // styles & assets
@@ -87,8 +87,9 @@ class IndexPage extends React.Component {
 
         <div id="newsletter-section">
 
-          <div id="nesletter-container">
-          <h3>Reçois un courriel à chaque nouvel article</h3>
+          <div id="newsletter-container">
+            <h3>reçois un courriel à chaque nouvel article</h3>
+            <MailchimpForm id="homepage-mailchimp-form" />
           </div>
         </div>
 
