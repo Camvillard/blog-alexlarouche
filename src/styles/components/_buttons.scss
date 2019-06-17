@@ -16,13 +16,13 @@
     content: "";
     position: absolute;
     top: 1.8rem;
-    left: -10%;
+    left: 18%;
+    right: 18%;
     z-index: -1;
-    width: 120%;
+    // width: 120%;
     height: 8px;
     background: $light-gray;
   }
-  &:hover {}
 }
 
 .btn-plain {

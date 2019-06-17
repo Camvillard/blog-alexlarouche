@@ -10,6 +10,7 @@ import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
 import MailchimpForm from "../components/mailchimp-form";
+import FavorisSmallCard from "../components/favoris-card";
 
 // helpers
 
@@ -26,7 +27,8 @@ class IndexPage extends React.Component {
     const featuredPost = this.props.data.wordpressPost
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
-    const favoris = this.props.data.allWordpressWpFavoris.edges
+    const favorisUn = this.props.data.allWordpressWpFavoris.edges[0].node
+    const favorisDeux = this.props.data.allWordpressWpFavoris.edges[1].node
     return(
       <div id="homepage-content">
         {/* Meta stuff */}
@@ -92,9 +94,39 @@ class IndexPage extends React.Component {
             <MailchimpForm id="homepage-mailchimp-form" />
           </div>
         </div>
+        {/* end of #newsletter-section */}
+
+        <div id="favoris-section">
+          <h3>mes favoris du moment</h3>
+
+          <div className="favoris-sm-card" id="homepage-premier-favori">
+            <img src={favorisUn.featured_media.source_url} />
+            <div className="favoris-sm-card-content">
+              <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
+              <p>{favorisUn.acf.nom_marque}</p>
+              <a href={`/${favorisUn.acf.url_du_produit}`}>à retrouver ici</a>
+            </div>
+          </div>
+          {/* end of #premier favori */}
+
+          <div className="favoris-sm-card" id="homepage-deuxieme-favori">
+            <img src={favorisDeux.featured_media.source_url} />
+            <div className="favoris-sm-card-content">
+              <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
+              <p>{favorisDeux.acf.nom_marque}</p>
+              <a href={`/${favorisDeux.acf.url_du_produit}`}>à retrouver ici</a>
+            </div>
+          </div>
+         {/* end of #deuxieme favori */}
+
+         <div className="btn-square">
+          <a href="#">voir tous les favoris</a>
+         </div>
 
 
 
+        </div>
+        {/* end of #favoris-section */}
 
       </div>
     )
@@ -162,13 +194,21 @@ query homePage {
   }
 
   allWordpressWpFavoris(limit: 2) {
-   edges {
-     node {
-       id
-       slug
-       content
-     }
-   }
+    edges {
+      node {
+        id
+        slug
+        title
+        featured_media {
+          source_url
+        }
+        acf {
+          nom_marque
+          url_du_produit
+          description
+        }
+      }
+    }
   }
 }
 `
