@@ -12,7 +12,7 @@ import MobileNavbar from "./mobile-navbar"
 const Header = ({siteTitle, path}) => {
   return (
     <header id="site-header" >
-      { window.innerWidth < 992 ?  <MobileNavbar /> : <Navbar /> }
+      <MobileNavbar />
       {path === "homepage" ? <h1 className="logo-title">{siteTitle}</h1> : <h1 className="logo-title"><Link to="/">{siteTitle}</Link></h1> }
     </header>
   )
