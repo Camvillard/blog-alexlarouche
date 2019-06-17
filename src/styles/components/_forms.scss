@@ -1,1 +1,59 @@
 /*----- COMPONENTS : FORMS ----- */
+
+// MAILCHIMP FORM - HOMEPAGE
+
+#homepage-mailchimp-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    width: 90%;
+    margin: 8px auto;
+    padding-bottom: 4px;
+    color: $rose-dawn;
+  }
+
+  input:active {
+    outline: none;
+    outline-offset: 0;
+    border-bottom: 1px solid $old-pink;
+    @include old-pink-transparent(0.24);
+  }
+
+  input:focus {
+    outline: none;
+    outline-offset: 0;
+    border-bottom: 1px solid $old-pink;
+    @include old-pink-transparent(0.24);
+  }
+
+  ::placeholder {
+    color: $gray;
+    text-transform: uppercase;
+    font-family: $body-font;
+  }
+}
+
+
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+

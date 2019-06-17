@@ -1,8 +1,6 @@
 // external libs
 import React from "react";
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
 
 // internal stuff
 
@@ -36,10 +34,10 @@ class MobileNavbar extends React.Component {
         </div>
         <div className={`mobile-main-menu ${this.state.navbarIsOpen === true ? 'show-menu' : 'hide-menu'}`}>
           <div className="mobile-menu-links">
-            <Link to="#">catégories</Link>
-            <Link to="#">shop mon look</Link>
-            <Link to="#">contact</Link>
-            <Link to="#">à propos</Link>
+            <Link to="/">catégories</Link>
+            <Link to="/">shop mon look</Link>
+            <Link to="/">contact</Link>
+            <Link to="/">à propos</Link>
           </div>
         </div>
       </div>
