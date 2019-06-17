@@ -1,0 +1,49 @@
+/*----- COMPONENTS : FAVORIS ----- */
+
+
+.favoris-sm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.favoris-sm-card-content {
+  position: relative;
+  top: -1.4rem;
+
+  p {
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+p.favoris-sm-card-title {
+  font-family: $headers-font;
+  color: white;
+  font-size: 2.4rem;
+  text-transform: none;
+
+  span {
+    background: $rose-dawn;
+    padding: 2px 8px;
+  }
+}
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+
