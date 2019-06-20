@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `Alexandra Larouche`,
+    title: `alexandra larouche`,
     description: `Alexandra Larouche | lifestyle, beauté, mode, famille`,
     author: `camilevillard | cdltbisou`,
     seo: ['alexandra larouche', 'beauté', 'lifestyle', 'youtube', 'québec']

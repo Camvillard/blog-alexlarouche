@@ -3,10 +3,23 @@
 h1.logo-title {
   text-align: center;
   font-size: 3.6rem;
-  background: -webkit-linear-gradient(145deg, $rose-dawn, $old-pink);
+  background: -webkit-linear-gradient(120deg, $old-pink 20%, $dark-rose);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    background: -webkit-linear-gradient(120deg, $dark-rose 4%, $old-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
+
+a h1.logo-title {
+  margin-top: 6rem;
+}
+
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
