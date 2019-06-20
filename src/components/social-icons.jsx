@@ -10,25 +10,25 @@ import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 const SocialIcons = (props) => {
   return(
     <div id={props.id}>
-      <div id="instagram">
+      <div id="instagram" className="icon-pink">
       <a href="https://www.instagram.com/alexandralarouche/" target="_blank" rel="noopener noreferrer">
         <FaInstagram />
       </a>
       </div>
 
-      <div id="youtube">
+      <div id="youtube" className="icon-pink">
       <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank" rel="noopener noreferrer">
         <FaYoutube />
         </a>
       </div>
 
-      <div id="youtube-vlogs">
+      <div id="youtube-vlogs" className="icon-white">
       <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank" rel="noopener noreferrer">
         <FaYoutube stroke="#C99086" strokeWidth="18" />
         </a>
       </div>
 
-      <div id="facebook">
+      <div id="facebook" className="icon-pink">
       <a href="https://www.facebook.com/alexfashionbeauty1" target="_blank" rel="noopener noreferrer">
         <FaFacebookF />
         </a>

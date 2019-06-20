@@ -108,7 +108,9 @@ class IndexPage extends React.Component {
             Commodi accusamus non ratione minima.</p>
             <iframe title="alex larouche video" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <div className="btn-square">
-              <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ">s'abonner aux vidéos</a>
+              <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                s'abonner aux vidéos
+              </a>
             </div>
           </div>
 
@@ -120,7 +122,9 @@ class IndexPage extends React.Component {
             Commodi accusamus non ratione minima.</p>
             <iframe title="alex larouche vlog" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <div className="btn-square">
-              <a href="https://www.youtube.com/user/alexfbvlogs">s'abonner aux vlogs</a>
+              <a href="https://www.youtube.com/user/alexfbvlogs" target="_blank"  rel="noopener noreferrer">
+                s'abonner aux vlogs
+              </a>
             </div>
           </div>
 
@@ -136,7 +140,9 @@ class IndexPage extends React.Component {
             <div className="favoris-sm-card-content">
               <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
               <p>{favorisUn.acf.nom_marque}</p>
-              <a href={`/${favorisUn.acf.url_du_produit}`}>à retrouver ici</a>
+              <a href={`/${favorisUn.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                à retrouver ici
+              </a>
             </div>
           </div>
           {/* end of #premier favori */}
@@ -146,13 +152,15 @@ class IndexPage extends React.Component {
             <div className="favoris-sm-card-content">
               <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
               <p>{favorisDeux.acf.nom_marque}</p>
-              <a href={`/${favorisDeux.acf.url_du_produit}`}>à retrouver ici</a>
+              <a href={`/${favorisDeux.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                à retrouver ici
+              </a>
             </div>
           </div>
          {/* end of #deuxieme favori */}
 
          <div className="btn-square">
-          <a href="/">voir tous les favoris</a>
+          <Link to="/">voir tous les favoris</Link>
          </div>
 
         </div>
