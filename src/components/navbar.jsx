@@ -44,10 +44,9 @@ class Navbar extends React.Component {
         <div className="main-menu">
           <div className="nav-links">
             {/* by default, dropdown is hidden - when you hover the name categories, it appears */}
-            <div className="link-navbar">
-              <Link to="/" className="menu-link dropdown-toggle" onMouseOver={this.showDropdownMenu} >
-                catégories
-              </Link>
+
+            <span className="menu-link dropdown-toggle" onMouseOver={this.showDropdownMenu} >
+              catégories
               {/* onMouseLeave allows the user to keep the menu open as long as he's on the list of items */}
               <div className={`dropdown-menu ${this.state.dropdownIsActive ? 'show-dropdown' : 'hide-dropdown'} `} onMouseLeave={this.hideDropdownMenu}>
                 <ul>
@@ -57,7 +56,9 @@ class Navbar extends React.Component {
                   )}
                 </ul>
               </div>
-            </div>
+
+            </span>
+
             <Link to="/shop-look" className="menu-link" activeClassName="active-link">shop mon look</Link>
             <Link to="/contact" className="menu-link" activeClassName="active-link">contact</Link>
             <Link to="/apropos" className="menu-link" activeClassName="active-link">à propos</Link>
