@@ -52,6 +52,18 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+
+  // MAILCHIMP FORM - HOMEPAGE
+
+  #homepage-mailchimp-form {
+
+    input {
+      font-size: 1.6rem;
+    }
+
+  }
+
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

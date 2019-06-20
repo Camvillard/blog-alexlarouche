@@ -4,18 +4,24 @@
 footer {
   margin-top: 32px;
   padding: 24px;
-  background: $light-gray;
+  background: $dark-rose;
+  color: white;
 }
 
 
 .footer-left-section {
   text-align: center;
-  color: $rose-dawn;
   a {
+    color: white;
+    font-size: 1.4rem;
     text-transform: uppercase;
   }
   p {
+    color: white;
     margin-top: 0;
+    font-size: 1.4rem;
+    font-family: $accent-font;
+    font-style: italic;
   }
 }
 
@@ -35,7 +41,16 @@ footer {
 
   p {
     text-align: right;
+    font-size: 1.2rem;
     margin: 0;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  a {
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
   }
 }
 
@@ -50,6 +65,32 @@ footer {
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  .footer-right-section {
+    margin-top: 16px;
+    border-top: none;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: $rose-dawn;
+
+    svg {
+      font-size: 1.2rem;
+    }
+
+    p {
+      text-align: right;
+      font-size: 1.2rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    a {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+  }
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

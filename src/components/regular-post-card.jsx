@@ -14,7 +14,7 @@ const RegularPostCard = ({post}) => {
     <div className="post-card">
 
       <div className="post-card-meta">
-        <p>{createPrintedDate(post.date)} / {post.categories[0].name}</p>
+        <p>{createPrintedDate(post.date)} / <Link to={`/categories/${post.categories[0].slug}`}>{post.categories[0].name}</Link></p>
       </div>
 
       <img src={post.featured_media.source_url} alt={post.title}/>
@@ -22,8 +22,8 @@ const RegularPostCard = ({post}) => {
       <div className="post-card-content">
         <h3 className="post-card-title">{post.title}</h3>
         <div className="post-card-excerpt" dangerouslySetInnerHTML= {{__html: createExcerpt(post.content)}} />
-        <div className="btn-plain">
-          <Link to={`/${post.slug}`}>lire la suite</Link>
+        <div className="btn-block-left">
+          <Link to={`/${post.slug}`} className="btn-plain">lire la suite</Link>
         </div>
 
       </div>

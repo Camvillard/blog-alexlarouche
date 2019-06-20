@@ -29,8 +29,8 @@ const Instagram = (props) => {
           key={edge.node.id} />
         )}
       </div>
-      <div className="btn-square">
-        <a href="https://instagram.com/alexandralarouche">@alexandralarouche</a>
+      <div className="btn-block">
+        <a href="https://instagram.com/alexandralarouche" className="btn-square">@alexandralarouche</a>
       </div>
     </div>
   )

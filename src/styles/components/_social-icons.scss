@@ -6,7 +6,7 @@
 .icon-pink {
   margin: 0 8px;
   a{
-    color: $old-pink;
+    color: $rose-dawn;
   }
 }
 
@@ -18,15 +18,6 @@
   }
 }
 
-
-// special icons : homepage
-#homepage-about-icons {
-  width: 60%;
-  margin: 16px auto 0;
-  svg {
-    font-size: 1.8rem;
-  }
-}
 
 #youtube-vlogs {
   svg {
@@ -44,11 +35,7 @@
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
-  #homepage-about-icons {
-    svg {
-      font-size: 3.2rem;
-    }
-  }
+
 
 } // end of md-screen - 992px
 

@@ -37,13 +37,13 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={metadata.seo} />
         <Header siteTitle={metadata.title} path="homepage" />
 
-        <div id="last-blogpost" className="main-container">
+        <div id="last-blogpost" className="fullwidth-container">
           <LastPostCard post={lastPost} />
         </div>
 
         <div className="container">
 
-          <div id="first-posts-section">
+          <div id="first-posts-section" className="posts-section">
             {firstSectionPosts.map( p => {
               return <RegularPostCard post={p.node} key={p.node.id} />
             })}
@@ -58,14 +58,14 @@ class IndexPage extends React.Component {
 
         <div className="container">
 
-          <div id="second-posts-section">
+          <div id="second-posts-section" className="posts-section">
             {secondSectionPosts.map( p => {
               return <RegularPostCard post={p.node} key={p.node.id} />
             })}
           </div>
 
           <div className="read-more">
-            <Link to="/">lire plus d'articles</Link>
+            <Link to="/articles">lire plus d'articles</Link>
           </div>
 
           <div id="about-section">
@@ -78,8 +78,8 @@ class IndexPage extends React.Component {
             <div className="right-section">
               <h3>à propos</h3>
               <p>Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.</p>
-              <div className="btn-blob">
-                <Link to="/apropos">en savoir plus</Link>
+              <div className="btn-block">
+                <Link to="/apropos" className="btn-blob">en savoir plus</Link>
               </div>
             </div>
 
@@ -91,7 +91,7 @@ class IndexPage extends React.Component {
 
         <div id="newsletter-section">
 
-          <div id="newsletter-container">
+          <div id="newsletter-container" className="container">
             <h3>reçois un courriel à chaque nouvel article</h3>
             <MailchimpForm id="homepage-mailchimp-form" />
           </div>
@@ -100,33 +100,48 @@ class IndexPage extends React.Component {
 
         <div id="video-section" className="container">
 
-          <div className="video-card">
-            <h3 className="rose-dawn">la dernière vidéo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
-            perspiciatis earum repellendus aliquam aliquid beatae?
-            Commodi accusamus non ratione minima.</p>
-            <iframe title="alex larouche video" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <div className="btn-square">
-              <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
-                s'abonner aux vidéos
-              </a>
-            </div>
-          </div>
+          <div className="video-card" id="first-video">
 
-          <div className="video-card">
-            <h3 className="rose-dawn">le dernier vlog</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
-            perspiciatis earum repellendus aliquam aliquid beatae?
-            Commodi accusamus non ratione minima.</p>
-            <iframe title="alex larouche vlog" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <div className="btn-square">
-              <a href="https://www.youtube.com/user/alexfbvlogs" target="_blank"  rel="noopener noreferrer">
-                s'abonner aux vlogs
-              </a>
+            <div className="video-description">
+              <h6 className="rose-dawn">la dernière vidéo</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
+              perspiciatis earum repellendus aliquam aliquid beatae?
+              Commodi accusamus non ratione minima.</p>
             </div>
+
+            <div className="video-container">
+              <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-video.png" alt="placeholder video"/>
+              <div className="btn-block">
+                <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                  s'abonner aux vidéos
+                </a>
+              </div>
+            </div>
+
           </div>
+          {/* end of video-card */}
+
+         <div className="video-card" id="second-video">
+
+           <div className="video-description">
+             <h6 className="rose-dawn">le dernier vlog</h6>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+             Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
+             perspiciatis earum repellendus aliquam aliquid beatae?
+             Commodi accusamus non ratione minima.</p>
+           </div>
+
+           <div className="video-container">
+             <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-video.png" alt="placeholder video"/>
+             <div className="btn-block">
+               <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                 s'abonner aux vlogs
+               </a>
+             </div>
+           </div>
+         </div>
+         {/* end of video-card */}
 
 
         </div>
@@ -135,32 +150,37 @@ class IndexPage extends React.Component {
         <div id="favoris-section">
           <h3>mes favoris du moment</h3>
 
-          <div className="favoris-sm-card" id="homepage-premier-favori">
-            <img src={favorisUn.featured_media.source_url} alt={favorisUn.acf.nom_marque} />
-            <div className="favoris-sm-card-content">
-              <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
-              <p>{favorisUn.acf.nom_marque}</p>
-              <a href={`/${favorisUn.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
-                à retrouver ici
-              </a>
-            </div>
-          </div>
-          {/* end of #premier favori */}
+          <div className="container">
 
-          <div className="favoris-sm-card" id="homepage-deuxieme-favori">
-            <img src={favorisDeux.featured_media.source_url} alt={favorisDeux.acf.nom_marque} />
-            <div className="favoris-sm-card-content">
-              <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
-              <p>{favorisDeux.acf.nom_marque}</p>
-              <a href={`/${favorisDeux.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
-                à retrouver ici
-              </a>
+            <div className="favoris-sm-card" id="homepage-premier-favori">
+              <img src={favorisUn.featured_media.source_url} alt={favorisUn.acf.nom_marque} />
+              <div className="favoris-sm-card-content">
+                <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
+                <p>{favorisUn.acf.nom_marque}</p>
+                <a href={`/${favorisUn.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                  à retrouver ici
+                </a>
+              </div>
             </div>
-          </div>
-         {/* end of #deuxieme favori */}
+            {/* end of #premier favori */}
 
-         <div className="btn-square">
-          <Link to="/">voir tous les favoris</Link>
+            <div className="favoris-sm-card" id="homepage-deuxieme-favori">
+              <img src={favorisDeux.featured_media.source_url} alt={favorisDeux.acf.nom_marque} />
+              <div className="favoris-sm-card-content">
+                <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
+                <p>{favorisDeux.acf.nom_marque}</p>
+                <a href={`/${favorisDeux.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                  à retrouver ici
+                </a>
+              </div>
+            </div>
+           {/* end of #deuxieme favori */}
+
+          </div>
+
+
+         <div className="btn-block">
+          <Link to="/" className="btn-square">voir tous les favoris</Link>
          </div>
 
         </div>
@@ -200,6 +220,7 @@ query homePage {
 
         categories {
           name
+          slug
         }
 
         acf {
@@ -220,6 +241,7 @@ query homePage {
     title
     categories {
       name
+      slug
     }
     date
     featured_media {

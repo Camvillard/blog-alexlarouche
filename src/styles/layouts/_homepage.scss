@@ -4,6 +4,72 @@
   margin-top: 64px;
 }
 
+// LAST BLOG POST
+
+
+// only for homepage : first post section
+.posts-section {
+
+  h3 {
+    margin: 2rem 0 1.2rem;
+  }
+
+  .post-card-excerpt {
+    padding-left: 24px;
+  }
+
+  .btn-plain {
+    text-align: center;
+    margin-top: 2.4rem;
+  }
+}
+
+
+// FEATURED SECTION
+
+#featured-post-section {
+  background: rgba(201, 144, 134, 0.1);
+  padding: 32px 0;
+
+  p.post-description {
+    margin-left: 2.4rem;
+    color: $dark-gray;
+    font-style: italic;
+  }
+
+  #first-img-featured {
+    width: 75%;
+    margin-left: 25%;
+  }
+
+  #second-img-featured {
+    position: relative;
+    top: -80px;
+    left: 24px;
+    width: 55vw;
+    height: 55vw;
+    object-fit: cover;
+    border: 8px solid white;
+  }
+
+  .post-card-content {
+    margin-top: -60px;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .btn-square {
+    &:before {
+      background: white;
+    }
+  }
+
+  .post-card-meta {
+    margin-top: 32px;
+    text-align: center;
+    color: $rose-dawn;
+  }
+}
 
 .read-more {
   text-align: center;
@@ -13,6 +79,9 @@
   }
 }
 
+
+// ABOUT SECTION
+
 #about-section {
   margin: 48px auto;
 }
@@ -21,6 +90,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 60%;
+  margin: 16px auto 0;
+  svg {
+    font-size: 1.8rem;
+  }
 }
 
 
@@ -36,15 +110,10 @@
   padding: 8px;
   h3 {
     text-align: center;
-    color: $gray;
+    color: $medium-gray;
     margin-top: 0;
     font-size: 2.4rem;
   }
-}
-
-
-#homepage-mailchimp-form {
-
 }
 
 #newsletter-thanks {
@@ -53,6 +122,52 @@
   font-family: $headers-font;
   color: $rose-dawn;
 }
+
+
+// VIDEO SECTION
+
+#video-section {
+
+  .video-card {
+    margin-bottom: 32px;
+  }
+
+  .btn-square {
+    display: inline-block;
+    &:before {
+      left: -4px;
+      right: -4px;
+    }
+  }
+
+  h6 {
+    font-size: 3.2rem;
+    font-style: italic;
+  }
+
+
+  .video-description {
+    width: 80%;
+  }
+}
+
+#first-video .btn-square {
+  margin-left: 4px;
+}
+
+#second-video {
+  text-align: right;
+  .video-description {
+    margin-left: 20%;
+  }
+
+  .btn-square {
+    margin-right: 4px;
+  }
+
+}
+
+// FAVORIS SECTION
 
 #favoris-section {
   background: $light-gray;
@@ -94,13 +209,262 @@
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
-  #homepage-content {
-    margin-top: 40px;
-  }
 
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  #homepage-content {
+    margin-top: 40px;
+  }
+
+  // LAST BLOG POST
+
+  #last-blogpost {
+    background: $old-pink;
+    padding: 4vw 0;
+
+    .last-post-card {
+      background: white;
+      padding: 4vw 8vw 0;
+      max-width: 1080px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+    }
+  }
+
+  // POSTS SECTIONS
+
+  .posts-section {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      margin: 2rem 0 1.2rem;
+    }
+
+    .post-card-excerpt {
+      padding-left: 24px;
+    }
+
+    .btn-plain {
+      text-align: left;
+      margin-top: 2.4rem;
+      margin-left: 24px;
+    }
+
+    .post-card-meta p{
+      padding-left: 24px;
+      font-size: 1.4rem;
+    }
+
+    .post-card {
+      flex: 0 0 45%;
+    }
+  }
+
+  // FEATURED SECTION
+
+  #featured-post-section {
+    padding: 32px 0;
+
+
+    .featured-post-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p.post-description {
+      margin-left: 16%;
+      font-size: 3.2rem;
+    }
+
+    .featured-post-images {
+      flex: 0 0 62%;
+      position: relative;
+    }
+
+    #first-img-featured {
+      width: 80%;
+      margin-left: 20%;
+    }
+
+    #second-img-featured {
+      position: absolute;
+      top: calc(94% - 25vw);
+      left: 24px;
+      width: 25vw;
+      height: 25vw;
+      border: 10px solid white;
+    }
+
+    .post-card-content {
+      margin-top: -60px;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .post-card-meta {
+      margin-top: 32px;
+      text-align: center;
+      color: $rose-dawn;
+    }
+  }
+
+  // ABOUT SECTION
+
+  #about-section {
+    margin: 48px auto;
+    display: flex;
+    align-items: center;
+
+    .left-section {
+      flex: 0 0 65%;
+    }
+
+    h3 {
+      color: $rose-dawn;
+    }
+
+    .right-section p{
+      padding-left: 24px;
+    }
+
+    .btn-blob {
+      text-align: center;
+    }
+  }
+
+  #homepage-about-icons {
+    width: 40%;
+    svg {
+      font-size: 3rem;
+    }
+  }
+
+  // VIDEO SECTION
+
+  .video-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .video-description {
+    flex: 0 0 40%;
+  }
+
+  .video-container {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    img {
+      width: 100%;
+    }
+  }
+
+  #first-video {
+    .btn-square {
+        margin-left: 0px;
+      }
+  }
+
+  #second-video {
+    text-align: right;
+    .video-description {
+      margin-left: 0;
+    }
+
+    .btn-square {
+      margin-right: 0px;
+    }
+
+  }
+
+
+  // FAVORIS SECTION
+
+  #favoris-section {
+    padding: 32px 24px 0px;
+
+    .container {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      position: relative;
+      top: 20px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .btn-square {
+      position: relative;
+      top: -40px;
+    }
+  }
+
+  #homepage-premier-favori {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    top: 60px;
+
+    img {
+      width: 34vw;
+      height: 34vw;
+    }
+
+    .favoris-sm-card-content {
+      position: relative;
+      top: 60px;
+      margin-right: 0px;
+      padding-left: 24px;
+    }
+
+    .favoris-sm-card-title {
+      margin-left: -48px;
+      margin-bottom: 16px;
+    }
+  }
+
+
+  #homepage-deuxieme-favori {
+    align-items: flex-end;
+    position: relative;
+    top: -40px;
+    width: 100%;
+    margin-left: 0;
+
+    img {
+      width: 36vw;
+      height: 36vw;
+    }
+
+    .favoris-sm-card-title {
+      margin-bottom: 16px;
+    }
+
+    .favoris-sm-card-content {
+      margin-right: 24px;
+    }
+  }
+
+
+
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

@@ -22,7 +22,7 @@ export default () => (
     render={data => (
       <footer>
       <div className="footer-left-section">
-        <Link to="/contact">contact</Link> - <Link to="/">infolettre</Link>
+        <Link to="/contact">contact</Link> ∙ <Link to="/">infolettre</Link>
         <p>© {new Date().getFullYear()} {data.site.siteMetadata.title} </p>
       </div>
       <div className="footer-right-section">
@@ -31,7 +31,7 @@ export default () => (
           <a href="https://www.cdltbisou.com"> <strong>cdlt</strong>bisou</a>
         </p>
         <div className="right-inks">
-          <Link to="/contact">mentions légales</Link> - <Link to="/">politique de confidentialité</Link>
+          <Link to="/contact">mentions légales</Link> ∙ <Link to="/">politique de confidentialité</Link>
         </div>
 
       </div>
