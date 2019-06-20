@@ -98,9 +98,19 @@
 
   .nav-links {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 60%;
     margin: auto;
+
+    span {
+      margin: 1.2rem auto .8rem;
+    }
+
+    span:hover {
+      cursor: pointer;
+    }
+
   }
 
   .menu-link {
@@ -109,6 +119,7 @@
     padding: 0 8px;
     border: 1px solid white;
     transition: 0.3s;
+    font-size: 1.8rem;
 
     &:hover {
       border: 1px solid $rose-dawn;
@@ -122,10 +133,8 @@
     }
   }
 
-  .link-navbar {
+  .dropdown-toggle {
     position: relative;
-    display: flex;
-    align-items: center;
   }
 
   a.dropdown-link:hover {
@@ -169,6 +178,7 @@
 
     a.dropdown-item {
       border: none;
+      text-transform: uppercase;
     }
   }
 
