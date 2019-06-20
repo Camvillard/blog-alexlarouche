@@ -37,13 +37,13 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={metadata.seo} />
         <Header siteTitle={metadata.title} path="homepage" />
 
-        <div id="last-blogpost" className="main-container">
+        <div id="last-blogpost" className="fullwidth-container">
           <LastPostCard post={lastPost} />
         </div>
 
         <div className="container">
 
-          <div id="first-posts-section">
+          <div id="first-posts-section" className="posts-section">
             {firstSectionPosts.map( p => {
               return <RegularPostCard post={p.node} key={p.node.id} />
             })}
@@ -58,7 +58,7 @@ class IndexPage extends React.Component {
 
         <div className="container">
 
-          <div id="second-posts-section">
+          <div id="second-posts-section" className="posts-section">
             {secondSectionPosts.map( p => {
               return <RegularPostCard post={p.node} key={p.node.id} />
             })}

@@ -37,11 +37,9 @@
     text-transform: uppercase;
   }
 
-  &:hover {
-    a {
-      background: $rose-dawn;
-      color: white;
-    }
+  a:hover {
+    background: $rose-dawn;
+    color: white;
   }
 }
 

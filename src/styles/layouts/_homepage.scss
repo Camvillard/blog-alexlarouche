@@ -4,6 +4,72 @@
   margin-top: 64px;
 }
 
+// LAST BLOG POST
+
+
+// only for homepage : first post section
+.posts-section {
+
+  h3 {
+    margin: 2rem 0 1.2rem;
+  }
+
+  .post-card-excerpt {
+    padding-left: 24px;
+  }
+
+  .btn-plain {
+    text-align: center;
+    margin-top: 2.4rem;
+  }
+}
+
+
+// featured section
+
+#featured-post-section {
+  background: rgba(201, 144, 134, 0.1);
+  padding: 32px 0;
+
+  p.post-description {
+    margin-left: 2.4rem;
+    color: $dark-gray;
+    font-style: italic;
+  }
+
+  #first-featured {
+    width: 75%;
+    margin-left: 25%;
+  }
+
+  #second-featured {
+    position: relative;
+    top: -80px;
+    left: 24px;
+    width: 55vw;
+    height: 55vw;
+    object-fit: cover;
+    border: 8px solid white;
+  }
+
+  .post-card-content {
+    margin-top: -60px;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .btn-square {
+    display: block;
+    width: 34%;
+    margin: auto;
+  }
+
+  .post-card-meta {
+    margin-top: 32px;
+    text-align: center;
+    color: $rose-dawn;
+  }
+}
 
 .read-more {
   text-align: center;
@@ -12,6 +78,9 @@
     border-bottom: 4px solid $rose-dawn;
   }
 }
+
+
+// ABOUT SECTION
 
 #about-section {
   margin: 48px auto;
@@ -22,6 +91,7 @@
   align-items: center;
   justify-content: space-around;
 }
+
 
 
 // NEWSLETTER SECTION
@@ -68,6 +138,9 @@
   }
 }
 
+
+
+
 #homepage-premier-favori {
   img {
     width: 100%;
@@ -94,13 +167,66 @@
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
-  #homepage-content {
-    margin-top: 40px;
-  }
 
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  #homepage-content {
+    margin-top: 40px;
+  }
+
+  // LAST BLOG POST
+
+  #last-blogpost {
+    background: $old-pink;
+    padding: 4vw 0;
+
+    .last-post-card {
+      background: white;
+      padding: 4vw 8vw 0;
+      max-width: 1080px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+    }
+  }
+
+  // POSTS SECTIONS
+
+  .posts-section {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      margin: 2rem 0 1.2rem;
+    }
+
+    .post-card-excerpt {
+      padding-left: 24px;
+    }
+
+    .btn-plain {
+      text-align: left;
+      margin-top: 2.4rem;
+      margin-left: 24px;
+    }
+
+    .post-card-meta p{
+      padding-left: 24px;
+      font-size: 1.4rem;
+    }
+
+    .post-card {
+      flex: 0 0 45%;
+    }
+  }
+
+
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

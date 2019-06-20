@@ -1,5 +1,5 @@
 const createExcerpt = (post) => {
-  return post.slice(0, 200) + " (...)"
+  return post.slice(0, 300) + " (...)"
 }
 
 const createPrintedDate = (date) => {
