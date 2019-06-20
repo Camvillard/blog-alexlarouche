@@ -9,7 +9,7 @@ import { buildSeoTags } from '../utilities/seo';
 
 const Page = ({ data }) => {
 
-  const page = data.wordpressPost
+  const page = data.wordpressPage
   const seoTags = buildSeoTags(page.acf.seo_tags)
 
   return(

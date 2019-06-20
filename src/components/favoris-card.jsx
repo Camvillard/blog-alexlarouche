@@ -1,9 +1,7 @@
 // external libs
 import React from "react";
-import { Link } from "gatsby";
 
 // internal stuff
-import { createExcerpt, createPrintedDate } from "../utilities/blog-cards"
 
 // styles & assets
 import '../styles/main.scss';

@@ -1,17 +1,12 @@
-/*----- INDEX FOR COMPONENTS ----- */
+/*----- COMPONENTS : VIDEO CARD ----- */
 
-@import "navbar";
-@import "header";
-@import "footer";
-@import "buttons";
-@import "forms";
-@import "containers";
-@import "social-icons";
-@import "post-cards";
-@import "favoris";
-@import "video-card";
-@import "instagram-footer";
 
+.video-card {
+  h3 {
+    text-align: center;
+    font-size: 3.2rem;
+  }
+}
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px

@@ -10,7 +10,9 @@ import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
 import MailchimpForm from "../components/mailchimp-form";
-import FavorisSmallCard from "../components/favoris-card";
+// import FavorisSmallCard from "../components/favoris-card";
+import Instagram from "../components/instagram";
+import Footer from "../components/footer";
 
 // helpers
 
@@ -96,11 +98,41 @@ class IndexPage extends React.Component {
         </div>
         {/* end of #newsletter-section */}
 
+        <div id="video-section" className="container">
+
+          <div className="video-card">
+            <h3 className="rose-dawn">la dernière vidéo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
+            perspiciatis earum repellendus aliquam aliquid beatae?
+            Commodi accusamus non ratione minima.</p>
+            <iframe title="alex larouche video" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div className="btn-square">
+              <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ">s'abonner aux vidéos</a>
+            </div>
+          </div>
+
+          <div className="video-card">
+            <h3 className="rose-dawn">le dernier vlog</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
+            perspiciatis earum repellendus aliquam aliquid beatae?
+            Commodi accusamus non ratione minima.</p>
+            <iframe title="alex larouche vlog" width="100%" height="300px" src="" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div className="btn-square">
+              <a href="https://www.youtube.com/user/alexfbvlogs">s'abonner aux vlogs</a>
+            </div>
+          </div>
+
+
+        </div>
+      {/* end of video-section */}
+
         <div id="favoris-section">
           <h3>mes favoris du moment</h3>
 
           <div className="favoris-sm-card" id="homepage-premier-favori">
-            <img src={favorisUn.featured_media.source_url} />
+            <img src={favorisUn.featured_media.source_url} alt={favorisUn.acf.nom_marque} />
             <div className="favoris-sm-card-content">
               <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
               <p>{favorisUn.acf.nom_marque}</p>
@@ -110,7 +142,7 @@ class IndexPage extends React.Component {
           {/* end of #premier favori */}
 
           <div className="favoris-sm-card" id="homepage-deuxieme-favori">
-            <img src={favorisDeux.featured_media.source_url} />
+            <img src={favorisDeux.featured_media.source_url} alt={favorisDeux.acf.nom_marque} />
             <div className="favoris-sm-card-content">
               <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
               <p>{favorisDeux.acf.nom_marque}</p>
@@ -120,13 +152,14 @@ class IndexPage extends React.Component {
          {/* end of #deuxieme favori */}
 
          <div className="btn-square">
-          <a href="#">voir tous les favoris</a>
+          <a href="/">voir tous les favoris</a>
          </div>
-
-
 
         </div>
         {/* end of #favoris-section */}
+
+        <Instagram />
+        <Footer />
 
       </div>
     )

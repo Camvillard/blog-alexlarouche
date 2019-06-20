@@ -9,14 +9,37 @@ import MobileNavbar from "./mobile-navbar"
 
 // styles & assets
 
-const Header = ({siteTitle, path}) => {
+class Header extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      windowSize: ""
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      windowSize: window.innerWidth
+    })
+  }
+
+  render(){
+  console.log('prout')
+  console.log(this.state.windowSize)
   return (
     <header id="site-header" >
-      <MobileNavbar />
-      {path === "homepage" ? <h1 className="logo-title">{siteTitle}</h1> : <h1 className="logo-title"><Link to="/">{siteTitle}</Link></h1> }
+      {this.state.windowSize < '992' ? <MobileNavbar /> : <Navbar />}
+
+      {this.props.path === "homepage" ? <h1 className="logo-title">{this.props.siteTitle}</h1> : <h1 className="logo-title"><Link to="/">{this.props.siteTitle}</Link></h1> }
     </header>
-  )
+    )
+  }
 }
+
+// const Header = ({siteTitle, path}) => {
+//   )
+// }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

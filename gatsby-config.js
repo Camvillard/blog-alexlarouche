@@ -25,23 +25,31 @@ module.exports = {
        protocol: 'https',
        hostingWPCOM: false,
        useACF: true,
-       // verboseOutput: true,
+       verboseOutput: true,
        // auth: {
        //   wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
        //   wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
        //   wpcom_user: process.env.WORDPRESS_USER,
        //   wpcom_pass: process.env.WORDPRESS_PASSWORD,
        // },
-       // includedRoutes: [
-       //   "**/categories",
-       //   "**/posts",
-       //   "**/pages",
-       //   "**/comments",
-       //   "**/favoris",
-       //   "**/media",
-       // ],
+       includedRoutes: [
+         "**/categories",
+         "**/posts",
+         "**/pages",
+         "**/comments",
+         "**/favoris",
+         "**/media",
+       ],
       },
-     },
+    },
+    // {
+    //   resolve: `gatsby-source-youtube-v2`,
+    //   options: {
+    //     channelId: ['UCW2B_S8WqN2RZZ4j9NoIRLA'],
+    //     apiKey: process.env.YOUTUBE_API_KEY,
+    //     maxVideos: 2
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -54,6 +62,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `alexandralarouche`,
       },
     },
     {
