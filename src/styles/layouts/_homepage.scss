@@ -277,6 +277,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      max-width: 1320px;
+      margin: auto;
     }
 
     p.post-description {
@@ -296,10 +298,10 @@
 
     #second-img-featured {
       position: absolute;
-      top: calc(94% - 25vw);
+      top: calc(94% - 20vw);
       left: 24px;
-      width: 25vw;
-      height: 25vw;
+      width: 20vw;
+      height: 20vw;
       border: 10px solid white;
     }
 

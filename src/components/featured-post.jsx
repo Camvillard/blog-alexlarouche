@@ -13,7 +13,6 @@ const FeaturedPost = ({post}) => {
   return(
     <div className="featured-post-card">
 
-
       <div className="featured-post-images">
         <p className="post-description">en ce moment</p>
         <img id="first-img-featured" src={post.acf.image_supplementaire.source_url} alt={post.title}/>
