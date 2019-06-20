@@ -4,47 +4,132 @@
 @import "../mixins/buttons";
 
 
-.btn-square {
-  position: relative;
-  z-index: 3;
+.btn-block {
+  display: block;
+  width: 100%;
+  margin: 8px auto;
   text-align: center;
-  a {
-    font-family: $headers-font;
-    font-size: 2.4rem;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    top: 1.8rem;
-    left: 18%;
-    right: 18%;
-    z-index: -1;
-    // width: 120%;
-    height: 8px;
-    background: $light-gray;
+
+  &-left {
+    margin: 16px auto;
+    margin-left: 0;
   }
 }
 
 
-
-.btn-plain {
-  a {
+a.btn-square {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  font-family: $headers-font;
+  font-size: 2rem;
+  margin-left: 8px;
+  transition: 0.3s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 1.6rem;
+    left: -8px;
+    right: -8px;
+    z-index: -1;
+    height: 8px;
+    background: $light-gray;
     transition: 0.3s;
-    font-size: 16px;
+  }
+  &:hover {
+    color: $dark-rose;
+  }
+  &:hover:before {
+    background: $old-pink;
+  }
+}
+
+
+button.btn-plain,
+a.btn-plain {
+    transition: 0.3s;
+    font-size: 1.8rem;
     padding: 4px 16px;
     background: $light-gray;
     color: $rose-dawn;
+    font-size: 1.6rem;
     text-transform: uppercase;
-  }
 
-  a:hover {
+  &:hover {
     background: $rose-dawn;
     color: white;
   }
 }
 
-.btn-blob {
+
+a.btn-blob {
   font-family: $headers-font;
-  font-size: 1.8rem;
   color: $rose-dawn;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: $dark-rose;
+  }
 }
+
+button.btn-blob {
+  font-family: $headers-font;
+  color: $rose-dawn;
+  background: white;
+  font-size: 1.6rem;
+  border: 0;
+
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+
+
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+
+  a.btn-square {
+    font-size: 2.4rem;
+    margin-left: 14px;
+    &:before {
+      top: 1.8rem;
+      left: -14px;
+      right: -14px;
+      height: 12px;
+    }
+  }
+
+  a.btn-blob {
+    font-size: 2rem;
+  }
+
+  button.btn-blob {
+    font-size: 2rem;
+  }
+
+  button.btn-plain,
+  a.btn-plain {
+    padding: 4px 16px;
+    font-size: 2rem;
+  }
+
+
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+
+

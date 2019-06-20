@@ -7,6 +7,10 @@
   align-items: flex-end;
   justify-content: center;
   margin-bottom: 4rem;
+
+  img {
+    object-fit: cover;
+  }
 }
 
 .favoris-sm-card-content {

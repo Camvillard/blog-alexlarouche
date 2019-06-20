@@ -143,6 +143,12 @@ class StylesPage extends React.Component {
           socks.</p>
 
         </div>
+
+
+        <div >
+          <a href="#" className="btn-square">test btn-square</a>
+        </div>
+
       </div>
     )
   }

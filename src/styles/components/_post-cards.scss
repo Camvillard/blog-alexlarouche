@@ -14,8 +14,11 @@
   text-transform: uppercase;
 }
 
-.post-card-meta p {
+.post-card-meta p,
+.post-card-meta a {
   margin: 0.4rem auto;
+  color: $medium-gray;
+  font-size: 1.4rem;
 }
 
 
@@ -43,8 +46,8 @@
   }
 
   .btn-square {
-    display: block;
-    width: 40%;
+    // display: block;
+    // width: 40%;
     margin: auto;
   }
 }
@@ -83,11 +86,14 @@
     .post-card-meta {
       flex: 0 0 25%;
       margin-top: 8px;
+      text-align: left;
     }
 
-    .post-card-meta p {
+    .post-card-meta p,
+    .post-card-meta a {
       font-size: 1.4rem;
-      text-align: left;
+      text-align: left !important;
+      margin-left: 0;
     }
 
     .post-card-content {
@@ -95,6 +101,14 @@
       padding: 16px 32px 32px;
       position: relative;
       top: -4vw;
+    }
+  }
+
+  .post-card {
+    img {
+      height: 420px;
+      width: 100%;
+      object-fit: cover;
     }
   }
 

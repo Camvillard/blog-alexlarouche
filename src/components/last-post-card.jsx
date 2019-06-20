@@ -19,15 +19,15 @@ const LastPostCard = ({post}) => {
       <div className="last-post-content">
 
         <div className="post-card-meta">
-          <p className="published"><span> publié le :</span> {createPrintedDate(post.date)}  </p>
-          <p className="categories"><span> catégories :</span> {post.categories[0].name}  </p>
+          <p className="published"><span> publié le :</span> {createPrintedDate(post.date)}</p>
+          <Link className="categories" to={`/categories/${post.categories[0].slug}`}><span> catégorie :</span> {post.categories[0].name}</Link>
         </div>
 
         <div className="post-card-content">
           <h3 className="post-card-title">{post.title}</h3>
           <div className="post-card-excerpt" dangerouslySetInnerHTML= {{__html: createExcerpt(post.content)}} />
-          <div className="btn-square">
-            <Link to={`/${post.slug}`}>lire la suite</Link>
+          <div className="btn-block" >
+            <Link to={`/${post.slug}`} className="btn-square">lire la suite</Link>
           </div>
         </div>
 
