@@ -1,3 +1,5 @@
+const queries = require("./src/utilities/algolia")
+
 require('dotenv').config();
 
 module.exports = {
@@ -84,6 +86,15 @@ module.exports = {
           endpoint: 'https://gmail.us3.list-manage.com/subscribe/post?u=9978552546769cd4ebb279197&amp;id=908fed04bb'
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
