@@ -6,13 +6,16 @@ import Layout from '../components/layout';
 
 // import { extractTags } from '../helpers/extract-tags';
 import { buildSeoTags } from '../utilities/seo';
+import { createPrintedDate } from "../utilities/blog-cards"
+
 
 const Post = ({ data }) => {
 
   const post = data.wordpressPost
   const featuredImage = post.featured_media.source_url
   const seoTags = buildSeoTags(post.acf.seo_tags)
-  const comments = data.allWordpressWpComments.edges[0].node
+  const comments = data.allWordpressWpComments.edges[0]
+  const postDate = createPrintedDate(post.date)
 
   return(
     <Layout>
@@ -24,13 +27,14 @@ const Post = ({ data }) => {
       {/* featured image*/}
       <img src={featuredImage} alt=""/>
 
+      <div className="post-meta">
+        <p className="date">publié le : {postDate}</p>
+        { post.tags ? <p className="tags">{if post.tags.}étiquettes : {post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
+        { post.categories ? <p className="categories">{post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}</p> : ''}
+      </div>
+
       <h1 dangerouslySetInnerHTML={{__html: post.title}} />
 
-      <div className="post-meta">
-        <p className="date">{post.date}</p>
-        { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
-
-      </div>
 
       <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
@@ -57,9 +61,14 @@ export const query = graphql`
       }
 
       title
-      date(formatString: "Do MMMM YYYY")
+      date
       content
       slug
+      categories {
+        id
+        name
+        slug
+      }
     }
 
     allWordpressWpComments(filter: {post: {eq: $postId}}){
