@@ -28,12 +28,12 @@ module.exports = {
        hostingWPCOM: false,
        useACF: true,
        verboseOutput: true,
-       // auth: {
-       //   wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-       //   wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
-       //   wpcom_user: process.env.WORDPRESS_USER,
-       //   wpcom_pass: process.env.WORDPRESS_PASSWORD,
-       // },
+       auth: {
+         wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
+         wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
+         wpcom_user: process.env.WORDPRESS_USER,
+         wpcom_pass: process.env.WORDPRESS_PASSWORD,
+       },
        includedRoutes: [
          "**/categories",
          "**/posts",
