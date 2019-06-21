@@ -12,6 +12,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               slug
+              wordpress_id
             }
           }
         }
@@ -36,6 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
           // in page queries as GraphQL variables.
           context: {
             id: edge.node.id,
+            postId: edge.node.wordpress_id
           },
         })
       })

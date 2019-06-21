@@ -1,4 +1,4 @@
-const baseUrl = `htpps://content.alexandralarouche.ca/wp-json/wp/v2/comments`;
+const baseUrl = `https://content.alexandralarouche.ca/wp-json/wp/v2/comments`;
 // const inputMessage = document.getElementById("your-message");
 // const inputName = document.getElementById("your-name");
 // const submit = document.querySelector("input.btn");

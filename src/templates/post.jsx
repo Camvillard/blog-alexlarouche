@@ -12,6 +12,7 @@ const Post = ({ data }) => {
   const post = data.wordpressPost
   const featuredImage = post.featured_media.source_url
   const seoTags = buildSeoTags(post.acf.seo_tags)
+  const comments = data.allWordpressWpComments.edges[0].node
 
   return(
     <Layout>
@@ -33,6 +34,8 @@ const Post = ({ data }) => {
 
       <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
+      <div>comments {comments.content}</div>
+
 
     </div>
     </Layout>
@@ -41,7 +44,7 @@ const Post = ({ data }) => {
 export default Post;
 
 export const query = graphql`
-  query($id: String!) {
+  query($id: String!, $postId: Int!) {
 
     wordpressPost(id: { eq: $id }) {
 
@@ -57,6 +60,19 @@ export const query = graphql`
       date(formatString: "Do MMMM YYYY")
       content
       slug
+    }
+
+    allWordpressWpComments(filter: {post: {eq: $postId}}){
+      edges {
+        node {
+          id
+          post
+          content
+          author_name
+          author_url
+          date
+        }
+      }
     }
   }
 `
