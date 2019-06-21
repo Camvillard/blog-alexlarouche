@@ -3,7 +3,7 @@ const postQuery = `{
     edges {
       node {
         id
-        content
+        acf {seo_tags}
         title
         categories {
           id
@@ -19,7 +19,7 @@ const pageQuery = `{
     edges {
       node {
         id
-        content
+        acf {seo_tags}
         title
       }
     }

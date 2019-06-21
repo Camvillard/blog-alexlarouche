@@ -19,8 +19,8 @@ const LastPostCard = ({post}) => {
       <div className="last-post-content">
 
         <div className="post-card-meta">
-          <p className="published"><span> publié le :</span> {createPrintedDate(post.date)}</p>
-          <Link className="categories" to={`/categories/${post.categories[0].slug}`}><span> catégorie :</span> {post.categories[0].name}</Link>
+          <p className="published"><span> publié le : </span> {createPrintedDate(post.date)}</p>
+          <Link className="categories" to={`/categories/${post.categories[0].slug}`}><span> catégorie : </span> {post.categories[0].name}</Link>
         </div>
 
         <div className="post-card-content">

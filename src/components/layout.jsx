@@ -9,7 +9,7 @@ import Footer from "./footer"
 
 // styles & assets
 
-const Layout = ({ children }) => (
+const Layout = ({ children, props }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -21,12 +21,12 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div className="main-content">
+      <div className={props}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="container">
           <main>{children}</main>
-          <Footer />
         </div>
+        <Footer />
       </div>
     )}
   />
