@@ -12,7 +12,7 @@ const Post = ({ data }) => {
   const post = data.wordpressPost
   const featuredImage = post.featured_media.source_url
   const seoTags = buildSeoTags(post.acf.seo_tags)
-  const comments = data.allWordpressWpComments.edges[0].node
+  const comments = data.allWordpressWpComments.edges[0]
 
   return(
     <Layout>
@@ -28,7 +28,7 @@ const Post = ({ data }) => {
 
       <div className="post-meta">
         <p className="date">{post.date}</p>
-        { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
+        { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : <span></span>}
 
       </div>
 
