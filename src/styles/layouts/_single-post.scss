@@ -1,0 +1,100 @@
+/*----- LAYOUTS : SINGLE POST ----- */
+
+
+// META TAGS
+
+.single-post-meta {
+  margin-top: 8px;
+  text-transform: uppercase;
+  span {
+    font-weight: 600;
+  }
+  p, a {
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: $medium-gray;
+  }
+}
+
+.single-post-container {
+
+  h3 {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 3.2rem;
+    color: $rose-dawn;
+  }
+  img {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .post-featured-image {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .legende-foncee figcaption {
+    position: relative;
+    width: 80%;
+    margin: -40px auto 24px;
+    padding: 4px 8px;
+    border: 3px solid white;
+    background: $dark-rose;
+    color: white;
+    font-family: $accent-font;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1rem;
+    // z-index: 3;
+  }
+
+  .legende-claire figcaption {
+    position: relative;
+    width: 80%;
+    margin: -40px auto 24px;
+    background: white;
+    padding: 4px 8px;
+    border-top: 1px solid $old-pink;
+    border-bottom: 1px solid $old-pink;
+    font-family: $accent-font;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1rem;
+    // z-index: 3;
+  }
+
+  .fullwidth-post-image {
+    padding: 4vw;
+    background: $light-gray;
+    img {
+      margin: 0;
+    }
+  }
+}
+
+.wp-block-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &.has-2-columns .wp-block-column {
+    flex: 0 0 48%;
+  }
+}
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+

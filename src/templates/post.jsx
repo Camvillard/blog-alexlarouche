@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 
 // import { extractTags } from '../helpers/extract-tags';
 import { buildSeoTags } from '../utilities/seo';
-import { createPrintedDate } from "../utilities/blog-cards"
+import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
 
 
 const Post = ({ data }) => {
@@ -20,34 +20,32 @@ const Post = ({ data }) => {
 
   return(
     <Layout>
-    <div>
+      <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+      <div className="single-post-container">
+
+        {/* featured image*/}
+        <img src={featuredImage} alt="" className="post-featured-image"/>
+
+        <div className="single-post-meta">
+          <p className="date"><span>publié le : </span>{postDate}</p>
+          { post.categories ?
+            <p className="categories">
+              <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
+              {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
+            </p> :
+            <span></span>}
+        </div>
+
+        <h1 dangerouslySetInnerHTML={{__html: post.title}} />
 
 
-    <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+        <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
-      {/* featured image*/}
-      <img src={featuredImage} alt=""/>
-
-      <div className="post-meta">
-        <p className="date">{post.date}</p>
-        { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : <span></span>}
-
-        { post.categories ? <p className="categories">{post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}</p> : <span></span>}
-
+        <div className="comments-container">
+        <h3>Commentaires</h3>
+        {comments ? <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> : <p>il n'y a acuun commentaire pour le moment</p> }
+        </div>
       </div>
-
-      <h1 dangerouslySetInnerHTML={{__html: post.title}} />
-
-
-      <div dangerouslySetInnerHTML= {{__html: post.content}} />
-
-      <div className="comments-container">
-      <h3>Commentaires</h3>
-      {comments ? <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> : <p>il n'y a acuun commentaire pour le moment</p> }
-      </div>
-
-
-    </div>
     </Layout>
   )
 }
