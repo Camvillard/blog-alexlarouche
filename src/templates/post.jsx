@@ -17,6 +17,7 @@ const Post = ({ data }) => {
   const comments = data.allWordpressWpComments.edges[0]
   const postDate = createPrintedDate(post.date)
 
+
   return(
     <Layout>
     <div>
@@ -28,9 +29,11 @@ const Post = ({ data }) => {
       <img src={featuredImage} alt=""/>
 
       <div className="post-meta">
-        <p className="date">publié le : {postDate}</p>
-        { post.tags ? <p className="tags">{if post.tags.}étiquettes : {post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
-        { post.categories ? <p className="categories">{post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}</p> : ''}
+        <p className="date">{post.date}</p>
+        { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : <span></span>}
+      
+        { post.categories ? <p className="categories">{post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}</p> : <span></span>}
+
       </div>
 
       <h1 dangerouslySetInnerHTML={{__html: post.title}} />
