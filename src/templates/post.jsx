@@ -31,7 +31,7 @@ const Post = ({ data }) => {
       <div className="post-meta">
         <p className="date">{post.date}</p>
         { post.tags ? <p className="tags">{post.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : <span></span>}
-      
+
         { post.categories ? <p className="categories">{post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}</p> : <span></span>}
 
       </div>
@@ -41,7 +41,7 @@ const Post = ({ data }) => {
 
       <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
-      <div>comments {comments.content}</div>
+      <div>comments {comments ? comments.content : 'no comment for the moment' }</div>
 
 
     </div>
