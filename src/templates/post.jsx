@@ -41,7 +41,10 @@ const Post = ({ data }) => {
 
       <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
-      <div>comments {comments ? comments.content : 'no comment for the moment' }</div>
+      <div className="comments-container">
+      <h3>Commentaires</h3>
+      {comments ? <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> : <p>il n'y a acuun commentaire pour le moment</p> }
+      </div>
 
 
     </div>
