@@ -10,6 +10,10 @@
   width: 100vw;
 }
 
+.main-content {
+  margin-top: 64px;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
@@ -30,10 +34,9 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
-  // .container {
-  //   width: 64vw;
-  //   margin: auto;
-  // }
+  .main-content {
+    margin-top: 40px;
+  }
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {
