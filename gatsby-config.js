@@ -33,6 +33,9 @@ module.exports = {
          wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
          wpcom_user: process.env.WORDPRESS_USER,
          wpcom_pass: process.env.WORDPRESS_PASSWORD,
+         htaccess_user: "camvillard",
+         htaccess_pass: "cdlTb!$0u201?AE",
+         htaccess_sendImmediately: false,
        },
        includedRoutes: [
          "**/categories",

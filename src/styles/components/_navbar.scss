@@ -16,16 +16,27 @@
   justify-content: center;
 }
 
+#mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  padding-right: 8px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(196, 196, 196, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 800;
+}
+
 
 .toggle-menu {
-  position: fixed;
   z-index: 1200;
-  top: 24px;
-  left: 24px;
-  font-size: 2rem;
-  svg {
-    fill: red;
-  }
+  position: fixed;
+  top: 12px;
+  left: 16px;
 }
 
 .mobile-main-menu {

@@ -36,7 +36,7 @@ const Post = ({ data }) => {
             <span></span>}
         </div>
 
-        <h1 dangerouslySetInnerHTML={{__html: post.title}} />
+        <h2 dangerouslySetInnerHTML={{__html: post.title}} />
 
 
         <div dangerouslySetInnerHTML= {{__html: post.content}} />

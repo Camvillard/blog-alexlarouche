@@ -1,18 +1,29 @@
 /*----- COMPONENTS : HEADER ----- */
 
 h1.logo-title {
+  position: relative;
+  margin-top: 84px;
+  margin-bottom: 36px;
   text-align: center;
-  font-size: 3.6rem;
-  background: -webkit-linear-gradient(120deg, $old-pink 20%, $dark-rose);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: 0.3s;
-
-  &:hover {
-    background: -webkit-linear-gradient(120deg, $dark-rose 4%, $old-pink);
+  font-size: 1.4rem;
+  font-family: $body-font;
+  text-transform: uppercase;
+  color: $dark-rose;
+  font-weight: 400;
+  &:before {
+    position: absolute;
+    top: -72px;
+    left: 43%;
+    content: "a";
+    font-family: $headers-font;
+    text-transform: none;
+    font-size: 10rem;
+    background: -webkit-linear-gradient(120deg, rgba(243, 240, 241, 0.6) 20%, rgba(232, 208, 204, 0.6));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: -1;
   }
+
 }
 
 a h1.logo-title {
@@ -28,9 +39,36 @@ a h1.logo-title {
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
-  h1.logo-title {
-    font-size: 6.4rem;
+  a h1.logo-title {
+    margin-top: 6rem;
   }
+
+
+  h1.logo-title {
+    text-align: center;
+    font-size: 6.4rem;
+    margin-top: 6rem;
+    text-transform: none;
+    color: $dark-rose;
+    font-family: $headers-font;
+    font-weight: 700;
+    // margin: auto;
+    background: -webkit-linear-gradient(120deg, $old-pink 20%, $dark-rose);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+
+    &:before {
+      content: none;
+    }
+
+    &:hover {
+      background: -webkit-linear-gradient(120deg, $dark-rose 4%, $old-pink);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
 
 } // end of md-screen - 992px
 

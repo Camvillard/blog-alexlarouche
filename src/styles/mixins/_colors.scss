@@ -4,3 +4,11 @@
   background: rgba(232, 208, 204, $transparency);
 }
 
+@mixin rose-dawn-transparent($transparency) {
+  background: rgba(201, 144, 134, $transparency);
+}
+
+@mixin light-gray-transparent($transparency) {
+  background: rgba(243, 240, 241, $transparency);
+}
+

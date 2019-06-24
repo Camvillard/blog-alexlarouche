@@ -146,7 +146,7 @@ class StylesPage extends React.Component {
 
 
         <div >
-          <a href="#" className="btn-square">test btn-square</a>
+          <a href="www.camillevillard.com" className="btn-square">test btn-square</a>
         </div>
 
       </div>

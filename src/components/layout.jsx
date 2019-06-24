@@ -21,7 +21,7 @@ const Layout = ({ children, props }) => (
       }
     `}
     render={data => (
-      <div className={props}>
+      <div className='layout-container'>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="container">
           <main>{children}</main>
