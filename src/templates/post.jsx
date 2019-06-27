@@ -22,7 +22,7 @@ const CommentItem = ({comment}) => {
     </div>
 
     <div className="comment-content">
-      <p className="comment-author"><Link to={comment.author_url}>{comment.author_name}</Link></p>
+      <p className="comment-author"><a href={comment.author_url} target="_blank" rel="noopener noreferrer">{comment.author_name}</a></p>
       <p className="comment-date">{createPrintedDate(comment.date)}</p>
       <p dangerouslySetInnerHTML={{__html: comment.content}}/>
     </div>
