@@ -13,13 +13,31 @@ import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
 
 // styles & assets
 
+const CommentItem = ({comment}) => {
+  return(
+    <div className={`comment-item ${comment.author === 1 ? 'comment-alex' : ''}`}>
+
+    <div className="comment-avatar">
+      <img src={comment.author_avatar_urls.wordpress_96} className="img-circle" alt={comment.author_name}/>
+    </div>
+
+    <div className="comment-content">
+      <p className="comment-author"><Link to={comment.author_url}>{comment.author_name}</Link></p>
+      <p className="comment-date">{createPrintedDate(comment.date)}</p>
+      <p dangerouslySetInnerHTML={{__html: comment.content}}/>
+    </div>
+
+    </div>
+  )
+}
+
 
 const Post = ({ data }) => {
 
   const post = data.wordpressPost
   const featuredImage = post.featured_media.source_url
   const seoTags = buildSeoTags(post.acf.seo_tags)
-  const comments = data.allWordpressWpComments.edges[0]
+  const comments = data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
 
 
@@ -28,30 +46,34 @@ const Post = ({ data }) => {
       <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
       <div className="single-post-container">
 
-        {/* featured image*/}
-        <img src={featuredImage} alt="" className="post-featured-image"/>
 
-        <div className="single-post-meta">
-          <p className="date"><span>publié le : </span>{postDate}</p>
-          { post.categories ?
-            <p className="categories">
-              <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
-              {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
-            </p> :
-            <span></span>}
-        </div>
+      {/* featured image*/}
+      <img src={featuredImage} alt="" className="post-featured-image"/>
 
-        <h2 dangerouslySetInnerHTML={{__html: post.title}} />
+      <div className="single-post-meta">
+        <p className="date"><span>publié le : </span>{postDate}</p>
+        { post.categories ?
+          <p className="categories">
+            <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
+            {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
+          </p> :
+          <span></span>}
+      </div>
+
+      <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
+
+
 
 
         <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
         <div className="comments-container">
-        <h3>Commentaires</h3>
+        <h3>laisser un commentaire</h3>
         <CommentForm />
+        <h3>tous les commentaires</h3>
         {comments ?
-          <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> :
-          <p>il n'y a acuun commentaire pour le moment</p> }
+          comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
+          <p>il n'y a aucun commentaire pour le moment</p> }
         </div>
       </div>
     </Layout>
@@ -84,14 +106,19 @@ export const query = graphql`
     }
 
     allWordpressWpComments(filter: {post: {eq: $postId}}){
+      totalCount
       edges {
         node {
           id
           post
           content
+          author
           author_name
           author_url
           date
+          author_avatar_urls {
+            wordpress_96
+          }
         }
       }
     }

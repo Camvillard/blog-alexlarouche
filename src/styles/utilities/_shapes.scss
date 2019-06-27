@@ -1,7 +1,8 @@
 /*----- INDEX FOR UTILITIES ----- */
 
-@import "states";
-@import "shapes";
+.img-circle {
+  border-radius: 50%;
+}
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
