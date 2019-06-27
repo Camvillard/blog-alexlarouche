@@ -39,15 +39,11 @@ a h1.logo-title {
 } // end of sm-screen - 768px
 
 @media (min-width: $md-screen) {
+
   a h1.logo-title {
-    margin-top: 6rem;
-  }
-
-
-  h1.logo-title {
     text-align: center;
     font-size: 6.4rem;
-    margin-top: 6rem;
+    margin-top: 0.8em;
     text-transform: none;
     color: $dark-rose;
     font-family: $headers-font;
@@ -67,6 +63,15 @@ a h1.logo-title {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+  }
+
+  #top-header-fixed {
+    border: 3px solid red;
+    background: yellow;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
   }
 
 

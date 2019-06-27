@@ -75,11 +75,7 @@
 
 @media (min-width: $md-screen) {
 
-  #main-navbar {
-    width: 100vw;
-  }
-
-  #top-navbar {
+  .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -101,7 +97,7 @@
     color: $old-pink;
   }
 
-  #navbar-social {
+  #top-social {
     display: flex;
     justify-content: flex-end;
 
@@ -112,7 +108,8 @@
   }
 
   .main-menu {
-    margin-top: 16px;
+    margin: 16px auto;
+
   }
 
   .nav-links {

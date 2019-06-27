@@ -6,8 +6,6 @@ import React from "react";
 // internal stuff
 import Navbar from "./navbar"
 import MobileNavbar from "./mobile-navbar"
-import SocialIcons from "./social-icons"
-import SearchBar from "./search-bar"
 
 // styles & assets
 
@@ -28,7 +26,7 @@ class Header extends React.Component {
 
   render(){
   return (
-    <header id="site-header" >
+    <header>
       {this.state.windowSize < '992' ? <MobileNavbar /> : <Navbar path={this.props.path} />}
     </header>
     )
