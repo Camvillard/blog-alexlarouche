@@ -35,6 +35,36 @@ p.favoris-sm-card-title {
   }
 }
 
+.favoris-card {
+  background: white;
+  margin: 8px auto 24px;
+  padding: 8px 8px 24px 8px;
+  text-align: center;
+  box-shadow: 4px 4px 8px rgba(100,100,100,0.1);
+
+  h3 {
+    margin: -14px auto 0;
+    line-height: 1;
+  }
+
+  a {
+    font-size: 1.4rem;
+    color: $dark-gray;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+
+
+}
+
+
+
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
@@ -46,6 +76,20 @@ p.favoris-sm-card-title {
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  .favoris-card {
+    background: white;
+    padding: 24px 24px 40px 24px;
+    text-align: center;
+
+    h3, p {
+      margin: 0 auto;
+    }
+
+    p {
+      text-transform: uppercase;
+    }
+  }
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

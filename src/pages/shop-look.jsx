@@ -1,6 +1,6 @@
 // external libs
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql} from "gatsby";
 
 // internal stuff
 import Layout from "../components/layout";
@@ -10,14 +10,87 @@ import meta from "../data/meta";
 
 // styles & assets
 
+
+const FavorisCard = ({favori}) => {
+  return(
+    <div className="favoris-card">
+
+      <img src={favori.featured_media.source_url} alt={favori.title}/>
+
+      <div className="favoris-card-content">
+        <h3 className="favoris-card-title">
+          <a href={`${favori.acf.url_du_produit}`} target="_blank" rel="noopener noreferrer">{favori.title}</a>
+        </h3>
+        <p>{favori.acf.nom_marque}</p>
+      </div>
+
+    </div>
+  )
+
+}
+
+// 1. need to create a function to filter elements depending on the category name
+
+
+// 2. need to create a li for each one of the categories that exists
+
+
 class ShopLook extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeTab: 'all'
+    }
+  }
+
+  handleClick = (e) => {
+    const allFavoris = this.props.data.allWordpressWpFavoris.edges
+    const categoryToShow =  e.target.dataset.category
+    // this.filterByCategories(allFavoris, categoryToShow)
+    this.setState({ activeTab: categoryToShow})
+  }
+
+
+  filterByCategories = (cards, category) => {
+    const filteredCards = cards.filter( card => {
+      return card.node.categories[0].name === category
+    })
+    return filteredCards
+  }
+
   render(){
+    const allFavoris = this.props.data.allWordpressWpFavoris.edges
+    const allCategory = this.props.data.allWordpressCategory.edges
     return(
       <Layout>
 
         <SEO title="Shop mon look" keywords={meta.seo.keywords} />
-        <h1>shop mon look</h1>
+        <h1 className="page-title">shop mon look</h1>
+
+        <div className="favoris-filter-tabs">
+
+        <ul className="list-inline">
+          {allCategory.map( cat => {
+            return <li key={cat.node.id} data-category={cat.node.name} onClick={this.handleClick}>
+                        {cat.node.name}</li>
+          })}
+        </ul>
+
+erdfg
+
+        </div>
+
+
+        <div className="favoris-container">
+
+        {this.filterByCategories(allFavoris, this.state.activeTab).map( fav => <FavorisCard favori={fav.node} key={fav.node.id} /> )}
+
+
+
+        </div>
+
+
 
       </Layout>
     )
@@ -48,6 +121,16 @@ query shopPage {
           slug
           name
         }
+      }
+    }
+  }
+
+  allWordpressCategory {
+    edges {
+      node {
+        id
+        name
+        slug
       }
     }
   }

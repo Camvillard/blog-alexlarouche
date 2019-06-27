@@ -1,12 +1,4 @@
-/*----- INDEX FOR LAYOUTS ----- */
-
-@import "general";
-@import "coming-soon";
-@import "homepage";
-@import "contact";
-@import "about";
-@import "single-post";
-@import "shop";
+/*----- LAYOUTS : SHOP MY LOOK ----- */
 
 
 @media (min-width: $xsm-screen) {
@@ -19,6 +11,16 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  .favoris-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .favoris-card {
+      flex: 0 0 30%;
+    }
+  }
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {
