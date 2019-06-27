@@ -22,6 +22,10 @@ import '../styles/main.scss';
 
 class IndexPage extends React.Component {
 
+  handleScroll = () => {
+    console.log('scrolling')
+  }
+
   render() {
     const metadata = this.props.data.site.siteMetadata
     const posts = this.props.data.allWordpressPost.edges
@@ -32,7 +36,7 @@ class IndexPage extends React.Component {
     const favorisUn = this.props.data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = this.props.data.allWordpressWpFavoris.edges[1].node
     return(
-      <div id="homepage-content">
+      <div id="homepage-content" onScroll={this.handleScroll}>
         {/* Meta stuff */}
         <SEO title="Home" keywords={metadata.seo} />
         <Header siteTitle={metadata.title} path="homepage" />

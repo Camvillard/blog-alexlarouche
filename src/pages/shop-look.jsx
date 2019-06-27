@@ -1,6 +1,6 @@
 // external libs
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 // internal stuff
 import Layout from "../components/layout";
@@ -10,13 +10,44 @@ import meta from "../data/meta";
 
 // styles & assets
 
-const ShopLook = () => (
-  <Layout>
-    <SEO title="Contact" keywords={meta.seo.keywords} />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+class ShopLook extends React.Component {
+
+  render(){
+    return(
+      <Layout>
+
+        <SEO title="Shop mon look" keywords={meta.seo.keywords} />
+        <h1>shop mon look</h1>
+
+      </Layout>
+    )
+  }
+}
+
 
 export default ShopLook
+
+export const query = graphql`
+query shopPage {
+  allWordpressWpFavoris {
+    edges {
+      node {
+        id
+        slug
+        acf {
+          seo_tags
+          nom_marque
+          url_du_produit
+          description
+        }
+        title
+        categories {
+          slug
+          name
+        }
+      }
+    }
+  }
+}
+`
+

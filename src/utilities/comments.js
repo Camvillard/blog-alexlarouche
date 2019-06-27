@@ -1,11 +1,23 @@
-const baseUrl = `https://content.alexandralarouche.ca/wp-json/wp/v2/comments`;
-// const inputMessage = document.getElementById("your-message");
-// const inputName = document.getElementById("your-name");
-// const submit = document.querySelector("input.btn");
-// const refresh = document.getElementById("refresh");
-// const chatMessages = document.querySelector("#messages ul");
+// const baseUrl = `https://content.alexandralarouche.ca/wp-json/wp/v2/comments`;
+// const inputMessage = document.getElementById("test-btn");
+// console.log(inputMessage)
+
 
 // functions
+
+// const callApi = () => {
+//   console.log('calling api')
+//   fetch(baseUrl, {
+//     method: 'POST'
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+// }
+
+// inputMessage.addEventListener('click', () => {
+//   console.log('clicked')
+//   callApi()
+// })
 
 // const populateNewMessages = (name, message) => {
 //   chatMessages.insertAdjacentHTML('afterbegin', `<li>${message} posted by ${name}</li>`);
@@ -39,8 +51,3 @@ const baseUrl = `https://content.alexandralarouche.ca/wp-json/wp/v2/comments`;
 // });
 
 
-const createComment = () => {
-  console.log('prout')
-}
-
-export default {createComment}

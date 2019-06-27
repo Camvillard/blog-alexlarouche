@@ -26,10 +26,8 @@ class Header extends React.Component {
 
   render(){
   return (
-    <header id="site-header" >
+    <header>
       {this.state.windowSize < '992' ? <MobileNavbar /> : <Navbar path={this.props.path} />}
-
-      {this.props.path === "homepage" ? <h1 className="logo-title">{this.props.siteTitle}</h1> : <Link to="/"><h1 className="logo-title">{this.props.siteTitle}</h1></Link> }
     </header>
     )
   }

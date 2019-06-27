@@ -2,7 +2,7 @@
 import React from "react";
 
 // images & assets
-import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaPinterest} from "react-icons/fa";
 
 // styles
 
@@ -10,12 +10,6 @@ import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 const SocialIcons = (props) => {
   return(
     <div id={props.id}>
-      <div id="instagram" className="icon-pink">
-      <a href="https://www.instagram.com/alexandralarouche/" target="_blank" rel="noopener noreferrer">
-        <FaInstagram />
-      </a>
-      </div>
-
       <div id="youtube" className="icon-pink">
       <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank" rel="noopener noreferrer">
         <FaYoutube />
@@ -28,11 +22,19 @@ const SocialIcons = (props) => {
         </a>
       </div>
 
-      <div id="facebook" className="icon-pink">
-      <a href="https://www.facebook.com/alexfashionbeauty1" target="_blank" rel="noopener noreferrer">
-        <FaFacebookF />
-        </a>
+      <div id="instagram" className="icon-pink">
+      <a href="https://www.instagram.com/alexandralarouche/" target="_blank" rel="noopener noreferrer">
+        <FaInstagram />
+      </a>
       </div>
+
+      <div id="pinterest" className="icon-pink">
+      <a href="https://www.instagram.com/alexandralarouche/" target="_blank" rel="noopener noreferrer">
+        <FaPinterest />
+      </a>
+      </div>
+
+
     </div>
   )
 }

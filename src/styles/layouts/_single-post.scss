@@ -16,23 +16,36 @@
   }
 }
 
-.single-post-container {
 
-  h3 {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 3.2rem;
-    color: $rose-dawn;
-  }
-  img {
-    margin-top: 24px;
-    margin-bottom: 24px;
+// POST CONTAINER
+.single-post-container {
+  max-width: 824px;
+  margin: 32px auto 32px;
+
+  h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 0;
   }
 
   .post-featured-image {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    position: relative;
+    z-index: -1;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
+
+  h3 {
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: $rose-dawn;
+  }
+
+  img {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
 
   .legende-foncee figcaption {
     position: relative;
@@ -46,7 +59,7 @@
     font-style: italic;
     text-align: center;
     font-size: 1.1rem;
-    // z-index: 3;
+    z-index: 200;
   }
 
   .legende-claire figcaption {
@@ -82,6 +95,51 @@
   }
 }
 
+// COMMENTS
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.comment-avatar {
+  flex: 0 0 40px;
+
+  img {
+    margin-top: 0;
+  }
+}
+
+.comment-content {
+  margin-left: 8px;
+  margin-top: 0;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .comment-author,
+  .comment-date {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .comment-date {
+    margin-bottom: 8px;
+  }
+
+}
+
+// COMMENTS IF LOGGED
+
+.comment-item.comment-alex {
+  background: $light-gray;
+  padding: 8px;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
@@ -93,6 +151,97 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  // META TAGS
+
+  .single-post-meta {
+    p, a {
+      font-size: 1.3rem;
+    }
+  }
+
+  // CONTENT
+
+  .single-post-container {
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    .legende-foncee {
+      margin-bottom: 80px;
+    }
+
+    .legende-foncee img {
+      width: 48%;
+      margin-left: 36%;
+    }
+
+    .legende-foncee figcaption {
+      width: 32%;
+      margin: -132px auto 24px 16%;
+      padding: 8px 12px;
+      font-size: 1.4rem;
+    }
+
+    .legende-claire {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between
+    }
+
+    .legende-claire img {
+      width: 64%;
+      max-height: 640px;
+      margin-left: 8%;
+    }
+
+    .legende-claire figcaption {
+      position: relative;
+      width: 28%;
+      margin: 0 8% 64px 24px;
+      background: white;
+      padding: 4px 8px;
+      border-top: 1px solid $old-pink;
+      border-bottom: 1px solid $old-pink;
+      font-family: $accent-font;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.1rem;
+      // z-index: 3;
+    }
+
+  }
+
+  // COMMENTS
+
+  .comment-item {
+    flex-direction: row;
+  }
+
+  .comment-avatar {
+    flex: 0 0 92px;
+
+    img {
+      margin-top: 0;
+    }
+  }
+
+  .comment-content {
+    margin-left: 24px;
+    margin-top: 16px;
+
+    p {
+      margin-top: 0px;
+    }
+
+    .comment-author,
+    .comment-date {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+  }
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

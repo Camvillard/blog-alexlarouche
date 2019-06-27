@@ -13,7 +13,7 @@ const LastPostCard = ({post}) => {
   return(
     <div className="last-post-card">
 
-      <p className="post-description">Le dernier billet</p>
+      <p className="post-description">le dernier billet</p>
       <img src={post.featured_media.source_url} alt={post.title}/>
 
       <div className="last-post-content">
