@@ -44,38 +44,41 @@ const Post = ({ data }) => {
   return(
     <Layout>
       <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+
       <div className="single-post-container">
+        {/* featured image*/}
+        <img src={featuredImage} alt="" className="post-featured-image"/>
 
 
-      {/* featured image*/}
-      <img src={featuredImage} alt="" className="post-featured-image"/>
+        {/* meta for the post */}
+        <div className="single-post-meta">
+          <p className="date"><span>publié le : </span>{postDate}</p>
+          { post.categories ?
+            <p className="categories">
+              <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
+              {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
+            </p> :
+            <span></span>}
+        </div>
+        {/* end of .single-post-meta */}
 
-      <div className="single-post-meta">
-        <p className="date"><span>publié le : </span>{postDate}</p>
-        { post.categories ?
-          <p className="categories">
-            <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
-            {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
-          </p> :
-          <span></span>}
-      </div>
-
-      <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
-
-
-
+        <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
 
         <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
         <div className="comments-container">
-        <h3>laisser un commentaire</h3>
-        <CommentForm />
-        <h3>tous les commentaires</h3>
-        {comments ?
-          comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
-          <p>il n'y a aucun commentaire pour le moment</p> }
+          <h3>laisser un commentaire</h3>
+          <CommentForm />
+          <h3>tous les commentaires</h3>
+          {comments ?
+            comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
+            <p>il n'y a aucun commentaire pour le moment</p> }
         </div>
+        {/* end of .comments-container */}
+
       </div>
+    {/* end of .single-post-container */}
+
     </Layout>
   )
 }

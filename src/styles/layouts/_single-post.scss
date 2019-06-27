@@ -24,7 +24,7 @@
 
   h2 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     margin-top: 0;
   }
 
@@ -32,13 +32,23 @@
     position: relative;
     z-index: -1;
     margin-top: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
+  }
+
+  .single-post-meta {
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: $rose-dawn;
   }
 
   h3 {
-    font-weight: 300;
-    font-size: 2.2rem;
     color: $rose-dawn;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
   img {
@@ -167,6 +177,10 @@
       font-size: 4rem;
     }
 
+    .post-featured-image {
+      margin-bottom: 16px;
+    }
+
     .legende-foncee {
       margin-bottom: 80px;
     }
@@ -216,10 +230,12 @@
 
   .comment-item {
     flex-direction: row;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
 
   .comment-avatar {
-    flex: 0 0 92px;
+    flex: 0 0 64px;
 
     img {
       margin-top: 0;
@@ -227,11 +243,12 @@
   }
 
   .comment-content {
-    margin-left: 24px;
+    margin-left: 8px;
     margin-top: 16px;
 
     p {
-      margin-top: 0px;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     .comment-author,
@@ -239,8 +256,31 @@
       font-size: 1.2rem;
       text-transform: uppercase;
     }
+    .comment-date {
+      margin-bottom: 8px;
+    }
 
   }
+
+  // COMMENTS IF LOGGED
+
+  .comment-item.comment-alex {
+    background: white;
+    padding: 8px;
+    margin: auto;
+
+    .comment-avatar {
+      position: relative;
+      z-index: 5;
+    }
+
+    .comment-content {
+      background: $light-gray;
+      padding: 16px 16px 16px 48px;
+      margin-left: -32px;
+    }
+  }
+
 
 } // end of lg-screen - 1200px
 

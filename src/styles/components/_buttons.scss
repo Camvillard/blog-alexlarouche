@@ -16,6 +16,10 @@
   }
 }
 
+button.btn-square {
+  border: 0;
+  background: none;
+}
 
 button.btn-square,
 a.btn-square {
@@ -44,6 +48,8 @@ a.btn-square {
   }
   &:hover:before {
     background: $old-pink;
+    height: 22px;
+    top: 4px;
   }
 }
 
