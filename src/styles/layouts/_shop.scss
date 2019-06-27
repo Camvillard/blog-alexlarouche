@@ -1,6 +1,20 @@
 /*----- LAYOUTS : SHOP MY LOOK ----- */
 
 
+.favoris-filter-tabs {
+
+  ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  li {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+}
+
+
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
 
@@ -21,6 +35,27 @@
       flex: 0 0 30%;
     }
   }
+
+
+  .favoris-filter-tabs {
+
+    ul {
+      width: 80%;
+      margin: 16px auto 16px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    li {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    li:hover {
+      cursor: pointer;
+    }
+  }
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

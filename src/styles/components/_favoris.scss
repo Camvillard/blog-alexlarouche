@@ -38,17 +38,17 @@ p.favoris-sm-card-title {
 .favoris-card {
   background: white;
   margin: 8px auto 24px;
-  padding: 8px 8px 24px 8px;
+  padding: 8px;
   text-align: center;
   box-shadow: 4px 4px 8px rgba(100,100,100,0.1);
 
   h3 {
-    margin: -14px auto 0;
+    margin: 0px auto 0;
     line-height: 1;
+    font-size: 1.4rem;
   }
 
   a {
-    font-size: 1.4rem;
     color: $dark-gray;
     text-align: center;
   }
@@ -78,11 +78,15 @@ p.favoris-sm-card-title {
 @media (min-width: $lg-screen) {
   .favoris-card {
     background: white;
-    padding: 24px 24px 40px 24px;
+    padding: 24px;
     text-align: center;
 
     h3, p {
       margin: 0 auto;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
     }
 
     p {
