@@ -45,18 +45,26 @@ class ShopLook extends React.Component {
   }
 
   handleClick = (e) => {
+    // we use data attributes to target the catehpry we want to show
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
     const categoryToShow =  e.target.dataset.category
-    // this.filterByCategories(allFavoris, categoryToShow)
-    this.setState({ activeTab: categoryToShow})
+    if (categoryToShow === "tout") {
+      this.setState({ activeTab: 'all'})
+    } else {
+      this.setState({ activeTab: categoryToShow})
+    }
   }
 
 
   filterByCategories = (cards, category) => {
-    const filteredCards = cards.filter( card => {
-      return card.node.categories[0].name === category
-    })
-    return filteredCards
+    if (category === "all") {
+      return cards
+    } else {
+      const filteredCards = cards.filter( card => {
+        return card.node.categories[0].name === category
+      })
+      return filteredCards
+    }
   }
 
   render(){
@@ -71,6 +79,7 @@ class ShopLook extends React.Component {
         <div className="favoris-filter-tabs">
 
         <ul className="list-inline">
+          <li key='0' data-category="tout" onClick={this.handleClick}>voir tout</li>
           {allCategory.map( cat => {
             return <li key={cat.node.id} data-category={cat.node.name} onClick={this.handleClick}>
                         {cat.node.name}</li>
