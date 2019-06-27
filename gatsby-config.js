@@ -33,8 +33,8 @@ module.exports = {
          wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
          wpcom_user: process.env.WORDPRESS_USER,
          wpcom_pass: process.env.WORDPRESS_PASSWORD,
-         htaccess_user: "camvillard",
-         htaccess_pass: "cdlTb!$0u201?AE",
+         htaccess_user: process.env.HTACCESS_USER,
+         htaccess_pass: process.env.HTACCESS_PASS,
          htaccess_sendImmediately: false,
        },
        includedRoutes: [
