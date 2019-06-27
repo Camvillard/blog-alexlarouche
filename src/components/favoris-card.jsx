@@ -24,23 +24,7 @@ const FavorisSmallCard = ({favori}) => {
 
 }
 
-// const FavorisLargeCard = ({favori}) => {
-//   return(
-//     <div className="favoris-lg-card">
-
-//       <img src={favori.featured_media.source_url} alt={favori.title}/>
-
-//       <div className="favoris-lg-card-content">
-//         <h3 className="favoris-lg-card-title">{favori.title}</h3>
-//         <p>{favori.acf.nom_marque}</p>
-//         <a href={`/${favori.acf.url_du_produit}`}>à retrouver ici</a>
-//       </div>
-
-//     </div>
-//   )
-
-// }
 
 
 
-export default { FavorisSmallCard };
+export default { FavorisSmallCard};
