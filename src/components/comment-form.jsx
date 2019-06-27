@@ -51,7 +51,7 @@ class CommentForm extends React.Component {
         </label>
 
         <label htmlFor="commentContent">commentaire :
-          <textarea type="textarea" name="comment" onChange={this.handleChange}/>
+          <textarea type="textarea" name="comment" rows="5" cols="33" onChange={this.handleChange}/>
         </label>
 
         <div className="btn-block">

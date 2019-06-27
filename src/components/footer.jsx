@@ -30,7 +30,7 @@ export default () => (
           design & développement faits avec <FaHeart /> par
           <a href="https://www.cdltbisou.com"> <strong>cdlt</strong>bisou</a>
         </p>
-        <div className="right-inks">
+        <div className="right-links">
           <Link to="/contact">mentions légales</Link> ∙ <Link to="/">politique de confidentialité</Link>
         </div>
 

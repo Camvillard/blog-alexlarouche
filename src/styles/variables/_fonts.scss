@@ -18,6 +18,14 @@ h1, h2, h3 {
   margin: 1em auto 0.4em;
 }
 
+h4 {
+  font-family: $headers-font;
+  font-weight: 300;
+  color: $dark-gray;
+  margin: 1em auto 0.4em;
+}
+
+
 h6 {
   font-family: $headers-font;
   font-weight: 400;
@@ -25,7 +33,7 @@ h6 {
   margin: 1em auto 0.4em;
 }
 
-h4, h5 {
+h5 {
   font-family: $body-font;
   text-transform: uppercase;
   color: $dark-gray;
@@ -65,27 +73,22 @@ h1 {
 
 h2 {
   font-size: 4.4rem;
-  margin: 3.2rem auto 1.6rem;
 }
 
 h3 {
   font-size: 4rem;
-  margin: 3.2rem auto 1.6rem;
 }
 
 h4 {
   font-size: 3.2rem;
-  margin: 2.4rem auto 1.6rem;
 }
 
 h5 {
   font-size: 2.4rem;
-  margin: 2.4rem auto 1.2rem;
 }
 
 h6 {
   font-size: 2rem;
-  margin: 2.4rem auto 1.2rem;
 }
 
 p, blockquote, a, li {
@@ -105,32 +108,26 @@ p, blockquote, a, li {
 @media (min-width: $lg-screen) {
   h1 {
     font-size: 4.8rem;
-    margin: 4rem auto 1.8rem;
   }
 
   h2 {
     font-size: 4.2rem;
-    margin: 4rem auto 1.8rem;
   }
 
   h3 {
     font-size: 3.6rem;
-    margin: 4rem auto 1.8rem;
   }
 
   h4 {
     font-size: 4rem;
-    margin: 3.2rem auto 1.6rem;
   }
 
   h5 {
     font-size: 3.2rem;
-    margin: 2rem auto 1.4rem;
   }
 
   h6 {
     font-size: 2.4rem;
-    margin: 2rem auto 1.4rem;
   }
 
   p, blockquote, a, li {
