@@ -34,6 +34,9 @@ query shopPage {
       node {
         id
         slug
+        featured_media {
+          source_url
+        }
         acf {
           seo_tags
           nom_marque
