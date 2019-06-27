@@ -3,8 +3,8 @@ import React from "react";
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 // internal stuff
-import SocialIcons from "./social-icons"
-import SearchBar from "./search-bar"
+// import SocialIcons from "./social-icons"
+// import SearchBar from "./search-bar"
 
 // styles & assets
 
@@ -37,10 +37,6 @@ class Navbar extends React.Component {
     const categories = this.props.data.allWordpressCategory.edges
     return(
       <div id="main-navbar">
-        <div id="top-navbar">
-          <SearchBar id="navbar-search"/>
-          <SocialIcons id='navbar-social'/>
-        </div>
         <div className="main-menu">
           <div className="nav-links">
             {/* by default, dropdown is hidden - when you hover the name categories, it appears */}
@@ -56,7 +52,6 @@ class Navbar extends React.Component {
                   )}
                 </ul>
               </div>
-
             </span>
 
             <Link to="/shop-look" className="menu-link" activeClassName="active-link">shop mon look</Link>

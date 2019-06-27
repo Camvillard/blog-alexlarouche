@@ -48,12 +48,14 @@ summary {
 img {
   border-style: none;
   max-width: 100%;
+  object-fit: cover;
 }
 
 button,
 select {
   text-transform: none;
 }
+
 [type="reset"],
 [type="submit"],
 button,

@@ -1,12 +1,17 @@
+// external libs
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
+// internal stuff
 import SEO from '../components/seo';
 import Layout from '../components/layout';
+import CommentForm from '../components/comment-form';
 
-// import { extractTags } from '../helpers/extract-tags';
+// helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
+
+// styles & assets
 
 
 const Post = ({ data }) => {
@@ -43,7 +48,10 @@ const Post = ({ data }) => {
 
         <div className="comments-container">
         <h3>Commentaires</h3>
-        {comments ? <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> : <p>il n'y a acuun commentaire pour le moment</p> }
+        <CommentForm />
+        {comments ?
+          <div className="comments-content" dangerouslySetInnerHTML={{__html: comments.node.content}} /> :
+          <p>il n'y a acuun commentaire pour le moment</p> }
         </div>
       </div>
     </Layout>

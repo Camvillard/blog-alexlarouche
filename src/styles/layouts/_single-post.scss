@@ -17,6 +17,12 @@
 }
 
 .single-post-container {
+  max-width: 824px;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+  }
 
   h3 {
     font-style: italic;
@@ -25,7 +31,7 @@
     color: $rose-dawn;
   }
   img {
-    margin-top: 24px;
+    margin-top: 32px;
     margin-bottom: 24px;
   }
 
@@ -46,7 +52,7 @@
     font-style: italic;
     text-align: center;
     font-size: 1.1rem;
-    // z-index: 3;
+    z-index: 200;
   }
 
   .legende-claire figcaption {
@@ -93,6 +99,64 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  // META TAGS
+
+  .single-post-meta {
+    p, a {
+      font-size: 1.3rem;
+    }
+  }
+
+  // CONTENT
+
+  .single-post-container {
+
+    .legende-foncee {
+      margin-bottom: 80px;
+    }
+
+    .legende-foncee img {
+      width: 48%;
+      margin-left: 36%;
+    }
+
+    .legende-foncee figcaption {
+      width: 32%;
+      margin: -132px auto 24px 16%;
+      padding: 8px 12px;
+      font-size: 1.4rem;
+    }
+
+    .legende-claire {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between
+    }
+
+    .legende-claire img {
+      width: 64%;
+      max-height: 640px;
+      margin-left: 8%;
+    }
+
+    .legende-claire figcaption {
+      position: relative;
+      width: 28%;
+      margin: 0 8% 64px 24px;
+      background: white;
+      padding: 4px 8px;
+      border-top: 1px solid $old-pink;
+      border-bottom: 1px solid $old-pink;
+      font-family: $accent-font;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.1rem;
+      // z-index: 3;
+    }
+
+
+  }
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

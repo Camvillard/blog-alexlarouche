@@ -6,6 +6,8 @@ import React from "react";
 // internal stuff
 import Navbar from "./navbar"
 import MobileNavbar from "./mobile-navbar"
+import SocialIcons from "./social-icons"
+import SearchBar from "./search-bar"
 
 // styles & assets
 
@@ -28,8 +30,6 @@ class Header extends React.Component {
   return (
     <header id="site-header" >
       {this.state.windowSize < '992' ? <MobileNavbar /> : <Navbar path={this.props.path} />}
-
-      {this.props.path === "homepage" ? <h1 className="logo-title">{this.props.siteTitle}</h1> : <Link to="/"><h1 className="logo-title">{this.props.siteTitle}</h1></Link> }
     </header>
     )
   }
