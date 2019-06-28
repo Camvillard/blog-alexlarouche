@@ -35,7 +35,9 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
     "react-instantsearch-dom": "^5.7.0",
-    "react-svg": "^10.0.8"
+    "react-svg": "^10.0.8",
+    "styled-components": "^4.3.2",
+    "styled-icons": "^8.1.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
