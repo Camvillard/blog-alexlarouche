@@ -37,7 +37,7 @@ class Navbar extends React.Component {
     // and build the dropdown menu with it
     const categories = this.props.data.allWordpressCategory.edges
     return(
-      <div className="main-header">
+      <div id="desktop-header">
 
         <div className="top-bar">
           <SearchBar id="navbar-search" />
