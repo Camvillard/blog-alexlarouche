@@ -1,18 +1,19 @@
 import React from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 
-import { SearchIcon, Form, Input } from "./styles"
+// import { Form, Input } from "./styles"
+
+import { FaSearch } from "react-icons/fa";
 
 export default connectSearchBox(({ refine, ...rest }) => (
-  <Form>
-    <Input
+  <form id="search-form">
+    <FaSearch />
+    <input
       type="text"
-      placeholder="Search"
+      placeholder="chercher"
       aria-label="Search"
       onChange={e => refine(e.target.value)}
       {...rest}
     />
-    ssdfghjyu
-    <SearchIcon />
-  </Form>
+  </form>
 ))

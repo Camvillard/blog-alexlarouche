@@ -13,12 +13,12 @@ import * as hitComps from "./hit-comps"
 
 const Results = connectStateResults(
   ({ searchState: state, searchResults: res, children }) =>
-    res && res.nbHits > 0 ? children : `No results for '${state.query}'`
+    res && res.nbHits > 0 ? children : `Aucun résultat pour '${state.query}'`
 )
 
 const Stats = connectStateResults(
   ({ searchResults: res }) =>
-    res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`
+    res && res.nbHits > 0 && `${res.nbHits} resultat${res.nbHits > 1 ? `s` : ``}`
 )
 
 const useClickOutside = (ref, handler, events) => {
@@ -40,8 +40,8 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
   const [query, setQuery] = useState(``)
   const [focus, setFocus] = useState(false)
   const searchClient = algoliasearch(
-    'Q814WW9ED5',
-    'b1841e7868c88744af8063420a5d86f6'
+    process.env.GATSBY_ALGOLIA_APP_ID,
+    process.env.GATSBY_ALGOLIA_SEARCH_KEY
   )
   useClickOutside(ref, () => setFocus(false))
   return (
@@ -51,6 +51,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
       onSearchStateChange={({ query }) => setQuery(query)}
       root={{ Root, props: { ref } }}
     >
+
       <Input onFocus={() => setFocus(true)} {...{ collapse, focus }} />
       <HitsWrapper show={query.length > 0 && focus} asGrid={hitsAsGrid}>
         {indices.map(({ name, title, hitComp }) => (
@@ -64,7 +65,6 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
             </Results>
           </Index>
         ))}
-        <PoweredBy />
       </HitsWrapper>
     </InstantSearch>
   )

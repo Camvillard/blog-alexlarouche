@@ -6,13 +6,6 @@ import React from "react";
 // internal stuff
 import Navbar from "./navbar"
 import MobileNavbar from "./mobile-navbar"
-import Search from "./search"
-
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
-
 
 // styles & assets
 
@@ -34,7 +27,6 @@ class Header extends React.Component {
   render(){
   return (
     <header>
-    <Search collapse indices={searchIndices} />
       {this.state.windowSize < '992' ? <MobileNavbar /> : <Navbar path={this.props.path} />}
     </header>
     )

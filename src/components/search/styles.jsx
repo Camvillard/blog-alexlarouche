@@ -71,13 +71,14 @@ export const Form = styled.form`
 `
 
 export const HitsWrapper = styled.div`
-  display: ${props => (props.show ? `grid` : `none`)};
+  display: ${props => (props.show ? `flex` : `none`)};
+  flex-direction: column;
   max-height: 80vh;
   overflow: scroll;
   z-index: 2;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  right: 0;
+  left: 0;
   top: calc(100% + 0.5em);
   width: 80vw;
   max-width: 30em;
@@ -110,7 +111,7 @@ export const HitsWrapper = styled.div`
     justify-content: space-between;
     margin-bottom: 0.3em;
     h3 {
-      color: white;
+      color: #C99086;
       background: ${props => props.theme.gray};
       padding: 0.1em 0.4em;
       border-radius: ${props => props.theme.smallBorderRadius};
