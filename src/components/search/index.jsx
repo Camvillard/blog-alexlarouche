@@ -7,7 +7,7 @@ import {
 } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 
-import { Root, HitsWrapper } from "./styles"
+import { Root, HitsWrapper, PoweredBy } from "./styles"
 import Input from "./Input"
 import * as hitComps from "./hit-comps"
 
@@ -64,6 +64,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
             </Results>
           </Index>
         ))}
+        <PoweredBy />
       </HitsWrapper>
     </InstantSearch>
   )

@@ -90,8 +90,8 @@ export const HitsWrapper = styled.div`
     list-style: none;
   }
   mark {
-    color: ${props => props.theme.lightBlue};
-    background: ${props => props.theme.darkBlue};
+    color: white;
+    background: #C99086;
   }
   header {
     display: flex;
@@ -112,3 +112,12 @@ export const HitsWrapper = styled.div`
     margin-bottom: 0.3em;
   }
 `
+
+export const PoweredBy = () => (
+  <span css="font-size: 0.3rem; text-align: left; padding: 0;">
+    propulsé par
+    <a href="https://algolia.com">
+      <Algolia size="1em" /> Algolia
+    </a>
+  </span>
+)
