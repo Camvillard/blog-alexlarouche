@@ -43,11 +43,11 @@ const favorisQuery = `{
 
 
 const flatten = arr =>
-  arr.map(({ node: { categories, slug, ...rest } }) => ({
+  arr.map(({ node: { categories, ...rest } }) => ({
     ...categories,
     ...rest,
   }))
-const settings = { attributesToSnippet: [`excerpt:20`] }
+const settings = { attributesToSnippet: [`excerpt:30`] }
 
 const queries = [
   {

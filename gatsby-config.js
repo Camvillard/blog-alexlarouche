@@ -1,4 +1,4 @@
-const queries = require("./src/utilities/algolia")
+const queries = require("./src/utilities/search-algolia")
 
 require('dotenv').config();
 
