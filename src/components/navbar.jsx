@@ -6,8 +6,17 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import SocialIcons from "./social-icons"
 import SearchBar from "./search-bar"
 
+import Search from "./search"
+
+
+
 // styles & assets
 
+const searchIndices = [
+  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
+  { name: `Posts`, title: `Articles`, hitComp: `PostHit` },
+  { name: `Favoris`, title: `Favoris`, hitComp: `FavHit` },
+]
 
 class Navbar extends React.Component {
 
@@ -40,7 +49,10 @@ class Navbar extends React.Component {
       <div id="desktop-header">
 
         <div className="top-bar">
-          <SearchBar id="navbar-search" />
+
+          <div id="navbar-search">
+            <Search collapse indices={searchIndices} />
+          </div>
           <SocialIcons id="top-social" />
         </div>
 

@@ -2,8 +2,8 @@ const postQuery = `{
   posts: allWordpressPost {
     edges {
       node {
+        slug
         id
-        acf {seo_tags}
         title
         categories {
           id
@@ -18,12 +18,27 @@ const pageQuery = `{
   pages: allWordpressPage {
     edges {
       node {
+        slug
         id
-        acf {seo_tags}
         title
       }
     }
   }
+}`
+
+
+const favorisQuery = `{
+  favoris: allWordpressWpFavoris {
+    edges {
+      node {
+        slug
+        title
+        categories { name }
+        acf { nom_marque }
+      }
+    }
+  }
+
 }`
 
 
@@ -32,7 +47,7 @@ const flatten = arr =>
     ...categories,
     ...rest,
   }))
-const settings = { attributesToSnippet: [`excerpt:20`] }
+const settings = { attributesToSnippet: [`excerpt:30`] }
 
 const queries = [
   {
@@ -45,6 +60,12 @@ const queries = [
     query: postQuery,
     transformer: ({ data }) => flatten(data.posts.edges),
     indexName: `Posts`,
+    settings,
+  },
+  {
+    query: favorisQuery,
+    transformer: ({ data }) => flatten(data.favoris.edges),
+    indexName: `Favoris`,
     settings,
   },
 ]

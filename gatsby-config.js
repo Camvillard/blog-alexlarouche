@@ -1,4 +1,4 @@
-const queries = require("./src/utilities/algolia")
+const queries = require("./src/utilities/search-algolia")
 
 require('dotenv').config();
 
@@ -92,8 +92,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        appId: 'Q814WW9ED5',
+        apiKey: '4d1afbd31ffbfa868cc322e2d3696b38',
         queries,
         chunkSize: 10000, // default: 1000
       },
