@@ -14,7 +14,8 @@ import Search from "./search"
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
+  { name: `Posts`, title: `Articles`, hitComp: `PostHit` },
+  { name: `Favoris`, title: `Favoris`, hitComp: `FavHit` },
 ]
 
 class Navbar extends React.Component {

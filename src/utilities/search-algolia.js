@@ -3,6 +3,7 @@ const postQuery = `{
     edges {
       node {
         slug
+        excerpt
         id
         title
         categories {

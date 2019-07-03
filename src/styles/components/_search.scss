@@ -1,17 +1,15 @@
-/*----- INDEX FOR COMPONENTS ----- */
+/*----- COMPONENTS : SEARCH ----- */
 
-@import "navbar";
-@import "header";
-@import "footer";
-@import "buttons";
-@import "forms";
-@import "containers";
-@import "social-icons";
-@import "post-cards";
-@import "favoris";
-@import "video-card";
-@import "instagram-footer";
-@import "search";
+
+#search-icon {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 3;
+  font-size: 24px;
+}
+
+
 
 
 @media (min-width: $xsm-screen) {

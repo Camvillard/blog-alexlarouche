@@ -7,66 +7,53 @@ import { Algolia } from "styled-icons/fa-brands/Algolia"
 
 export const Root = styled.div`
   position: relative;
-  display: grid;
-  grid-gap: 1em;
-`
-
-export const SearchIcon = styled(Search)`
-  width: 50px;
-  pointer-events: none;
+  display: flex;
 `
 
 const focus = css`
-  background: white;
+  background: transparent;
   color: ${props => props.theme.darkBlue};
   cursor: text;
-  width: 5em;
-  + ${SearchIcon} {
-    color: ${props => props.theme.darkBlue};
-    margin: 0.3em;
-  }
+  width: 60vw;
 `
 
 const collapse = css`
-  width: 0;
+  width: 60vw;
   cursor: pointer;
-  color: ${props => props.theme.lightBlue};
-  + ${SearchIcon} {
-    color: white;
-  }
+  color: #AC7970;
   ${props => props.focus && focus}
-  margin-left: ${props => (props.focus ? `-1.6em` : `-1em`)};
-  padding-left: ${props => (props.focus ? `1.6em` : `1em`)};
+  margin-left: 0;
+  padding-left: 32px;
   ::placeholder {
-    color: ${props => props.theme.gray};
+    color: #AC7970;
+    opacity: 0.9;
   }
 `
+// margin-left: ${props => (props.focus ? `-1.6em` : `-1em`)};
 
 const expand = css`
   background: ${props => props.theme.veryLightGray};
-  width: 6em;
-  margin-left: -1.6em;
-  padding-left: 1.6em;
-  + ${SearchIcon} {
-    margin: 0.3em;
-  }
+  margin-left: 0;
+  padding-left: 0;
 `
 
 export const Input = styled.input`
   outline: none;
-  border: 3px solid red;
-  margin-right: 40px;
-  font-size: 1em;
+  position: absolute;
+  border: none;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  font-size: 1.8rem;
   background: transparent;
   transition: ${props => props.theme.shortTrans};
-  border-radius: ${props => props.theme.smallBorderRadius};
   {hightlight-next-line}
   ${props => (props.collapse ? collapse : expand)};
 `
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
 `
 
@@ -79,16 +66,15 @@ export const HitsWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   position: absolute;
   left: 0;
-  top: calc(100% + 0.5em);
-  width: 80vw;
-  max-width: 30em;
-  box-shadow: 0 0 5px 0;
+  top: 32px;
+  width: 88vw;
+  max-width: 88vw;
   padding: 0.7em 1em 0.4em;
   background: white;
   border-radius: ${props => props.theme.smallBorderRadius};
   > * + * {
     padding-top: 1em !important;
-    border-top: 2px solid ${props => props.theme.darkGray};
+    border-top: 0px solid ${props => props.theme.darkGray};
   }
   li + li {
     margin-top: 0.7em;
@@ -98,6 +84,7 @@ export const HitsWrapper = styled.div`
   * {
     margin-top: 0;
     padding: 0;
+    font-size: 1.4rem;
   }
   ul {
     list-style: none;
@@ -110,26 +97,18 @@ export const HitsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.3em;
-    h3 {
+    h4 {
+      font-family: 'freight-sans-pro', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
       color: #C99086;
       background: ${props => props.theme.gray};
-      padding: 0.1em 0.4em;
-      border-radius: ${props => props.theme.smallBorderRadius};
     }
   }
-  h3 {
+  h4 {
     margin: 0 0 0.5em;
   }
   h4 {
     margin-bottom: 0.3em;
   }
 `
-
-export const PoweredBy = () => (
-  <span css="font-size: 0.6em; text-align: end; padding: 0;">
-    Powered by{` `}
-    <a href="https://algolia.com">
-      <Algolia size="1em" /> Algolia
-    </a>
-  </span>
-)

@@ -7,7 +7,7 @@ import {
 } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 
-import { Root, HitsWrapper, PoweredBy } from "./styles"
+import { Root, HitsWrapper } from "./styles"
 import Input from "./Input"
 import * as hitComps from "./hit-comps"
 
@@ -57,8 +57,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
         {indices.map(({ name, title, hitComp }) => (
           <Index key={name} indexName={name}>
             <header>
-              <h3>{title}</h3>
-              <Stats />
+              <h4>{title} / <Stats /></h4>
             </header>
             <Results>
               <Hits hitComponent={hitComps[hitComp](() => setFocus(false))} />
