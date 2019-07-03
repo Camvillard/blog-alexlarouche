@@ -35,7 +35,12 @@ const CommentItem = ({comment}) => {
 const Post = ({ data }) => {
 
   const post = data.wordpressPost
-  const featuredImage = post.featured_media.source_url
+  let featuredImage
+  if (post.featured_media) {
+    featuredImage = post.featured_media.source_url
+  } else {
+    featuredImage = "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
+  }
   const seoTags = buildSeoTags(post.acf.seo_tags)
   const comments = data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
@@ -47,7 +52,11 @@ const Post = ({ data }) => {
 
       <div className="single-post-container">
         {/* featured image*/}
-        <img src={featuredImage} alt="" className="post-featured-image"/>
+
+        {post.featured_media ?
+          <img src={post.featured_media.source_url} alt={post.title} className="post-featured-image"/> :
+           <span></span>}
+
 
 
         {/* meta for the post */}

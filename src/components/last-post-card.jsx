@@ -14,7 +14,10 @@ const LastPostCard = ({post}) => {
     <div className="last-post-card">
 
       <p className="post-description">le dernier billet</p>
-      <img src={post.featured_media.source_url} alt={post.title}/>
+      {post.featured_media ?
+        <img src={post.featured_media.source_url} alt={post.title}/> :
+         <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg" alt={post.title}/>
+       }
 
       <div className="last-post-content">
 
