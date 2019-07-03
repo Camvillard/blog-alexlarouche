@@ -17,7 +17,10 @@ const RegularPostCard = ({post}) => {
         <p>{createPrintedDate(post.date)} / <Link to={`/categories/${post.categories[0].slug}`}>{post.categories[0].name}</Link></p>
       </div>
 
-      <img src={post.featured_media.source_url} alt={post.title}/>
+      {post.featured_media ?
+        <img src={post.featured_media.source_url} alt={post.title}/> :
+         <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg" alt={post.title}/>
+       }
 
       <div className="post-card-content">
         <h3 className="post-card-title">{post.title}</h3>
