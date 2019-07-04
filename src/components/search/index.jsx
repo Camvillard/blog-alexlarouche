@@ -40,8 +40,8 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
   const [query, setQuery] = useState(``)
   const [focus, setFocus] = useState(false)
   const searchClient = algoliasearch(
-    process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.GATSBY_ALGOLIA_SEARCH_KEY
+    'Q814WW9ED5',
+    '4d1afbd31ffbfa868cc322e2d3696b38'
   )
   useClickOutside(ref, () => setFocus(false))
   return (
