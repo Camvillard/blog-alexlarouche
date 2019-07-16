@@ -54,7 +54,7 @@ const Post = ({ data }) => {
         {/* featured image*/}
 
         {post.featured_media ?
-          <img src={post.featured_media.source_url} alt={post.title} className="post-featured-image"/> :
+          <img src={featuredImage} alt={post.title} className="post-featured-image"/> :
            <span></span>}
 
 

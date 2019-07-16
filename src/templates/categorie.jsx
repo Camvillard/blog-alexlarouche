@@ -1,9 +1,8 @@
 // external libs
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 // internal stuff
-import SEO from '../components/seo';
 import Layout from '../components/layout';
 import RegularPostCard from "../components/regular-post-card"
 import MailchimpForm from "../components/mailchimp-form";
@@ -32,6 +31,8 @@ const Categorie = ({ data }) => {
       <div id="category-post-container">
         {blogPosts.map( post => <RegularPostCard post={post.node} key={post.node.id}/> )}
       </div>
+
+      <MailchimpForm />
 
     </Layout>
   )

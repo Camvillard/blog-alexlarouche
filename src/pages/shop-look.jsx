@@ -51,7 +51,7 @@ class ShopLook extends React.Component {
 
   handleClick = (e) => {
     // we use data attributes to target the catehpry we want to show
-    const allFavoris = this.props.data.allWordpressWpFavoris.edges
+    // const allFavoris = this.props.data.allWordpressWpFavoris.edges
     const categoryToShow =  e.target.dataset.category
     // if see all is targeted, we need to set manually the state
     if (categoryToShow === "tout") {
