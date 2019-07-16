@@ -90,15 +90,15 @@ module.exports = {
           endpoint: 'https://gmail.us3.list-manage.com/subscribe/post?u=9978552546769cd4ebb279197&amp;id=908fed04bb'
       },
     },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: 'Q814WW9ED5',
-        apiKey: '4d1afbd31ffbfa868cc322e2d3696b38',
-        queries,
-        chunkSize: 10000, // default: 1000
-      },
-     },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: 'Q814WW9ED5',
+    //     apiKey: '4d1afbd31ffbfa868cc322e2d3696b38',
+    //     queries,
+    //     chunkSize: 10000, // default: 1000
+    //   },
+    //  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
