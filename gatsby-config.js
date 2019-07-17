@@ -29,15 +29,19 @@ module.exports = {
        useACF: true,
        verboseOutput: true,
        auth: {
-         wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-         wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
-         wpcom_user: process.env.WORDPRESS_USER,
-         wpcom_pass: process.env.WORDPRESS_PASSWORD
+          wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
+          wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
+          wpcom_user: process.env.WORDPRESS_USER,
+          wpcom_pass: process.env.WORDPRESS_PASSWORD,
+          jwt_user: process.env.JWT_USER,
+          jwt_pass: process.env.JWT_PASSWORD,
+          jwt_base_path: "/jwt-auth/v1/token",
          // if not using JWT to authenticate with WP' can uncomment those next lines
          // htaccess_user: process.env.HTACCESS_USER,
          // htaccess_pass: process.env.HTACCESS_PASS,
          // htaccess_sendImmediately: false,
        },
+       cookies: {},
        includedRoutes: [
          "**/categories",
          "**/posts",

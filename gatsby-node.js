@@ -1,4 +1,8 @@
+require('dotenv').config();
 const path = require('path');
+
+console.log(process.env.JWT_USER)
+//
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
