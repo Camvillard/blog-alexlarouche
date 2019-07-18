@@ -1,5 +1,5 @@
 const getToken = () => {
-  fetch('https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token', {
+  typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token', {
     method: 'POST',
     body: JSON.stringify( {
             // Username of a user on the WordPress website in which the REST API request

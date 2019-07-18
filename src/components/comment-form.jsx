@@ -48,7 +48,7 @@ class CommentForm extends React.Component {
     const token = cookies.get('token')
     console.log('token', token)
     console.log(this.state)
-    fetch('https://content.alexandralarouche.ca/wp-json/wp/v2/comments', {
+    typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/wp/v2/comments', {
       method: 'POST',
       body: JSON.stringify( {
                 author_email: this.state.email,
