@@ -10,6 +10,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
+import { getToken, getCookie } from "../utilities/comments"
 
 // styles & assets
 
@@ -34,8 +35,12 @@ const CommentItem = ({comment}) => {
 
 class Post extends React.Component {
 
+  componentWillMount() {
+    const token = getToken()
+  }
+
   render(){
-  const post = this.data.wordpressPost
+  const post = this.props.data.wordpressPost
   let featuredImage
   if (post.featured_media) {
     featuredImage = post.featured_media.source_url
@@ -43,7 +48,7 @@ class Post extends React.Component {
     featuredImage = "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
   }
   const seoTags = buildSeoTags(post.acf.seo_tags)
-  const comments = this.data.allWordpressWpComments.edges
+  const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
     return(
       <Layout>
@@ -76,7 +81,8 @@ class Post extends React.Component {
 
           <div className="comments-container">
             <h3>laisser un commentaire</h3>
-            <CommentForm />
+            <CommentForm post_id={post.wordpress_id} />
+            <div id="comment-validation"></div>
             <h3>tous les commentaires</h3>
             {comments ?
               comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
@@ -108,7 +114,7 @@ export const query = graphql`
       acf {
         seo_tags
       }
-
+      wordpress_id
       title
       date
       content
