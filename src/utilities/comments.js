@@ -1,4 +1,6 @@
+
 const getToken = () => {
+  const fetch = require('isomorphic-fetch')
   typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token', {
     method: 'POST',
     body: JSON.stringify( {
@@ -20,6 +22,7 @@ const getToken = () => {
 }
 
 const getCookie = () => {
+  const fetch = require('isomorphic-fetch')
   // initialize a map object to store the cookies
   // in an accessible way for later
   let cookiesObject = new Map()
