@@ -10,6 +10,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
+import { getToken, getCookie } from "../utilities/comments"
 
 // styles & assets
 
@@ -32,9 +33,14 @@ const CommentItem = ({comment}) => {
 }
 
 
-const Post = ({ data }) => {
+class Post extends React.Component {
 
-  const post = data.wordpressPost
+  componentWillMount() {
+    const token = getToken()
+  }
+
+  render(){
+  const post = this.props.data.wordpressPost
   let featuredImage
   if (post.featured_media) {
     featuredImage = post.featured_media.source_url
@@ -42,56 +48,59 @@ const Post = ({ data }) => {
     featuredImage = "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
   }
   const seoTags = buildSeoTags(post.acf.seo_tags)
-  const comments = data.allWordpressWpComments.edges
+  const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
+    return(
+      <Layout>
+        <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
 
+        <div className="single-post-container">
+          {/* featured image*/}
 
-  return(
-    <Layout>
-      <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
-
-      <div className="single-post-container">
-        {/* featured image*/}
-
-        {post.featured_media ?
-          <img src={featuredImage} alt={post.title} className="post-featured-image"/> :
-           <span></span>}
+          {post.featured_media ?
+            <img src={featuredImage} alt={post.title} className="post-featured-image"/> :
+             <span></span>}
 
 
 
-        {/* meta for the post */}
-        <div className="single-post-meta">
-          <p className="date"><span>publié le : </span>{postDate}</p>
-          { post.categories ?
-            <p className="categories">
-              <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
-              {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
-            </p> :
-            <span></span>}
+          {/* meta for the post */}
+          <div className="single-post-meta">
+            <p className="date"><span>publié le : </span>{postDate}</p>
+            { post.categories ?
+              <p className="categories">
+                <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
+                {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
+              </p> :
+              <span></span>}
+          </div>
+          {/* end of .single-post-meta */}
+
+          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
+
+          <div dangerouslySetInnerHTML= {{__html: post.content}} />
+
+          <div className="comments-container">
+            <h3>laisser un commentaire</h3>
+            <CommentForm post_id={post.wordpress_id} />
+            <div id="comment-validation"></div>
+            <h3>tous les commentaires</h3>
+            {comments ?
+              comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
+              <p>il n'y a aucun commentaire pour le moment</p> }
+          </div>
+          {/* end of .comments-container */}
+
         </div>
-        {/* end of .single-post-meta */}
+      {/* end of .single-post-container */}
 
-        <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
+      </Layout>
+    )
 
-        <div dangerouslySetInnerHTML= {{__html: post.content}} />
+  }
 
-        <div className="comments-container">
-          <h3>laisser un commentaire</h3>
-          <CommentForm />
-          <h3>tous les commentaires</h3>
-          {comments ?
-            comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
-            <p>il n'y a aucun commentaire pour le moment</p> }
-        </div>
-        {/* end of .comments-container */}
-
-      </div>
-    {/* end of .single-post-container */}
-
-    </Layout>
-  )
 }
-export default Post;
+
+
 
 export const query = graphql`
   query($id: String!, $postId: Int!) {
@@ -105,7 +114,7 @@ export const query = graphql`
       acf {
         seo_tags
       }
-
+      wordpress_id
       title
       date
       content
@@ -137,4 +146,5 @@ export const query = graphql`
   }
 `
 
+export default Post;
 

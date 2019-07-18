@@ -67,20 +67,33 @@ class Test extends React.Component {
 
   };
 
+  testingRequest = () => {
+    fetch('https://content.alexandralarouche.ca/wp-json/simple-jwt-authentication/v1/token')
+    .then( res => res.json())
+    .then( res => console.log(res))
+
+  }
+
 
   render() {
     return(
       <div>test
 
-      <div id="test-btn" onClick={this.handleClick}>
+      <div onClick={this.handleClick}>
         <h3>
           bouton pout get le cookie
         </h3>
       </div>
 
-      <div id="test-comment" onClick={this.sendComment}>
+      <div onClick={this.sendComment}>
         <h3>
-          bouton pout envoyer un commentaire
+          testing comment stuff
+        </h3>
+      </div>
+
+      <div onClick={this.testingRequest}>
+        <h3>
+          testing request
         </h3>
       </div>
 
