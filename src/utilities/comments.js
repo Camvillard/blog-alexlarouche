@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 const getToken = () => {
   const fetch = require('isomorphic-fetch')
@@ -6,9 +7,9 @@ const getToken = () => {
     body: JSON.stringify( {
             // Username of a user on the WordPress website in which the REST API request
             // is being made to.
-            username: 'camvillard',
+            username: process.env.JWT_USER,
             // And the above user's password.
-            password: 'cdlTb!$0u201?AE'
+            password: process.env.JWT_PASSWORD
         } ),
     headers:{
       'Content-Type': 'application/json'
