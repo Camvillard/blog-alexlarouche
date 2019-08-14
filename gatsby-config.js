@@ -1,6 +1,9 @@
 const queries = require("./src/utilities/search-algolia")
 
-require('dotenv').config();
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -29,10 +32,10 @@ module.exports = {
        useACF: true,
        verboseOutput: true,
        auth: {
-          wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-          wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
-          wpcom_user: process.env.WORDPRESS_USER,
-          wpcom_pass: process.env.WORDPRESS_PASSWORD,
+          wpcom_app_clientSecret: process.env.GATSBY_WORDPRESS_CLIENT_SECRET,
+          wpcom_app_clientId: process.env.GATSBY_WORDPRESS_CLIENT_ID,
+          wpcom_user: process.env.GATSBY_WORDPRESS_USER,
+          wpcom_pass: process.env.GATSBY_WORDPRESS_PASSWORD,
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
           jwt_base_path: "/jwt-auth/v1/token",

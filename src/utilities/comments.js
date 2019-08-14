@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 const getToken = () => {
   const fetch = require('isomorphic-fetch')
