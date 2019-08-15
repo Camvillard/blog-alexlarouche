@@ -1,6 +1,45 @@
 /*----- LAYOUTS : CONTACT ----- */
 
 
+#contact-page {
+  background: $rose-dawn;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .main-page-title {
+    text-align: center;
+  }
+
+  .form-white {
+    width: 50%;
+    // margin: auto;
+  }
+
+  .form-element {
+    justify-content: flex-end;
+  }
+}
+
+.form-name {
+  position: relative;
+}
+
+.form-name::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  // font-size: 2rem;
+  background: red;
+  // color: white;
+}
+
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
 

@@ -75,6 +75,11 @@ a:hover, button:hover {
   text-align: center;
 }
 
+.main-page-title {
+  margin: 0;
+  font-size: 5.2rem;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
@@ -86,6 +91,10 @@ a:hover, button:hover {
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  .main-page-title {
+    font-size: 7.2rem;
+  }
+
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {
