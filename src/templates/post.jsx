@@ -66,12 +66,9 @@ class Post extends React.Component {
 
         <div className="single-post-container">
           {/* featured image*/}
+          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
 
-          {post.featured_media ?
-            <img src={featuredImage} alt={post.title} className="post-featured-image"/> :
-             <span></span>}
-
-
+          <img src={featuredImage} alt={post.title} className="post-featured-image"/>
 
           {/* meta for the post */}
           <div className="single-post-meta">
@@ -85,7 +82,6 @@ class Post extends React.Component {
           </div>
           {/* end of .single-post-meta */}
 
-          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
 
           <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
