@@ -105,6 +105,12 @@
   }
 }
 
+.wp-block-embed__wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 24px 0;
+}
+
 // COMMENTS
 
 .comment-item {

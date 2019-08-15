@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 const getToken = () => {
   const fetch = require('isomorphic-fetch')
   typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token', {

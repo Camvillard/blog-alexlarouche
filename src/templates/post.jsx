@@ -1,6 +1,7 @@
 // external libs
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Helmet from "react-helmet";
 
 // internal stuff
 import SEO from '../components/seo';
@@ -39,6 +40,12 @@ class Post extends React.Component {
     const token = getToken()
   }
 
+  componentDidMount() {
+    if (window.instgrm) {
+       window.instgrm.Embeds.process();
+     }
+  }
+
   render(){
   const post = this.props.data.wordpressPost
   let featuredImage
@@ -53,6 +60,9 @@ class Post extends React.Component {
     return(
       <Layout>
         <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+        <Helmet>
+          {<script async defer src="//www.instagram.com/embed.js"></script>}
+        </Helmet>
 
         <div className="single-post-container">
           {/* featured image*/}

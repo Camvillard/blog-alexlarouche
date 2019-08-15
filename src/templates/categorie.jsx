@@ -23,6 +23,12 @@ const Categorie = ({ data }) => {
   return(
     <Layout>
 
+    <p>
+
+
+
+    </p>
+
       <div id="category-header">
         <h4>catégorie</h4>
         <h3>{category.name} <span className="total-count-number">({postCount})</span></h3>

@@ -45,7 +45,8 @@ class CommentForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const cookies = getCookie()
-    const token = cookies.get('token')
+    // const token = cookies.get('token')
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvY29udGVudC5hbGV4YW5kcmFsYXJvdWNoZS5jYSIsImlhdCI6MTU2NTgyNTM0MCwibmJmIjoxNTY1ODI1MzQwLCJleHAiOjE1NjY0MzAxNDAsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.RcJzRro0Mxkt29oM00N4-FvEsWFbZBx5rVzXDSqEsHI"
     console.log('token', token)
     console.log(this.state)
     typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/wp/v2/comments', {
