@@ -1,0 +1,60 @@
+/*----- LAYOUTS : COLUMNS ----- */
+
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 0 16px;
+}
+
+.one-half,
+.one-third,
+.one-fourth,
+.one-fifth {
+  width: 100%;
+}
+
+
+@media (min-width: $xsm-screen) {
+} // end of xsm-screen - 576px
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+
+  .columns {
+    flex-direction: row;
+  }
+
+  .one-half {
+    width: 50%;
+  }
+
+  .one-third {
+    width: calc(100%  /  3);
+  }
+
+  .one-fourth {
+    width: 25%;
+  }
+
+  .one-fifth {
+    width: 20%;
+  }
+
+  .one-fifth {
+    width: calc(100% / 6);
+  }
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+
