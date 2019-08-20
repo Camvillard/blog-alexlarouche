@@ -36,11 +36,8 @@ const CommentItem = ({comment}) => {
 
 class Post extends React.Component {
 
-  componentWillMount() {
-    const token = getToken()
-  }
-
   componentDidMount() {
+    const token = getToken()
     if (window.instgrm) {
        window.instgrm.Embeds.process();
      }

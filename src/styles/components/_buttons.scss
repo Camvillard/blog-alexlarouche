@@ -103,6 +103,15 @@ button.btn-blob {
   }
 }
 
+.back-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
