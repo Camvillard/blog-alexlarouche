@@ -40,9 +40,9 @@ class MobileNavbar extends React.Component {
         <div className={`mobile-main-menu ${this.state.navbarIsOpen === true ? 'show-menu' : 'hide-menu'}`}>
           <div className="mobile-menu-links">
             <Link to="/">catégories</Link>
-            <Link to="/">shop mon look</Link>
-            <Link to="/">contact</Link>
-            <Link to="/">à propos</Link>
+            <Link to="/shop-look">shop mon look</Link>
+            <Link to="/contact">contact</Link>
+            <Link to="/a-propos">à propos</Link>
           </div>
           <SocialIcons id="social-icons-mobile" />
         </div>

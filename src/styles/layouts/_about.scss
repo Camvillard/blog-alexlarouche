@@ -1,5 +1,37 @@
 /*----- LAYOUTS : ABOUT ----- */
 
+.page-about {
+  background-image: url('https://content.alexandralarouche.ca/wp-content/uploads/2019/08/pattern_dash.png');
+  background-size: 200px;
+  background-position: fixed;
+  background-repeat: repeat;
+  padding-top: 48px;
+
+  .page-title {
+    margin: 0;
+  }
+
+  img {
+    position: relative;
+    z-index: 2;
+  }
+
+  .white-container {
+    position: relative;
+    margin-top: -24px;
+    z-index: 4;
+  }
+
+  .back-button  {
+    background: white;
+    padding: 4px;
+  }
+
+  p  {
+    margin: 0.4em auto;
+  }
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px

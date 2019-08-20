@@ -6,6 +6,11 @@
   max-width: 1080px;
 }
 
+
+.fullheight-container {
+  height: 100vh;
+}
+
 .fullwidth-container {
   width: 100vw;
 }
@@ -16,6 +21,13 @@
 
 .layout-container {
   margin-top: 64px;
+}
+
+.white-container {
+  width: 88%;
+  margin: auto;
+  background: white;
+  padding: 24px;
 }
 
 

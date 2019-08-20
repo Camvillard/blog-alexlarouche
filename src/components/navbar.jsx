@@ -78,7 +78,7 @@ class Navbar extends React.Component {
 
             <Link to="/shop-look" className="menu-link" activeClassName="active-link">shop mon look</Link>
             <Link to="/contact" className="menu-link" activeClassName="active-link">contact</Link>
-            <Link to="/apropos" className="menu-link" activeClassName="active-link">à propos</Link>
+            <Link to="/a-propos" className="menu-link" activeClassName="active-link">à propos</Link>
           </div>
 
         </div>
