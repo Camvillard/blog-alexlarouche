@@ -29,8 +29,8 @@ class ContactPage extends React.Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
+    // e.preventDefault()
+    // console.log(this.state)
   }
 
   render() {
@@ -42,11 +42,12 @@ class ContactPage extends React.Component {
 
         <form
           action="/merci"
+          method="post"
           name="Contact Form"
           className="form-white contact-form"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}>
+          >
 
           {/* specifying name of  the form for Netlify */}
           <input type="hidden" name="form-name" value="Contact Form" />
