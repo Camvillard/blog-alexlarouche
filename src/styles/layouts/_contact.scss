@@ -12,32 +12,27 @@
 
   .main-page-title {
     text-align: center;
+    color: white;
+    margin-bottom: 0.8em;
   }
 
-  .form-white {
-    width: 50%;
-    // margin: auto;
-  }
+}
+//
+
+.contact-form {
+  width: 92%;
 
   .form-element {
-    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
-}
 
-.form-name {
-  position: relative;
-}
-
-.form-name::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  // font-size: 2rem;
-  background: red;
-  // color: white;
+  .btn-plain {
+    background: white;
+    border-color: white;
+  }
 }
 
 @media (min-width: $xsm-screen) {
@@ -50,6 +45,9 @@
 } // end of md-screen - 992px
 
 @media (min-width: $lg-screen) {
+  .contact-form {
+    width: 52%;
+  }
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {

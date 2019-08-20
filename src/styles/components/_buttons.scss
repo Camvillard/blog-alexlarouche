@@ -56,9 +56,9 @@ a.btn-square {
   }
 }
 
-
 button.btn-plain,
 a.btn-plain {
+    border: 1px solid $light-gray;
     transition: 0.3s;
     font-size: 1.8rem;
     padding: 4px 16px;

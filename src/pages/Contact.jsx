@@ -23,9 +23,14 @@ class ContactPage extends React.Component {
 
   handleBlur = (e) => {
     console.log(e.target.name)
-    // this.setState({
-    //   [e.target.name]:  e.target.value
-    // })
+    this.setState({
+      [e.target.name]:  e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(this.state)
   }
 
   render() {
@@ -35,21 +40,40 @@ class ContactPage extends React.Component {
 
         <h1 className="main-page-title">contact</h1>
 
-        <form className="form-white">
+        <form
+          action="/merci"
+          name="Contact Form"
+          className="form-white contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}>
+
+          {/* specifying name of  the form for Netlify */}
+          <input type="hidden" name="form-name" value="Contact Form" />
+          {/* need a bot */}
+          <input type="hidden" name="bot-field" />
           <div className="form-element">
-            <input type="text" name="name" onBlur={this.handleBlur} className="form-name"/>
+            <label htmlFor="">nom, prénom :</label>
+            <input type="text" name="name" onBlur={this.handleBlur}/>
           </div>
 
           <div className="form-element">
+            <label htmlFor="">adresse courriel :</label>
             <input type="email" name="email" onBlur={this.handleBlur}/>
           </div>
 
           <div className="form-element">
-            <input type="email" name="subject" onBlur={this.handleBlur}/>
+            <label htmlFor="">objet du message :</label>
+            <input type="text" name="subject" onBlur={this.handleBlur}/>
           </div>
 
           <div className="form-element">
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <label htmlFor="">message :</label>
+            <textarea name="message" id="" cols="30" rows="14" onBlur={this.handleBlur}></textarea>
+          </div>
+
+          <div className="form-element">
+              <button className="btn-plain">envoyer</button>
           </div>
 
         </form>

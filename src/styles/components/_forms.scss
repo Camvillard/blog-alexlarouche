@@ -97,12 +97,25 @@
   input, textarea {
     background: white;
     border: 1px solid white;
-    margin-left: 8px;
     width: 100%;
+    margin: 4px auto;
+  }
+
+  label {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
   input {
-    height: 2rem;
+    height: 2.6rem;
+  }
+
+  input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $dark-rose;
+    color: $dark-rose;
   }
 
 }
@@ -142,6 +155,24 @@
     }
 
   }
+
+  .form-white {
+
+    input, textarea {
+      margin: 8px auto;
+    }
+
+    label {
+
+      font-size: 1.4rem;
+    }
+
+    input {
+      height: 3rem;
+    }
+
+  }
+
 
 
 
