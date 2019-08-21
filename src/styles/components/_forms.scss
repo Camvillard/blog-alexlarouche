@@ -135,8 +135,16 @@
   // MAILCHIMP FORM - HOMEPAGE
 
   #homepage-mailchimp-form {
+    width: 60%;
+    margin:auto;
+
     input {
       font-size: 1.6rem;
+      height: 3.2rem;
+    }
+
+    button {
+      margin-top: 24px;
     }
   }
 

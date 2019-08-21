@@ -103,6 +103,9 @@
 #newsletter-section {
   @include old-pink-transparent(0.3);
   padding: 24px;
+  background-image: url('https://content.alexandralarouche.ca/wp-content/uploads/2019/08/pattern_dash.png');
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 
 #newsletter-container {
