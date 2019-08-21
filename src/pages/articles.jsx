@@ -3,11 +3,11 @@ import React from "react";
 // import { graphql, Link } from "gatsby";
 
 // internal stuff
-// import Header from "../components/header";
-// import SEO from "../components/seo";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 // import SocialIcons from "../components/social-icons"
 // import LastPostCard from "../components/last-post-card"
-// import RegularPostCard from "../components/regular-post-card"
+import RegularPostCard from "../components/regular-post-card"
 // import FeaturedPost from "../components/featured-post"
 // import MailchimpForm from "../components/mailchimp-form";
 // import FavorisSmallCard from "../components/favoris-card";
@@ -23,25 +23,74 @@ import '../styles/main.scss';
 class ArchivesPage extends React.Component {
 
   render() {
-    // const metadata = this.props.data.site.siteMetadata
-    // const posts = this.props.data.allWordpressPost.edges
-    // const lastPost = posts[0].node
-    // const featuredPost = this.props.data.wordpressPost
-    // const firstSectionPosts = posts.slice(1,3)
-    // const secondSectionPosts = posts.slice(3,5)
-    // const favorisUn = this.props.data.allWordpressWpFavoris.edges[0].node
-    // const favorisDeux = this.props.data.allWordpressWpFavoris.edges[1].node
+    const metadata = this.props.data.site.siteMetadata.seo
+    const posts = this.props.data.allWordpressPost.edges
     return(
-      <div id="archive-articles-content">
+      <React.Fragment>
+        <SEO title="archives" keywords={metadata}/>
+        <Layout>
 
-        <Instagram />
-        <Footer />
+          <div className="page archives-page">
 
-      </div>
+            <h1 className="page-title">archives</h1>
+
+            <div className="container archives-container">
+
+              {posts && (
+                posts.map( post => {
+                  return <RegularPostCard post={post.node} key={post.node.id} />
+                })
+              )}
+
+
+            </div>
+
+          </div>
+
+        </Layout>
+      </React.Fragment>
     )
   }
 }
 
 export default ArchivesPage
+
+export const query = graphql`
+query archivesPage {
+  allWordpressPost(
+  limit: 12,
+  sort: {fields: [date], order: [DESC] }
+  ) {
+    edges {
+      node {
+        id
+        content
+        title
+        slug
+        date
+
+        categories {
+          name
+          slug
+        }
+
+        acf {
+          seo_tags
+        }
+
+        featured_media {
+          id
+          source_url
+        }
+      }
+    }
+  }
+  site {
+    siteMetadata {
+      seo
+    }
+  }
+}
+`
 
 

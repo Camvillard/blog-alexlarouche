@@ -59,5 +59,4 @@ query aboutPage {
     }
   }
 }
-
 `
