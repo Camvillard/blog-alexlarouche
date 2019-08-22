@@ -28,7 +28,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
+    console.log(this.props)
     const data = this.props.data
     const metadata = data.site.siteMetadata
     const posts = data.allWordpressPost.edges
@@ -37,7 +37,7 @@ class IndexPage extends React.Component {
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
-    // const firstVideo = data.allYoutubeVideo.edges[0].node
+    const firstVideo = data.allYoutubeVideo.edges[0].node
     // const secondVideo = data.allYoutubeVideo.edges[1].node
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
@@ -115,6 +115,7 @@ class IndexPage extends React.Component {
             <div className="video-description">
               <h6 className="rose-dawn">la dernière vidéo</h6>
               <p>description (...)</p>
+              // <p>{firstVideo.channelTitle}</p>
             </div>
 
             <div className="video-container">
@@ -283,6 +284,22 @@ query homePage {
           nom_marque
           url_du_produit
           description
+        }
+      }
+    }
+  }
+
+  allYoutubeVideo(filter: {channelTitle:  {in: ["Alexandra Larouche", "Les vlogs d'Alex"]}},
+  sort: {fields: [publishedAt], order: [DESC]}, limit: 2) {
+    edges {
+      node {
+        id
+        channelTitle
+        publishedAt
+        description
+        videoId
+        thumbnail {
+          url
         }
       }
     }
