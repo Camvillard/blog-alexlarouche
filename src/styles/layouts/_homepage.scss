@@ -150,7 +150,19 @@
 
 
   .video-description {
-    width: 80%;
+    // width: 80%;
+    margin-bottom: 24px;
+  }
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  iframe {
+    width: 100%;
+    height: 200px;
   }
 }
 
@@ -376,16 +388,30 @@
     img {
       width: 100%;
     }
+
+    iframe {
+      width: 560px;
+      height: 315px;
+    }
   }
 
   #first-video {
+    justify-content: space-around;
     .btn-square {
         margin-left: 0px;
       }
+
+    .video-description {
+      text-align: right;
+    }
+
+
   }
 
   #second-video {
-    text-align: right;
+    width: 40%;
+    flex-direction: column;
+    // text-align: right;
     .video-description {
       margin-left: 0;
     }
