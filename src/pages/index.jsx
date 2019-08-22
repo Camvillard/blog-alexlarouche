@@ -21,11 +21,29 @@ import { truncateWord } from "../utilities/blog-cards";
 // styles & assets
 import '../styles/main.scss';
 
+
+// takes an array of videos in both channels
+// to retrieve only the most recent in each one of the channels
+const orderVideos = (videos) => {
+  const mainVideos = []
+  const vlogs = []
+  videos.map( video  => {
+    if (video.node.channelTitle === "Alexandra Larouche") {
+      mainVideos.push(video)
+    } else {
+      vlogs.push(video)
+    }
+  })
+  const recentVideos = []
+  // return recentVideos
+}
+
 class IndexPage extends React.Component {
 
   handleScroll = () => {
     console.log('scrolling')
   }
+
 
   render() {
     console.log(this.props)
@@ -38,9 +56,12 @@ class IndexPage extends React.Component {
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
     const firstVideo = data.allYoutubeVideo.edges[0].node
-    // const secondVideo = data.allYoutubeVideo.edges[1].node
+    const secondVideo = data.allYoutubeVideo.edges[1].node
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
+
+    orderVideos(data.allYoutubeVideo.edges)
+
     return(
       <div id="homepage-content" onScroll={this.handleScroll}>
         {/* Meta stuff */}
@@ -114,8 +135,7 @@ class IndexPage extends React.Component {
 
             <div className="video-description">
               <h6 className="rose-dawn">la dernière vidéo</h6>
-              <p>description (...)</p>
-              // <p>{firstVideo.channelTitle}</p>
+              <p>{truncateWord(firstVideo.description, 40)} (...)</p>
             </div>
 
             <div className="video-container">
@@ -123,7 +143,7 @@ class IndexPage extends React.Component {
                 src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullscreen>
+                allowFullScreen>
               </iframe>
               <div className="btn-block">
                 <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
@@ -146,7 +166,7 @@ class IndexPage extends React.Component {
                src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
                frameBorder="0"
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-               allowFullscreen>
+               allowFullScreen>
              </iframe>
              <div className="btn-block">
                <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
