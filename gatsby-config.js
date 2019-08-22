@@ -55,14 +55,14 @@ module.exports = {
        ],
       },
     },
-    {
-      resolve: `gatsby-source-youtube-v2`,
-      options: {
-        channelId: ['UCIhIjNXYBKJuoGstuB3-GHA', 'UCUCkH561i3VjDQPJrGdGFQQ'],
-        apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
-        maxVideos: 40
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-youtube-v2`,
+    //   options: {
+    //     channelId: ['UCIhIjNXYBKJuoGstuB3-GHA', 'UCUCkH561i3VjDQPJrGdGFQQ'],
+    //     apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
+    //     maxVideos: 40
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

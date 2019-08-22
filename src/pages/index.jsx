@@ -114,12 +114,12 @@ class IndexPage extends React.Component {
 
             <div className="video-description">
               <h6 className="rose-dawn">la dernière vidéo</h6>
-              <p>{truncateWord(firstVideo.description, 20)} (...)</p>
+              <p>description (...)</p>
             </div>
 
             <div className="video-container">
               <iframe
-                src={`https://www.youtube.com/embed/${firstVideo.videoId}`}
+                src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullscreen>
@@ -142,7 +142,7 @@ class IndexPage extends React.Component {
 
            <div className="video-container">
              <iframe
-               src={`https://www.youtube.com/embed/${secondVideo.videoId}`}
+               src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
                frameBorder="0"
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                allowFullscreen>
@@ -267,22 +267,6 @@ query homePage {
       }
     }
     slug
-  }
-
-  allYoutubeVideo(filter: {channelTitle:  {in: ["Alexandra Larouche", "Les vlogs d'Alex"]}},
-  sort: {fields: [publishedAt], order: [DESC]}, limit: 2) {
-    edges {
-      node {
-        id
-        channelTitle
-        publishedAt
-        description
-        videoId
-        thumbnail {
-          url
-        }
-      }
-    }
   }
 
 
