@@ -37,8 +37,8 @@ class IndexPage extends React.Component {
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
-    const firstVideo = data.allYoutubeVideo.edges[0].node
-    const secondVideo = data.allYoutubeVideo.edges[1].node
+    // const firstVideo = data.allYoutubeVideo.edges[0].node
+    // const secondVideo = data.allYoutubeVideo.edges[1].node
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
     return(
