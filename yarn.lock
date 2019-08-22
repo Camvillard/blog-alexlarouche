@@ -5791,15 +5791,6 @@ gatsby-source-youtube-v2@^1.0.1:
     gatsby-source-filesystem "^1.5.27"
     lodash "^4.17.5"
 
-gatsby-source-youtube@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-youtube/-/gatsby-source-youtube-1.0.1.tgz#ca756eac01e672613d0bdabd01c5f828780dc0d3"
-  integrity sha512-aAGW/FWffbqAVcxOsRP5E3sMRWF6+9jx6R846SqQbN4vhK61Xko3FLyI5IEAh5rZdkwdwHJexpnMv9HzV2OFpA==
-  dependencies:
-    axios "^0.18.0"
-    gatsby-source-filesystem "^1.5.27"
-    lodash "^4.17.5"
-
 gatsby-telemetry@^1.1.11:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.11.tgz#7c98881759fa8f61a6bf4f2ee2fb9ac74c6eb592"

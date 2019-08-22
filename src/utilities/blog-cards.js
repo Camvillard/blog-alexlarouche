@@ -26,5 +26,8 @@ const pluralizeWord = (array, word) => {
   }
 }
 
+const truncateWord = (string, words) => {
+  return string.split(' ').slice(0, words).join(' ')
+}
 
-export { createExcerpt, createPrintedDate, pluralizeWord };
+export { createExcerpt, createPrintedDate, pluralizeWord, truncateWord };

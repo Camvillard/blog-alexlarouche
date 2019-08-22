@@ -15,6 +15,7 @@ import Instagram from "../components/instagram";
 import Footer from "../components/footer";
 
 // helpers
+import { truncateWord } from "../utilities/blog-cards";
 
 
 // styles & assets
@@ -27,15 +28,19 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const metadata = this.props.data.site.siteMetadata
-    const posts = this.props.data.allWordpressPost.edges
+    // console.log(this.props)
+    const data = this.props.data
+    const metadata = data.site.siteMetadata
+    const posts = data.allWordpressPost.edges
     const lastPost = posts[0].node
-    const featuredPost = this.props.data.wordpressPost
+    const featuredPost = data.wordpressPost
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
-    const aboutContent = this.props.data.wordpressPage.acf.a_propos
-    const favorisUn = this.props.data.allWordpressWpFavoris.edges[0].node
-    const favorisDeux = this.props.data.allWordpressWpFavoris.edges[1].node
+    const aboutContent = data.wordpressPage.acf.a_propos
+    const firstVideo = data.allYoutubeVideo.edges[0].node
+    const secondVideo = data.allYoutubeVideo.edges[1].node
+    const favorisUn = data.allWordpressWpFavoris.edges[0].node
+    const favorisDeux = data.allWordpressWpFavoris.edges[1].node
     return(
       <div id="homepage-content" onScroll={this.handleScroll}>
         {/* Meta stuff */}
@@ -109,14 +114,16 @@ class IndexPage extends React.Component {
 
             <div className="video-description">
               <h6 className="rose-dawn">la dernière vidéo</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
-              perspiciatis earum repellendus aliquam aliquid beatae?
-              Commodi accusamus non ratione minima.</p>
+              <p>{truncateWord(firstVideo.description, 20)} (...)</p>
             </div>
 
             <div className="video-container">
-              <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-video.png" alt="placeholder video"/>
+              <iframe
+                src={`https://www.youtube.com/embed/${firstVideo.videoId}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullscreen>
+              </iframe>
               <div className="btn-block">
                 <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
                   s'abonner aux vidéos
@@ -131,14 +138,15 @@ class IndexPage extends React.Component {
 
            <div className="video-description">
              <h6 className="rose-dawn">le dernier vlog</h6>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-             Ratione deserunt veniam aspernatur, error rem qui, sit vero quisquam hic
-             perspiciatis earum repellendus aliquam aliquid beatae?
-             Commodi accusamus non ratione minima.</p>
            </div>
 
            <div className="video-container">
-             <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-video.png" alt="placeholder video"/>
+             <iframe
+               src={`https://www.youtube.com/embed/${secondVideo.videoId}`}
+               frameBorder="0"
+               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+               allowFullscreen>
+             </iframe>
              <div className="btn-block">
                <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
                  s'abonner aux vlogs
@@ -261,6 +269,23 @@ query homePage {
     slug
   }
 
+  allYoutubeVideo(filter: {channelTitle:  {in: ["Alexandra Larouche", "Les vlogs d'Alex"]}},
+  sort: {fields: [publishedAt], order: [DESC]}, limit: 2) {
+    edges {
+      node {
+        id
+        channelTitle
+        publishedAt
+        description
+        videoId
+        thumbnail {
+          url
+        }
+      }
+    }
+  }
+
+
   allWordpressWpFavoris(limit: 2) {
     edges {
       node {
@@ -285,6 +310,11 @@ query homePage {
     }
   }
 }
+
+
+
+
+
 `
 
 
