@@ -90,7 +90,7 @@ class ContactPage extends React.Component {
 export default ContactPage
 
 export const query = graphql`
-query contactPage {
+query forContactPage {
 
   site {
     siteMetadata {

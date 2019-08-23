@@ -11,8 +11,6 @@ import SocialIcons from "./social-icons"
 
 
 
-
-
 class MobileNavbar extends React.Component {
 
   constructor(props) {
