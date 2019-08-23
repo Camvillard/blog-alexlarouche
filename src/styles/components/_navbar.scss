@@ -70,6 +70,30 @@
   display: flex;
 }
 
+// sub-menu
+
+.sub-menu-links {
+  padding: 0;
+  list-style: none;
+
+  &.show-sub-menu  {
+    display: block;
+  }
+
+  &.hide-sub-menu  {
+    display: none;
+  }
+
+  li {
+    text-align: center;
+    margin: 4px auto;
+  }
+
+  a {
+    font-size: 1.6rem;
+  }
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px

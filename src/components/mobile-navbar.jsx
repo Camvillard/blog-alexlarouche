@@ -1,6 +1,6 @@
 // external libs
 import React from "react";
-import { Link } from 'gatsby';
+import { Link, StaticQuery } from 'gatsby';
 
 // internal stuff
 
@@ -11,22 +11,33 @@ import SocialIcons from "./social-icons"
 
 
 
+
+
 class MobileNavbar extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      navbarIsOpen: false
+      navbarIsOpen: false,
+      categoriesAreOpen: false
     }
   }
 
-  toggleMenu = (e) => {
+  toggleMenu = () => {
     this.setState({
       navbarIsOpen: !this.state.navbarIsOpen
+    })
+  };
+
+  toggleCategories = () => {
+    this.setState({
+      categoriesAreOpen: !this.state.categoriesAreOpen
     })
   }
 
   render(){
+    console.log(this.props)
+    const categories = this.props.data.allWordpressCategory.edges
     return(
       <div id="mobile-header" >
 
@@ -39,7 +50,10 @@ class MobileNavbar extends React.Component {
 
         <div className={`mobile-main-menu ${this.state.navbarIsOpen === true ? 'show-menu' : 'hide-menu'}`}>
           <div className="mobile-menu-links">
-            <Link to="/">catégories</Link>
+            <Link to="/" onClick={this.toggleCategories}>catégories</Link>
+            <ul className={`sub-menu-links ${this.state.categoriesAreOpen ? 'show-sub-menu' :  'hide-sub-menu'} `}>
+              {categories.map( d => <li key={d.node.name}><Link to={`/categories/${d.node.slug}`}>{d.node.name}</Link></li>)}
+            </ul>
             <Link to="/shop-look">shop mon look</Link>
             <Link to="/contact">contact</Link>
             <Link to="/a-propos">à propos</Link>
@@ -54,4 +68,29 @@ class MobileNavbar extends React.Component {
 }
 
 
-export default MobileNavbar
+
+export default (props) => {
+  return (<StaticQuery
+    query={graphql`
+      query {
+          allWordpressCategory {
+            edges {
+              node {
+                name
+                slug
+              }
+            }
+          }
+        }
+    `
+    }
+
+    render={(data) => {
+      return (
+        <MobileNavbar data={data}  />
+      )}
+    }
+  />)
+}
+
+
