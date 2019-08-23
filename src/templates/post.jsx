@@ -11,7 +11,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
-import { getToken, getCookie } from "../utilities/comments"
+// import { getToken, getCookie } from "../utilities/comments"
 
 // styles & assets
 
@@ -37,7 +37,7 @@ const CommentItem = ({comment}) => {
 class Post extends React.Component {
 
   componentDidMount() {
-    const token = getToken()
+    // const token = getToken()
     if (window.instgrm) {
        window.instgrm.Embeds.process();
      }

@@ -1,12 +1,9 @@
 // external libs
 import React from "react";
-import { Link } from "gatsby";
 
 // internal stuff
-import Layout from "../components/layout";
 import SEO from "../components/seo";
-import meta from "../data/meta";
-
+import SimpleFooter from "../components/simple-footer";
 
 // styles & assets
 
@@ -34,9 +31,10 @@ class ContactPage extends React.Component {
   }
 
   render() {
-
+    const metadata = this.props.data.site.siteMetadata
     return(
       <div id="contact-page">
+        <SEO title="Home" keywords={metadata.seo} />
 
         <h1 className="main-page-title">contact</h1>
 
@@ -79,6 +77,8 @@ class ContactPage extends React.Component {
 
         </form>
 
+        <SimpleFooter />
+
       </div>
 
 
@@ -88,3 +88,15 @@ class ContactPage extends React.Component {
 
 
 export default ContactPage
+
+export const query = graphql`
+query contactPage {
+
+  site {
+    siteMetadata {
+      title
+      seo
+    }
+  }
+}
+`

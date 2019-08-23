@@ -22,13 +22,14 @@ class AboutPage extends React.Component {
         <div className="columns">
           <div className="column one-half">
             <h1 className="main-page-title">{data.title}</h1>
-            <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="photo d'à propos alexandra larouche"/>
+            <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="profile alexandra larouche"/>
           </div>
 
           <div className="column one-half">
             <div className="white-container">
               <div dangerouslySetInnerHTML= {{__html: data.content}} />
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In perferendis mollitia facere dignissimos aperiam soluta molestias, ducimus quisquam eaque eum, officiis quo natus magni doloremque, maiores hic assumenda sint voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. In perferendis mollitia facere dignissimos aperiam soluta molestias, ducimus quisquam eaque eum, officiis quo natus magni doloremque, maiores hic assumenda sint voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. In perferendis mollitia facere dignissimos aperiam soluta molestias, ducimus quisquam eaque eum, officiis quo natus magni doloremque.</p>
+              <Link to="/contact" class="btn-square">me contacter</Link>
             </div>
           </div>
 

@@ -34,8 +34,7 @@ const orderVideos = (videos) => {
       vlogs.push(video)
     }
   })
-  const recentVideos = []
-  // return recentVideos
+  return [mainVideos[0], vlogs[0]]
 }
 
 class IndexPage extends React.Component {
@@ -46,7 +45,7 @@ class IndexPage extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     const data = this.props.data
     const metadata = data.site.siteMetadata
     const posts = data.allWordpressPost.edges
@@ -55,12 +54,10 @@ class IndexPage extends React.Component {
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
-    const firstVideo = data.allYoutubeVideo.edges[0].node
-    const secondVideo = data.allYoutubeVideo.edges[1].node
+    const firstVideo = orderVideos(data.allYoutubeVideo.edges)[0].node
+    const secondVideo = orderVideos(data.allYoutubeVideo.edges)[1].node
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
-
-    orderVideos(data.allYoutubeVideo.edges)
 
     return(
       <div id="homepage-content" onScroll={this.handleScroll}>
@@ -135,12 +132,13 @@ class IndexPage extends React.Component {
 
             <div className="video-description">
               <h6 className="rose-dawn">la dernière vidéo</h6>
-              <p>{truncateWord(firstVideo.description, 40)} (...)</p>
+              <p>{truncateWord(firstVideo.description, 50)} (...)</p>
             </div>
 
             <div className="video-container">
               <iframe
-                src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
+                title={firstVideo.title}
+                src={`https://www.youtube.com/embed/${firstVideo.videoId}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen>
@@ -163,7 +161,8 @@ class IndexPage extends React.Component {
 
            <div className="video-container">
              <iframe
-               src={`https://www.youtube.com/embed/0ngg6dc6hIE`}
+               title={secondVideo.title}
+               src={`https://www.youtube.com/embed/${secondVideo.videoId}`}
                frameBorder="0"
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                allowFullScreen>
@@ -318,6 +317,7 @@ query homePage {
         publishedAt
         description
         videoId
+        title
         thumbnail {
           url
         }
