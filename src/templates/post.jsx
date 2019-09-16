@@ -54,9 +54,9 @@ class Post extends React.Component {
        window.instgrm.Embeds.process();
     }
 
-    setSlider('.slick-slider')
-
-
+    if (typeof window !== 'undefined') {
+      setSlider('.slick-slider')
+    }
   }
 
   // used to check if there is a fetured image set in wordpress
