@@ -1,6 +1,6 @@
 // external libs
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 // internal stuff
 import SEO from "../components/seo"

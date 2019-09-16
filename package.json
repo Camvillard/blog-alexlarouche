@@ -26,6 +26,7 @@
     "gatsby-source-wordpress": "^3.0.52",
     "gatsby-source-youtube-v2": "^1.0.1",
     "gatsby-transformer-sharp": "^2.1.17",
+    "jquery": "^3.4.1",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -34,6 +35,7 @@
     "react-icons": "^3.5.0",
     "react-instantsearch-dom": "^5.7.0",
     "react-svg": "^10.0.8",
+    "slick-slider": "^1.8.2",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.1.0"
   },
