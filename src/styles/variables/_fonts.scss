@@ -26,18 +26,19 @@ h4 {
 }
 
 
-h6 {
-  font-family: $headers-font;
-  font-weight: 400;
-  color: $dark-gray;
-  margin: 1em auto 0.4em;
-}
-
 h5 {
   font-family: $body-font;
   text-transform: uppercase;
   color: $dark-gray;
   font-weight: 600;
+  margin: 1em auto 0.4em;
+}
+
+
+h6 {
+  font-family: $headers-font;
+  font-weight: 400;
+  color: $dark-gray;
   margin: 1em auto 0.4em;
 }
 
