@@ -54,7 +54,9 @@ class Post extends React.Component {
        window.instgrm.Embeds.process();
     }
 
-    setSlider('.slick-slider')
+    if (window) {
+      setSlider('.slick-slider')
+    }
 
   }
 
