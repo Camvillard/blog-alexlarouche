@@ -14,7 +14,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
-import "../utilities/carousel"
+// import "../utilities/carousel"
 
 // styles & assets
 
