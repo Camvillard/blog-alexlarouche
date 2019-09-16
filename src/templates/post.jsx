@@ -2,6 +2,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from "react-helmet";
+import $ from 'jquery'
+// import slick from "slick-slider"
+
 
 // internal stuff
 import SEO from '../components/seo';
@@ -33,38 +36,59 @@ const CommentItem = ({comment}) => {
   )
 }
 
+const setSlider = (element) => {
+  $(element).slick({
+    dots: true,
+    speed: 500,
+    arrows: true
+  });
+}
+
 
 class Post extends React.Component {
 
   componentDidMount() {
     // const token = getToken()
+
     if (window.instgrm) {
        window.instgrm.Embeds.process();
-     }
+    }
+
+    setSlider('.slick-slider')
+
+  }
+
+  // used to check if there is a fetured image set in wordpress
+  // if not, assign a geatured image  to a placeholder
+  // @post is the data pulled from Wordpress
+  setFeaturedImage = (post) => {
+    let featuredImage
+    if (post.featured_media) {
+      featuredImage = post.featured_media.source_url
+    } else {
+      featuredImage = "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
+    }
+    return featuredImage
   }
 
   render(){
   const post = this.props.data.wordpressPost
-  let featuredImage
-  if (post.featured_media) {
-    featuredImage = post.featured_media.source_url
-  } else {
-    featuredImage = "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
-  }
   const seoTags = buildSeoTags(post.acf.seo_tags)
+  const featuredImage = this.setFeaturedImage(post)
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
     return(
       <Layout>
         <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+
+        {/* Helmet is used to load library for embedded Instagram posts */}
         <Helmet>
           {<script async defer src="//www.instagram.com/embed.js"></script>}
         </Helmet>
 
         <div className="single-post-container">
-          {/* featured image*/}
-          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
 
+          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
           <img src={featuredImage} alt={post.title} className="post-featured-image"/>
 
           {/* meta for the post */}
@@ -78,7 +102,6 @@ class Post extends React.Component {
               <span></span>}
           </div>
           {/* end of .single-post-meta */}
-
 
           <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
