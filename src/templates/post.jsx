@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from "react-helmet";
 import $ from 'jquery'
-// import slick from "slick-slider"
+import slick from "slick-slider"
 
 
 // internal stuff
@@ -54,7 +54,9 @@ class Post extends React.Component {
        window.instgrm.Embeds.process();
     }
 
-    setSlider('.slick-slider')
+    if (window) {
+      setSlider('.slick-slider')
+    }
 
   }
 
