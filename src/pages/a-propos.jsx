@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import SimpleFooter from "../components/simple-footer";
 
 // styles & assets
-// import pattern from "../images/favicon.png"
+import '../styles/main.scss';
 
 
 class AboutPage extends React.Component {

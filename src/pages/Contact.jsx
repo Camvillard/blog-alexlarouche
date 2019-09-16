@@ -6,6 +6,8 @@ import SEO from "../components/seo";
 import SimpleFooter from "../components/simple-footer";
 
 // styles & assets
+import '../styles/main.scss';
+
 
 class ContactPage extends React.Component {
   constructor(props) {
