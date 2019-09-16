@@ -23,7 +23,7 @@ const RegularPostCard = ({post}) => {
        }
 
       <div className="post-card-content">
-        <h3 className="post-card-title">{post.title}</h3>
+        <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: post.title}} /></h3>
         <div className="post-card-excerpt" dangerouslySetInnerHTML= {{__html: createExcerpt(post.content)}} />
         <div className="btn-block-left">
           <Link to={`/${post.slug}`} className="btn-plain">lire la suite</Link>
