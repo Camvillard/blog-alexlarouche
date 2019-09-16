@@ -14,7 +14,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
-// import { getToken, getCookie } from "../utilities/comments"
+import "../utilities/carousel"
 
 // styles & assets
 
@@ -36,14 +36,6 @@ const CommentItem = ({comment}) => {
   )
 }
 
-const setSlider = (element) => {
-  $(element).slick({
-    dots: true,
-    speed: 500,
-    arrows: true
-  });
-}
-
 
 class Post extends React.Component {
 
@@ -52,10 +44,6 @@ class Post extends React.Component {
 
     if (window.instgrm) {
        window.instgrm.Embeds.process();
-    }
-
-    if (typeof window !== 'undefined') {
-      setSlider('.slick-slider')
     }
   }
 
