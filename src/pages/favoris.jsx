@@ -18,7 +18,9 @@ const FavorisCard = ({favori}) => {
     <div className="favoris-archives-card">
     <a href={favori.acf.url_du_produit} target="_blank">
       <img className="featured-favoris" src={favori.featured_media.source_url} alt=""/>
-      <h6><span dangerouslySetInnerHTML={{__html: favori.title}}/></h6>
+      <div className="favoris-header">
+        <div className="favoris-name" dangerouslySetInnerHTML={{__html: favori.title}}/>/<div className="favoris-brand" dangerouslySetInnerHTML={{__html: favori.acf.nom_marque}}/>
+      </div>
     </a>
     </div>
   )
