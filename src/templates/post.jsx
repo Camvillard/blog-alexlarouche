@@ -2,9 +2,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from "react-helmet";
-import $ from 'jquery'
-import slick from "slick-slider"
-
 
 // internal stuff
 import SEO from '../components/seo';
@@ -44,13 +41,6 @@ class Post extends React.Component {
     if (window.instgrm) {
        window.instgrm.Embeds.process();
     }
-
-    $('.slick-slider').slick({
-        dots: true,
-        speed: 500,
-        arrows: true
-      });
-
   }
 
   // used to check if there is a fetured image set in wordpress
@@ -113,6 +103,17 @@ class Post extends React.Component {
 
         </div>
       {/* end of .single-post-container */}
+
+      <div className="carousel-wrapper">
+        <div className="carousel">
+          <img className="carousel__photo initial" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_7.jpeg" />
+          <img className="carousel__photo" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_8.jpeg" />
+          <img className="carousel__photo" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_6.jpeg" />
+
+          <div className="carousel__button--next"></div>
+          <div className="carousel__button--prev"></div>
+        </div>
+      </div>
 
       </Layout>
     )
