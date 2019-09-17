@@ -2,8 +2,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from "react-helmet";
-// import $ from 'jquery'
-// import slick from "slick-slider"
+import $ from 'jquery'
+import slick from "slick-slider"
 
 
 // internal stuff
@@ -14,7 +14,7 @@ import CommentForm from '../components/comment-form';
 // helpers
 import { buildSeoTags } from '../utilities/seo';
 import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
-// import "../utilities/carousel"
+import "../utilities/carousel"
 
 // styles & assets
 
@@ -45,6 +45,13 @@ class Post extends React.Component {
     if (window.instgrm) {
        window.instgrm.Embeds.process();
     }
+
+    $('.slick-slider').slick({
+        dots: true,
+        speed: 500,
+        arrows: true
+      });
+
   }
 
   // used to check if there is a fetured image set in wordpress

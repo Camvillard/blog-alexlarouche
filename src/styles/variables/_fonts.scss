@@ -15,14 +15,14 @@ h1, h2, h3 {
   font-family: $headers-font;
   font-weight: 700;
   color: $dark-gray;
-  margin: 1em auto 0.4em;
+  margin: 0.8em auto 0.4em;
 }
 
 h4 {
   font-family: $headers-font;
   font-weight: 300;
   color: $dark-gray;
-  margin: 1em auto 0.4em;
+  margin: 0.8em auto 0.4em;
 }
 
 
@@ -31,7 +31,7 @@ h5 {
   text-transform: uppercase;
   color: $dark-gray;
   font-weight: 600;
-  margin: 1em auto 0.4em;
+  margin: 0.8em auto 0.4em;
 }
 
 
@@ -39,7 +39,7 @@ h6 {
   font-family: $headers-font;
   font-weight: 400;
   color: $dark-gray;
-  margin: 1em auto 0.4em;
+  margin: 0.8em auto 0.4em;
 }
 
 a {
@@ -77,7 +77,7 @@ h2 {
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h4 {
@@ -94,7 +94,7 @@ h6 {
 
 p, blockquote, a, li {
   font-size: 1.4rem;
-  margin: 1em auto 0.4em;
+  margin: 0.8em auto 0.4em;
 }
 
 @media (min-width: $xsm-screen) {
