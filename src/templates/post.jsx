@@ -17,17 +17,15 @@ import { createPrintedDate, pluralizeWord } from "../utilities/blog-cards"
 const CommentItem = ({comment}) => {
   return(
     <div className={`comment-item ${comment.author === 1 ? 'comment-alex' : ''}`}>
+      <div className="comment-avatar">
+        <img src={comment.author_avatar_urls.wordpress_96} className="img-circle" alt={comment.author_name}/>
+      </div>
 
-    <div className="comment-avatar">
-      <img src={comment.author_avatar_urls.wordpress_96} className="img-circle" alt={comment.author_name}/>
-    </div>
-
-    <div className="comment-content">
-      <p className="comment-author"><a href={comment.author_url} target="_blank" rel="noopener noreferrer">{comment.author_name}</a></p>
-      <p className="comment-date">{createPrintedDate(comment.date)}</p>
-      <p dangerouslySetInnerHTML={{__html: comment.content}}/>
-    </div>
-
+      <div className="comment-content">
+        <p className="comment-author"><a href={comment.author_url} target="_blank" rel="noopener noreferrer">{comment.author_name}</a></p>
+        <p className="comment-date">{createPrintedDate(comment.date)}</p>
+        <p dangerouslySetInnerHTML={{__html: comment.content}}/>
+      </div>
     </div>
   )
 }
@@ -37,10 +35,16 @@ class Post extends React.Component {
 
   componentDidMount() {
     // const token = getToken()
-
     if (window.instgrm) {
        window.instgrm.Embeds.process();
     }
+
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+      })
+    })
   }
 
   // used to check if there is a fetured image set in wordpress
