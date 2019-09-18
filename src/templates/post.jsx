@@ -165,7 +165,23 @@ export const query = graphql`
       }
     }
 
-
+    allWordpressWpComments(filter: {post: {eq: $postId}}){
+      totalCount
+      edges {
+        node {
+          id
+          post
+          content
+          author
+          author_name
+          author_url
+          date
+          author_avatar_urls {
+            wordpress_96
+          }
+        }
+      }
+    }
   }
 `
 
