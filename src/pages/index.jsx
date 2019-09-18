@@ -313,23 +313,6 @@ query homePage {
     }
   }
 
-  allYoutubeVideo(filter: {channelTitle:  {in: ["Alexandra Larouche", "Les vlogs d'Alex"]}},
-  sort: {fields: [publishedAt], order: [DESC]}, limit: 2) {
-    edges {
-      node {
-        id
-        channelTitle
-        publishedAt
-        description
-        videoId
-        title
-        thumbnail {
-          url
-        }
-      }
-    }
-  }
-
   wordpressPage(title:  {eq:  "accueil"}) {
     acf {
       a_propos
