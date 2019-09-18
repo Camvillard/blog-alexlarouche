@@ -62,7 +62,6 @@ class ShopLook extends React.Component {
     }
   }
 
-
   filterByCategories = (cards, category) => {
     // again, we need to handle the « see all » possibily
     // we return all the cards if activeTab wanted is all
@@ -76,6 +75,16 @@ class ShopLook extends React.Component {
       })
       return filteredCards
     }
+  }
+
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
   }
 
   render(){

@@ -43,6 +43,7 @@ class Post extends React.Component {
     allImages.forEach( img => {
       img.addEventListener('contextmenu', e => {
         e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
       })
     })
   }

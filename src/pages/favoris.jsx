@@ -28,6 +28,15 @@ const FavorisCard = ({favori}) => {
 
 class FavorisPage extends React.Component {
 
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
+  }
 
   render() {
     const metadata = this.props.data.site.siteMetadata.seo

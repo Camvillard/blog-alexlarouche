@@ -7,35 +7,44 @@ import Layout from '../components/layout';
 // import { extractTags } from '../helpers/extract-tags';
 import { buildSeoTags } from '../utilities/seo';
 
-const Page = ({ data }) => {
 
-  const page = data.wordpressPage
-  const seoTags = buildSeoTags(page.acf.seo_tags)
+class Page extends React.Component {
 
-  return(
-    <Layout>
-    <div>
-
-
-    <SEO title={`${page.title}`} keywords={seoTags} id={page.slug ? `${page.slug}` : ''} />
-
-
-      <h1 dangerouslySetInnerHTML={{__html: page.title}} />
-
-      <div className="page-meta">
-        <p className="date">{page.date}</p>
-        { page.tags ? <p className="tags">{page.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
-
-      </div>
-
-      <div dangerouslySetInnerHTML= {{__html: page.content}} />
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
+  }
 
 
-    </div>
-    </Layout>
-  )
+  render(){
+    const page = this.props.data.wordpressPage
+    const seoTags = buildSeoTags(page.acf.seo_tags)
+    return(
+      <Layout>
+        <SEO title={`${page.title}`} keywords={seoTags} id={page.slug ? `${page.slug}` : ''} />
+
+
+        <h1 dangerouslySetInnerHTML={{__html: page.title}} />
+
+        <div className="page-meta">
+          <p className="date">{page.date}</p>
+          { page.tags ? <p className="tags">{page.tags.map( tag => <Link key={tag.id} to={`/tags/${tag.slug}`}>{tag.name}</Link> )}</p> : ''}
+
+        </div>
+
+        <div dangerouslySetInnerHTML= {{__html: page.content}} />
+      </Layout>
+
+
+    )
+  }
 }
-export default Page;
+
 
 export const query = graphql`
   query($id: String!) {
@@ -53,5 +62,8 @@ export const query = graphql`
     }
   }
 `
+
+export default Page;
+
 
 

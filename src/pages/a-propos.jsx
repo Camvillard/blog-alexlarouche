@@ -12,6 +12,17 @@ import '../styles/main.scss';
 
 
 class AboutPage extends React.Component {
+
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
+  }
+
   render(){
     const meta =  this.props.data.site.siteMetadata.seo
     const data = this.props.data.wordpressPage

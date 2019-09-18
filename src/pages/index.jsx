@@ -39,10 +39,15 @@ const orderVideos = (videos) => {
 
 class IndexPage extends React.Component {
 
-  handleScroll = () => {
-    console.log('scrolling')
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
   }
-
 
   render() {
     // console.log(this.props)
@@ -60,7 +65,7 @@ class IndexPage extends React.Component {
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
 
     return(
-      <div id="homepage-content" onScroll={this.handleScroll}>
+      <div id="homepage-content">
         {/* Meta stuff */}
         <SEO title="Home" keywords={metadata.seo} />
         <Header siteTitle={metadata.title} path="homepage" />

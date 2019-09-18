@@ -12,38 +12,41 @@ import MailchimpForm from "../components/mailchimp-form";
 // styles & assets
 import '../styles/main.scss';
 
-const Categorie = ({ data }) => {
 
-  const category = data.wordpressCategory
-  const blogPosts = data.allWordpressPost.edges
-  const postCount = data.allWordpressPost.totalCount
-  // const seoTags = buildSeoTags(page.acf.seo_tags)
+class Categorie extends React.Component {
 
-  console.log(blogPosts)
-  return(
-    <Layout>
+  componentDidMount() {
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach( img => {
+      img.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        alert('le clic droit est désactivé pour les photos')
+      })
+    })
+  }
 
-    <p>
+  render(){
+    const category = this.props.data.wordpressCategory
+    const blogPosts = this.props.data.allWordpressPost.edges
+    const postCount = this.props.data.allWordpressPost.totalCount
+    return(
+      <Layout>
+        <div id="category-header">
+          <h4>catégorie</h4>
+          <h3>{category.name} <span className="total-count-number">({postCount})</span></h3>
+        </div>
 
+        <div id="category-post-container">
+          {blogPosts.map( post => <RegularPostCard post={post.node} key={post.node.id}/> )}
+        </div>
 
+        <MailchimpForm />
 
-    </p>
+      </Layout>
+    )
+  }
 
-      <div id="category-header">
-        <h4>catégorie</h4>
-        <h3>{category.name} <span className="total-count-number">({postCount})</span></h3>
-      </div>
-
-      <div id="category-post-container">
-        {blogPosts.map( post => <RegularPostCard post={post.node} key={post.node.id}/> )}
-      </div>
-
-      <MailchimpForm />
-
-    </Layout>
-  )
 }
-export default Categorie;
 
 export const query = graphql`
   query($id: String!) {
@@ -76,5 +79,5 @@ export const query = graphql`
     }
   }
 `
-
+export default Categorie;
 
