@@ -74,7 +74,6 @@ class Post extends React.Component {
         {/* Helmet is used to load library for embedded Instagram posts */}
         <Helmet>
           {<script async defer src="//www.instagram.com/embed.js"></script>}
-          {<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>}
         </Helmet>
 
         <div className="single-post-container">
