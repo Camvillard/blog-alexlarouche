@@ -74,6 +74,7 @@ class Post extends React.Component {
         {/* Helmet is used to load library for embedded Instagram posts */}
         <Helmet>
           {<script async defer src="//www.instagram.com/embed.js"></script>}
+          {<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>}
         </Helmet>
 
         <div className="single-post-container">
@@ -108,17 +109,6 @@ class Post extends React.Component {
 
         </div>
       {/* end of .single-post-container */}
-
-      <div className="carousel-wrapper">
-        <div className="carousel">
-          <img className="carousel__photo initial" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_7.jpeg" />
-          <img className="carousel__photo" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_8.jpeg" />
-          <img className="carousel__photo" src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/favoris_6.jpeg" />
-
-          <div className="carousel__button--next"></div>
-          <div className="carousel__button--prev"></div>
-        </div>
-      </div>
 
       </Layout>
     )
