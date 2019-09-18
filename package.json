@@ -34,6 +34,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
     "react-instantsearch-dom": "^5.7.0",
+    "react-pinterest": "^1.2.0",
     "react-svg": "^10.0.8",
     "slick-slider": "^1.8.2",
     "styled-components": "^4.3.2",

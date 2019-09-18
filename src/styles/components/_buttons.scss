@@ -112,6 +112,13 @@ button.btn-blob {
   z-index: 10;
 }
 
+// pinterest button
+.pinterest-btn-container {
+  position: relative;
+  top: -52px;
+  left: 12px;
+}
+
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px

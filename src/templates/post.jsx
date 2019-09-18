@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from "react-helmet";
 
+
 // internal stuff
 import SEO from '../components/seo';
 import Layout from '../components/layout';
@@ -34,19 +35,39 @@ const CommentItem = ({comment}) => {
 class Post extends React.Component {
 
   componentDidMount() {
-    // const token = getToken()
-    if (window.instgrm) {
-       window.instgrm.Embeds.process();
-    }
-
+    // disable  right click on images
     const allImages = document.querySelectorAll('img')
     allImages.forEach( img => {
+      // prevent  right click
       img.addEventListener('contextmenu', e => {
         e.preventDefault()
         alert('le clic droit est désactivé pour les photos')
       })
+      // append pinterest button
+      const pinLink = "<div class='pinterest-btn-container'><a class='pinterest-btn' href='https://www.pinterest.com/pin/create/button/' data-pin-round='true' data-pin-do='buttonBookmark'></a></div> ";
+      img.insertAdjacentHTML('afterend', pinLink )
     })
+
+    // load  instagram script
+    if (window.instgrm) {
+       window.instgrm.Embeds.process();
+    }
+
+    // pinterest pin it button
+    if (!window.doBuild) {
+      this.preloadWidgetScript();
+    } else {
+      window.doBuild();
+    }
+
   }
+    preloadWidgetScript = () => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.dataset.pinBuild = 'doBuild';
+      script.src = '//assets.pinterest.com/js/pinit.js';
+      document.body.appendChild(script);
+    }
 
   // used to check if there is a fetured image set in wordpress
   // if not, assign a geatured image  to a placeholder
@@ -77,6 +98,8 @@ class Post extends React.Component {
         </Helmet>
 
         <div className="single-post-container">
+
+
 
           <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
           <img src={featuredImage} alt={post.title} className="post-featured-image"/>
