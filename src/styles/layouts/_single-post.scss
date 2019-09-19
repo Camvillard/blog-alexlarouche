@@ -120,12 +120,50 @@
 .slider-alex {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
   justify-items: center;
+  width: 94%;
+  margin:auto;
+  list-style: none;
+  padding-left: 0;
+
+  img {
+    margin: 0;
+  }
+
+  .hide-slide{
+    display: none;
+  }
+
 }
 
+.slider-nav {
+  margin-top:  -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin: 0;
+  }
+
+  .button-prev {
+    margin-right: 8px;
+  }
+
+  .button-next {
+    margin-left: 8px;
+  }
+}
+
+
+
 // COMMENTS
+
+.comments-container  {
+  margin-top: 80px;
+}
 
 .comment-item {
   display: flex;
@@ -247,18 +285,16 @@
   }
   // CAROUSEL
 
+
   .slider-alex {
+    width: 92%;
+    margin:auto;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 24px;
     position: relative;
     padding-left: 0;
-
-    .slider-nav {
-      position: absolute;
-      top: 50%;
-    }
 
     .hide-slide{
       display: none;

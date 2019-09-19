@@ -62,7 +62,12 @@ class Post extends React.Component {
 
     // slider stuff
     const sliderContainer = document.querySelector('.slider-alex')
-    this.loadCarousel(sliderContainer)
+
+    if (window && window.innerWidth < 992) {
+      this.loadCarousel(sliderContainer, 1)
+    } else {
+      this.loadCarousel(sliderContainer, 4)
+    }
 
   }
 
@@ -74,17 +79,19 @@ class Post extends React.Component {
     document.body.appendChild(script);
   }
 
-  loadCarousel = (container) =>  {
+  loadCarousel = (container, number) =>  {
     // add navigation commands
-    container.insertAdjacentHTML('beforebegin', '<span class="slider-nav button-prev">avant<span>')
-    container.insertAdjacentHTML('beforebegin', '<span class="slider-nav button-next">après<span>')
+    container.insertAdjacentHTML('afterend', '<div class="slider-nav"></div>')
+    const navContainer = document.querySelector('.slider-nav')
+    navContainer.insertAdjacentHTML('afterbegin', '<span class="button-prev"><img src="https://res.cloudinary.com/camvillard/image/upload/v1568667144/alex%20larouche/prev.svg" alt="next" /></span>')
+    navContainer.insertAdjacentHTML('beforeend', '<span class="button-next"><img src="https://res.cloudinary.com/camvillard/image/upload/v1568667055/alex%20larouche/next.svg" alt="" /></span>')
     const previousButton = document.querySelector('.button-prev')
     const nextButton = document.querySelector('.button-next')
 
     //  select items in the carousel and remove the default hidden display on the 3 first
     let listItems = container.querySelectorAll('li.blocks-gallery-item')
     let listValues = Object.values(listItems)
-    listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+    listValues.slice(number).forEach(  i => i.classList.add('hide-slide'));
 
     nextButton.addEventListener('click', e => {
       // take the first element of the container
@@ -95,8 +102,8 @@ class Post extends React.Component {
       container.appendChild(firstElement)
       listItems = container.querySelectorAll('li.blocks-gallery-item')
       listValues = Object.values(listItems)
-      listValues.slice(0,4).forEach(  i => i.classList.remove('hide-slide'));
-      listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+      listValues.slice(0, number).forEach(  i => i.classList.remove('hide-slide'));
+      listValues.slice(number).forEach(  i => i.classList.add('hide-slide'));
       }) //  end of  event listener
 
     previousButton.addEventListener('click', e => {
@@ -109,8 +116,8 @@ class Post extends React.Component {
       container.insertBefore(lastElement, firstElement)
       listItems = container.querySelectorAll('li.blocks-gallery-item')
       listValues = Object.values(listItems)
-      listValues.slice(0,4).forEach(  i => i.classList.remove('hide-slide'));
-      listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+      listValues.slice(0,number).forEach(  i => i.classList.remove('hide-slide'));
+      listValues.slice(number).forEach(  i => i.classList.add('hide-slide'));
       }) //  end of  event listener
 
     } //  end of loadCarousel()
