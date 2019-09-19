@@ -50,7 +50,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
+    console.log(this.props)
     const data = this.props.data
     const metadata = data.site.siteMetadata
     const posts = data.allWordpressPost.edges
