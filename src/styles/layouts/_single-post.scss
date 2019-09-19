@@ -163,6 +163,16 @@
 
 .comments-container  {
   margin-top: 80px;
+  padding: 24px 16px;
+  background: $old-pink;
+  background-repeat: repeat;
+
+  h3, h5 {
+    text-align: center;
+    font-family: $headers-font;
+    text-transform: none;
+  }
+
 }
 
 .comment-item {

@@ -6,7 +6,9 @@ import Helmet from "react-helmet";
 
 // internal stuff
 import SEO from '../components/seo';
-import Layout from '../components/layout';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Instagram from '../components/instagram';
 import CommentForm from '../components/comment-form';
 
 // helpers
@@ -143,7 +145,7 @@ class Post extends React.Component {
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
     return(
-      <Layout>
+      <React.Fragment>
         <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
 
         {/* Helmet is used to load library for embedded Instagram posts */}
@@ -151,42 +153,50 @@ class Post extends React.Component {
           {<script async defer src="//www.instagram.com/embed.js"></script>}
         </Helmet>
 
-        <div className="single-post-container">
+        <div className='layout-container'>
+          <Header siteTitle="alexandra larouche" />
 
+          <div className="single-post-container">
 
+            <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
+            <img src={featuredImage} alt={post.title} className="post-featured-image"/>
 
-          <h2><span dangerouslySetInnerHTML={{__html: post.title}} /></h2>
-          <img src={featuredImage} alt={post.title} className="post-featured-image"/>
+            {/* meta for the post */}
+            <div className="single-post-meta">
+              <p className="date"><span>publié le : </span>{postDate}</p>
+              { post.categories ?
+                <p className="categories">
+                  <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
+                  {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
+                </p> :
+                <span></span>}
+            </div>
+            {/* end of .single-post-meta */}
 
-          {/* meta for the post */}
-          <div className="single-post-meta">
-            <p className="date"><span>publié le : </span>{postDate}</p>
-            { post.categories ?
-              <p className="categories">
-                <span>{pluralizeWord(post.categories, 'catégorie')} : </span>
-                {post.categories.map( cat => <Link key={cat.id} to={`/categories/${cat.slug}`}>{cat.name}</Link> )}
-              </p> :
-              <span></span>}
+            <div dangerouslySetInnerHTML= {{__html: post.content}} />
+
           </div>
-          {/* end of .single-post-meta */}
+          {/* end of .single-post-container */}
 
-          <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
           <div className="comments-container">
             <h3>laisser un commentaire</h3>
             <CommentForm post_id={post.wordpress_id} />
             <div id="comment-validation"></div>
-            <h3>tous les commentaires</h3>
-            {comments ?
-              comments.map( c => <CommentItem comment={c.node} key={c.node.id} />):
-              <p>il n'y a aucun commentaire pour le moment</p> }
+            {comments.length > 1 ? <h3>tous les commentaires</h3> : <h5>il n'y a pas encore  de commentaire</h5>}
+            {comments.length  > 1 ?
+              comments.map( c => <CommentItem comment={c.node} key={c.node.id} />) :
+              "" }
           </div>
           {/* end of .comments-container */}
 
-        </div>
-      {/* end of .single-post-container */}
+          <Instagram />
+          <Footer />
 
-      </Layout>
+        </div>
+        {/* end of .layout-container */}
+
+      </React.Fragment>
     )
 
   }

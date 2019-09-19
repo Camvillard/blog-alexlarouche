@@ -44,7 +44,8 @@
 #post-comment-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 
   input, textarea {
     width: 100%;
