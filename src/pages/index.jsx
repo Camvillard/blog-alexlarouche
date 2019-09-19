@@ -22,21 +22,6 @@ import { truncateWord } from "../utilities/blog-cards";
 import '../styles/main.scss';
 
 
-// takes an array of videos in both channels
-// to retrieve only the most recent in each one of the channels
-const orderVideos = (videos) => {
-  const mainVideos = []
-  const vlogs = []
-  videos.map( video  => {
-    if (video.node.channelTitle === "Alexandra Larouche") {
-      mainVideos.push(video)
-    } else {
-      vlogs.push(video)
-    }
-  })
-  return [mainVideos[0], vlogs[0]]
-}
-
 class IndexPage extends React.Component {
 
   componentDidMount() {
@@ -50,7 +35,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     const data = this.props.data
     const metadata = data.site.siteMetadata
     const posts = data.allWordpressPost.edges
@@ -59,8 +43,10 @@ class IndexPage extends React.Component {
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
-    const firstVideo = orderVideos(data.allYoutubeVideo.edges)[0].node
-    const secondVideo = orderVideos(data.allYoutubeVideo.edges)[1].node
+    const videoLink = data.wordpressPage.acf.last_video
+    const videoText = data.wordpressPage.acf.last_video_text
+    const vlogLink = data.wordpressPage.acf.last_vlog
+    const vlogText = data.wordpressPage.acf.last_vlog_text
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
     const favorisDeux = data.allWordpressWpFavoris.edges[1].node
 
@@ -131,59 +117,60 @@ class IndexPage extends React.Component {
         </div>
         {/* end of #newsletter-section */}
 
-        <div id="video-section" className="container">
+          <div id="video-section" className="container">
 
-          <div className="video-card" id="first-video">
+            <div className="video-card" id="first-video">
 
-            <div className="video-description">
-              <h6 className="rose-dawn">la dernière vidéo</h6>
-              <p>{truncateWord(firstVideo.description, 50)} (...)</p>
-            </div>
-
-            <div className="video-container">
-              <iframe
-                title={firstVideo.title}
-                src={`https://www.youtube.com/embed/${firstVideo.videoId}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
-              </iframe>
-              <div className="btn-block">
-                <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
-                  s'abonner aux vidéos
-                </a>
+              <div className="video-description">
+                <h6 className="rose-dawn">la dernière vidéo</h6>
+                <div dangerouslySetInnerHTML= {{__html: videoText}} />
               </div>
+
+              <div className="video-container">
+                <iframe
+                  src={`https://www.youtube.com/embed/${videoLink}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen>
+                </iframe>
+                <div className="btn-block">
+                  <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                    s'abonner aux vidéos
+                  </a>
+                </div>
+              </div>
+
             </div>
+            {/* end of video-card */}
 
-          </div>
-          {/* end of video-card */}
+           <div className="video-card" id="second-video">
 
-         <div className="video-card" id="second-video">
+             <div className="video-description">
+                <h6 className="rose-dawn">le dernier vlog</h6>
+                <div dangerouslySetInnerHTML= {{__html: vlogText}} />
+             </div>
 
-           <div className="video-description">
-             <h6 className="rose-dawn">le dernier vlog</h6>
-           </div>
-
-           <div className="video-container">
-             <iframe
-               title={secondVideo.title}
-               src={`https://www.youtube.com/embed/${secondVideo.videoId}`}
-               frameBorder="0"
-               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-               allowFullScreen>
-             </iframe>
-             <div className="btn-block">
-               <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
-                 s'abonner aux vlogs
-               </a>
+             <div className="video-container">
+               <iframe
+                 src={`https://www.youtube.com/embed/${vlogLink}`}
+                 frameBorder="0"
+                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                 allowFullScreen>
+               </iframe>
+               <div className="btn-block">
+                 <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                   s'abonner aux vlogs
+                 </a>
+               </div>
              </div>
            </div>
-         </div>
-         {/* end of video-card */}
+           {/* end of video-card */}
 
 
-        </div>
-      {/* end of video-section */}
+          </div>
+        {/* end of video-section */}
+
+
 
         <div id="favoris-section">
           <h3>mes favoris du moment</h3>
@@ -193,9 +180,9 @@ class IndexPage extends React.Component {
             <div className="favoris-sm-card" id="homepage-premier-favori">
               <img src={favorisUn.featured_media.source_url} alt={favorisUn.acf.nom_marque} />
               <div className="favoris-sm-card-content">
-                <p className="favoris-sm-card-title"><span>{favorisUn.title}</span></p>
+                <p className="favoris-sm-card-title"><span dangerouslySetInnerHTML= {{__html:favorisUn.title}} /></p>
                 <p>{favorisUn.acf.nom_marque}</p>
-                <a href={`/${favorisUn.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                <a href={favorisUn.acf.url_du_produit} target="_blank"  rel="noopener noreferrer">
                   à retrouver ici
                 </a>
               </div>
@@ -205,9 +192,9 @@ class IndexPage extends React.Component {
             <div className="favoris-sm-card" id="homepage-deuxieme-favori">
               <img src={favorisDeux.featured_media.source_url} alt={favorisDeux.acf.nom_marque} />
               <div className="favoris-sm-card-content">
-                <p className="favoris-sm-card-title"><span>{favorisDeux.title}</span></p>
+                <p className="favoris-sm-card-title"><span dangerouslySetInnerHTML= {{__html:favorisDeux.title}} /></p>
                 <p>{favorisDeux.acf.nom_marque}</p>
-                <a href={`/${favorisDeux.acf.url_du_produit}`} target="_blank"  rel="noopener noreferrer">
+                <a href={favorisDeux.acf.url_du_produit} target="_blank"  rel="noopener noreferrer">
                   à retrouver ici
                 </a>
               </div>
@@ -316,6 +303,11 @@ query homePage {
   wordpressPage(title:  {eq:  "accueil"}) {
     acf {
       a_propos
+      last_video
+      last_video_text
+      last_vlog
+      last_vlog_text
+      seo_tags
     }
   }
 }
