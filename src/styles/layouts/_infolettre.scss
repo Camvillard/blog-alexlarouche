@@ -1,17 +1,16 @@
-/*----- INDEX FOR LAYOUTS ----- */
+/*----- LAYOUTS : INFOLETTRE ----- */
 
-@import "general";
-@import "coming-soon";
-@import "homepage";
-@import "infolettre";
-@import "contact";
-@import "about";
-@import "single-post";
-@import "shop";
-@import "categories";
-@import "columns";
-@import "archives";
 
+.page-infolettre {
+  background: $rose-dawn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    margin: 0;
+  }
+}
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
