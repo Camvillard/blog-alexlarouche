@@ -60,14 +60,61 @@ class Post extends React.Component {
       window.doBuild();
     }
 
+    // slider stuff
+    const sliderContainer = document.querySelector('.slider-alex')
+    this.loadCarousel(sliderContainer)
+
   }
-    preloadWidgetScript = () => {
-      const script = document.createElement('script');
-      script.async = true;
-      script.dataset.pinBuild = 'doBuild';
-      script.src = '//assets.pinterest.com/js/pinit.js';
-      document.body.appendChild(script);
-    }
+
+  preloadWidgetScript = () => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.dataset.pinBuild = 'doBuild';
+    script.src = '//assets.pinterest.com/js/pinit.js';
+    document.body.appendChild(script);
+  }
+
+  loadCarousel = (container) =>  {
+    // add navigation commands
+    container.insertAdjacentHTML('beforebegin', '<span class="slider-nav button-prev">avant<span>')
+    container.insertAdjacentHTML('beforebegin', '<span class="slider-nav button-next">après<span>')
+    const previousButton = document.querySelector('.button-prev')
+    const nextButton = document.querySelector('.button-next')
+
+    //  select items in the carousel and remove the default hidden display on the 3 first
+    let listItems = container.querySelectorAll('li.blocks-gallery-item')
+    let listValues = Object.values(listItems)
+    listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+
+    nextButton.addEventListener('click', e => {
+      // take the first element of the container
+      const firstElement = listValues.shift()
+      // remove it from the carousel
+      container.removeChild(firstElement)
+      // add the visibility to the new first 3 elements
+      container.appendChild(firstElement)
+      listItems = container.querySelectorAll('li.blocks-gallery-item')
+      listValues = Object.values(listItems)
+      listValues.slice(0,4).forEach(  i => i.classList.remove('hide-slide'));
+      listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+      }) //  end of  event listener
+
+    previousButton.addEventListener('click', e => {
+      // take the first element of the container
+      const lastElement = listValues.pop()
+      const firstElement = listValues.shift()
+      // remove it from the carousel
+      container.removeChild(lastElement)
+      // add the visibility to the new first 3 elements
+      container.insertBefore(lastElement, firstElement)
+      listItems = container.querySelectorAll('li.blocks-gallery-item')
+      listValues = Object.values(listItems)
+      listValues.slice(0,4).forEach(  i => i.classList.remove('hide-slide'));
+      listValues.slice(4).forEach(  i => i.classList.add('hide-slide'));
+      }) //  end of  event listener
+
+    } //  end of loadCarousel()
+
 
   // used to check if there is a fetured image set in wordpress
   // if not, assign a geatured image  to a placeholder
