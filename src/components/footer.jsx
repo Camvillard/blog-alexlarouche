@@ -31,7 +31,7 @@ export default () => (
           <a href="https://www.cdltbisou.com"> <strong>cdlt</strong>bisou</a>
         </p>
         <div className="right-links">
-          <Link to="/mentions-legales">mentions légales</Link> ∙ <Link to="/">politique de confidentialité</Link>
+          <Link to="/mentions-legales">mentions légales</Link> ∙ <Link to="/politique-confidentialite">politique de confidentialité</Link>
         </div>
 
       </div>

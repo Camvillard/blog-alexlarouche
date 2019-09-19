@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 
 // internal stuff
 import SEO from "../components/seo"
-import SimpleFooter from "../components/simple-footer";
+import Layout from "../components/layout";
 
 // styles & assets
 import '../styles/main.scss';
@@ -26,17 +26,18 @@ class PolitiqueCondidentialite extends React.Component {
     const meta =  this.props.data.site.siteMetadata.seo
     const data = this.props.data.wordpressPage
     return(
-      <React.Fragment>
+      <Layout>
         <SEO title="Politique de confidentialité" keywords={meta} />
-        <div className="page page-confidentialite fullheight-container">
+        <div className="page page-confidentialite container">
+
+          <h1>Politique de confidentialité</h1>
 
           <div dangerouslySetInnerHTML= {{__html: data.content}} />
 
-          <SimpleFooter />
 
         </div>
 
-      </React.Fragment>
+      </Layout>
     )
   }
 }

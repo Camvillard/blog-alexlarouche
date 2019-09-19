@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4.4rem;
+  font-size: 3.4rem;
 }
 
 h3 {
@@ -81,7 +81,7 @@ h3 {
 }
 
 h4 {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
 }
 
 h5 {
@@ -108,23 +108,23 @@ p, blockquote, a, li {
 
 @media (min-width: $lg-screen) {
   h1 {
-    font-size: 4.8rem;
+    font-size: 4.4rem;
   }
 
   h2 {
-    font-size: 4.2rem;
-  }
-
-  h3 {
-    font-size: 3.6rem;
-  }
-
-  h4 {
     font-size: 4rem;
   }
 
-  h5 {
+  h3 {
     font-size: 3.2rem;
+  }
+
+  h4 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 2.6rem;
   }
 
   h6 {
