@@ -1,15 +1,16 @@
 /*----- INDEX FOR LAYOUTS ----- */
 
-@import "general";
-@import "coming-soon";
-@import "homepage";
-@import "contact";
 @import "about";
-@import "single-post";
-@import "shop";
+@import "archives";
 @import "categories";
 @import "columns";
-@import "archives";
+@import "coming-soon";
+@import "contact";
+@import "general";
+@import "homepage";
+@import "merci";
+@import "shop";
+@import "single-post";
 
 
 @media (min-width: $xsm-screen) {

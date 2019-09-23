@@ -19,11 +19,10 @@ class MerciPage extends React.Component {
         <SEO title="Merci" keywords={meta} />
         <div className="page page-merci fullheight-container">
 
-          <div className="container">
-
-          <h1>merci pour ton message !</h1>
-
-
+          <div className="white-container">
+            <img className="icon-a" src="https://res.cloudinary.com/camvillard/image/upload/v1569254303/alex%20larouche/a-stroke.svg" alt="initiales"/>
+            <h2>merci pour ton message !</h2>
+            <p>tu recevras une réponse rapidement.</p>
           </div>
 
 
