@@ -30,21 +30,19 @@ class AboutPage extends React.Component {
         <SEO title="About" keywords={meta} />
         <div className="page page-about fullheight-container">
 
-        <div className="columns">
-          <div className="column one-half">
-            <h1 className="main-page-title">{data.title}</h1>
-            <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="profile alexandra larouche"/>
-          </div>
+          <div className="columns">
+            <div className="column one-half">
+              <h1 className="main-page-title">{data.title}</h1>
+              <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="profile alexandra larouche"/>
+            </div>
 
-          <div className="column one-half">
-            <div className="white-container">
-              <div dangerouslySetInnerHTML= {{__html: data.content}} />
-              <Link to="/contact" className="btn-square">me contacter</Link>
+            <div className="column one-half">
+              <div className="white-container">
+                <div dangerouslySetInnerHTML= {{__html: data.content}} />
+                <Link to="/contact" className="btn-square">me contacter</Link>
+              </div>
             </div>
           </div>
-
-        </div>
-
 
           <SimpleFooter />
 

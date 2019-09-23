@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby"
 // internal stuff
 import SEO from "../components/seo"
 import Layout from "../components/layout";
+import SimpleFooter from "../components/simple-footer";
 import MailchimpForm from "../components/mailchimp-form"
 
 // styles & assets
@@ -18,16 +19,15 @@ class Infolettre extends React.Component {
     const meta =  this.props.data.site.siteMetadata.seo
     return(
       <React.Fragment>
-        <SEO title="mentions légales" keywords={meta} />
+        <SEO title="infolettre" keywords={meta} />
         <div className="page page-infolettre fullheight-container">
 
-        <div className="infolettre-container">
-          <h3>s'inscrire à l'infolettre</h3>
-          <MailchimpForm id="homepage-mailchimp-form" />
+          <div className="infolettre-container">
+            <h3>s'inscrire à l'infolettre</h3>
+            <MailchimpForm id="homepage-mailchimp-form" />
 
-        </div>
-
-
+          </div>
+          <SimpleFooter />
 
         </div>
 
