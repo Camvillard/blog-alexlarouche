@@ -52,6 +52,7 @@ module.exports = {
          "**/comments",
          "**/favoris",
          "**/media",
+         "**/users",
        ],
       },
     },
