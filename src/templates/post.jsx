@@ -65,10 +65,14 @@ class Post extends React.Component {
     // slider stuff
     const sliderContainer = document.querySelector('.slider-alex')
 
-    if (window && window.innerWidth < 992) {
-      this.loadCarousel(sliderContainer, 1)
-    } else {
-      this.loadCarousel(sliderContainer, 4)
+    if (sliderContainer) {
+
+      if (window && window.innerWidth < 992) {
+        this.loadCarousel(sliderContainer, 1)
+      } else {
+        this.loadCarousel(sliderContainer, 4)
+      }
+
     }
 
   }

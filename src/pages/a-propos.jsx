@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 
 // internal stuff
 import SEO from "../components/seo"
-import ApplicationHeader from "../components/application-header";
 import SimpleFooter from "../components/simple-footer";
 
 // styles & assets
@@ -28,7 +27,6 @@ class AboutPage extends React.Component {
     const data = this.props.data.wordpressPage
     return(
       <React.Fragment>
-        <ApplicationHeader />
         <SEO title="About" keywords={meta} />
         <div className="page page-about fullheight-container">
 

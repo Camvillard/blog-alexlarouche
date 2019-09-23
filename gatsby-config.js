@@ -1,5 +1,3 @@
-const queries = require("./src/utilities/search-algolia")
-
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -32,20 +30,12 @@ module.exports = {
        useACF: true,
        verboseOutput: true,
        auth: {
-          wpcom_app_clientSecret: process.env.GATSBY_WORDPRESS_CLIENT_SECRET,
-          wpcom_app_clientId: process.env.GATSBY_WORDPRESS_CLIENT_ID,
-          wpcom_user: process.env.GATSBY_WORDPRESS_USER,
-          wpcom_pass: process.env.GATSBY_WORDPRESS_PASSWORD,
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
           jwt_base_path: "/jwt-auth/v1/token",
-         // if not using JWT to authenticate with WP' can uncomment those next lines
-         // htaccess_user: process.env.HTACCESS_USER,
-         // htaccess_pass: process.env.HTACCESS_PASS,
-         // htaccess_sendImmediately: false,
        },
-       cookies: {},
        includedRoutes: [
+         "**/users",
          "**/categories",
          "**/posts",
          "**/pages",
@@ -55,14 +45,6 @@ module.exports = {
        ],
       },
     },
-    // {
-    //   resolve: `gatsby-source-youtube-v2`,
-    //   options: {
-    //     channelId: ['UCIhIjNXYBKJuoGstuB3-GHA', 'UCUCkH561i3VjDQPJrGdGFQQ'],
-    //     apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
-    //     maxVideos: 40
-    //   },
-    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

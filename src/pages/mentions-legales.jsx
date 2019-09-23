@@ -28,7 +28,7 @@ class MentionsLegales extends React.Component {
     return(
       <Layout>
         <SEO title="mentions légales" keywords={meta} />
-        <div className="page page-legale fullheight-container">
+        <div className="page page-legale container">
 
           <h1>Mentions légales</h1>
 

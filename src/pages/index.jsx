@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
               <h3>à propos</h3>
               <div dangerouslySetInnerHTML= {{__html: aboutContent}} />
               <div className="btn-block">
-                <Link to="/apropos" className="btn-blob">en savoir plus</Link>
+                <Link to="/apropos" className="btn-plain">en savoir plus</Link>
               </div>
             </div>
 
@@ -205,7 +205,7 @@ class IndexPage extends React.Component {
 
 
          <div className="btn-block">
-          <Link to="/" className="btn-square">voir tous les favoris</Link>
+          <Link to="/favoris" className="btn-square">voir tous les favoris</Link>
          </div>
 
         </div>

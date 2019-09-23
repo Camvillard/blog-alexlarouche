@@ -5,7 +5,11 @@
 }
 
 // LAST BLOG POST
-
+#last-blogpost {
+  .post-card-excerpt figure  {
+    display: none;
+  }
+}
 
 // only for homepage : first post section
 .posts-section {
@@ -16,6 +20,10 @@
 
   .post-card-excerpt {
     padding-left: 24px;
+  }
+
+  .post-card-excerpt figure  {
+    display: none;
   }
 
   .btn-plain {

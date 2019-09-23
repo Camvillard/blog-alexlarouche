@@ -64,19 +64,33 @@ p.favoris-sm-card-title {
 
 .favoris-archives-card {
   margin: 24px auto;
+  position: relative;
+
+  .featured-favoris {
+    position: relative;
+    z-index: 0;
+  }
 
   .favoris-header {
     width: 88%;
-    margin:  -12px auto;
-    background: $old-pink;
+    position: relative;
+    margin: -18px auto 0;
+    background: $light-gray;
     padding: 6px 4px;
     color: $medium-gray;
     display: flex;
+    justify-content: space-around;
+    z-index: 4;
   }
 
   .favoris-name  {
     font-family: $headers-font;
   }
+
+  .favoris-name span {
+    padding-right: 8px;
+  }
+
 
 }
 
