@@ -17,7 +17,7 @@ const SocialIcons = (props) => {
       </div>
 
       <div id="youtube-vlogs" className="icon-white">
-      <a href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.youtube.com/user/alexfbvlogs" target="_blank" rel="noopener noreferrer">
         <FaYoutube stroke="#C99086" strokeWidth="18" />
         </a>
       </div>

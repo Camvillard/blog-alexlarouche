@@ -27,7 +27,7 @@ const LastPostCard = ({post}) => {
         </div>
 
         <div className="post-card-content">
-          <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: post.title}} /></h3>
+          <Link to={post.slug}><h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: post.title}} /></h3></Link>
           <div className="post-card-excerpt" dangerouslySetInnerHTML= {{__html: createExcerpt(post.content)}} />
           <div className="btn-block" >
             <Link to={`/${post.slug}`} className="btn-square">lire la suite</Link>
