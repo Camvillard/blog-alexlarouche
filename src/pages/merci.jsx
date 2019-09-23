@@ -25,7 +25,6 @@ class MerciPage extends React.Component {
             <p>tu recevras une réponse rapidement.</p>
           </div>
 
-
           <SimpleFooter />
 
         </div>

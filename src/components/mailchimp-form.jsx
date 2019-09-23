@@ -52,7 +52,7 @@ class MailchimpForm extends React.Component {
       <form onSubmit={this.handleSubmit} id={this.props.id}>
         <input type="text" name="name" placeholder="prénom" onChange={this.handleChange} />
         <input type="email" name="email" placeholder="courriel" onChange={this.handleChange}/>
-        <button type="submit" className="btn-blob">s'abonner aux articles</button>
+        <button type="submit" className="btn-square">s'abonner aux articles</button>
       </form>
     )
   }

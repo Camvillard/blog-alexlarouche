@@ -76,26 +76,16 @@ a.btn-plain {
   }
 }
 
-
-a.btn-blob {
-  font-family: $headers-font;
-  color: $rose-dawn;
-  font-size: 1.6rem;
-
-  &:hover {
-    color: $dark-rose;
-  }
-    &:focus {
-    outline: none;
-  }
-}
-
+a.btn-blob,
 button.btn-blob {
   font-family: $headers-font;
   color: $rose-dawn;
   background: white;
   font-size: 1.6rem;
   border: 0;
+  position: relative;
+  display: block;
+  z-index: 4;
 
   &:focus {
     outline: none;
