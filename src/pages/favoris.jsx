@@ -19,7 +19,8 @@ const FavorisCard = ({favori}) => {
     <a href={favori.acf.url_du_produit} target="_blank" without rel="noopener noreferrer">
       <img className="featured-favoris" src={favori.featured_media.source_url} alt=""/>
       <div className="favoris-header">
-        <div className="favoris-name" dangerouslySetInnerHTML={{__html: favori.title}}/>/<div className="favoris-brand" dangerouslySetInnerHTML={{__html: favori.acf.nom_marque}}/>
+        <div className="favoris-name"><span dangerouslySetInnerHTML={{__html: favori.title}} />/</div>
+        <div className="favoris-brand" dangerouslySetInnerHTML={{__html: favori.acf.nom_marque}}/>
       </div>
     </a>
     </div>
