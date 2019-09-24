@@ -34,7 +34,6 @@ class MobileNavbar extends React.Component {
   }
 
   render(){
-    console.log(this.props)
     const categories = this.props.data.allWordpressCategory.edges
     return(
       <div id="mobile-header" >

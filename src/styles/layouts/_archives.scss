@@ -9,6 +9,38 @@
   padding: 4px 12px;
 }
 
+.pagination-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-links {
+  display: flex;
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.previous-link {
+  margin-right: 8px;
+  text-align: right;
+}
+
+.next-link {
+  margin-left: 8px;
+}
+
+.number-links {
+  a {
+    margin: 0 4px;
+    background: $rose-dawn;
+    color: white;
+    padding: 4px;
+  }
+}
+
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
 
