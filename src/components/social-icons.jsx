@@ -29,7 +29,7 @@ const SocialIcons = (props) => {
       </div>
 
       <div id="pinterest" className="icon-pink">
-      <a href="https://www.instagram.com/alexandralarouche/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.pinterest.fr/alexandralarouche1/" target="_blank" rel="noopener noreferrer">
         <FaPinterest />
       </a>
       </div>

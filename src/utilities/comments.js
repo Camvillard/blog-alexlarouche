@@ -28,7 +28,7 @@ const getCookie = () => {
   if (document.cookie) {
     const cookies = document.cookie
     // document.cookie is a string build with key/value pairs
-    // assigned to each pther with = sign
+    // assigned to each other with = sign
     // and separated with ;
     const cookiesArray = cookies.split(';')
     // for each one of the elements of that array
