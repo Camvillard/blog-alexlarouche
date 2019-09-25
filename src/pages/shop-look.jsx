@@ -72,10 +72,23 @@ class ShopLook extends React.Component {
       // we filter them if not, using the category name
       // matching the data attributes
       const filteredCards = cards.filter( card => {
-        return card.node.categories[0].name === category
+        if (card.node.categories) {
+          return card.node.categories[0].name === category
+        }
       })
       return filteredCards
     }
+  }
+
+  assignDefaultCategory = (favoris) => {
+    return favoris.map( fav => {
+      if (!fav.node.categories) {
+        fav.node.categories[0].slug = "all"
+        fav.node.categories[0].name = "tout"
+      }
+      console.log('favoris', favoris)
+    })
+
   }
 
   componentDidMount() {
@@ -89,9 +102,10 @@ class ShopLook extends React.Component {
   }
 
   render(){
+    // const allFavoris = this.assignDefaultCategory(this.props.data.allWordpressWpFavoris.edges)
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
-    const allCategory = this.props.data.allWordpressCategory.edges
     console.log(allFavoris)
+    const allCategory = this.props.data.allWordpressCategory.edges
     return(
       <Layout>
 

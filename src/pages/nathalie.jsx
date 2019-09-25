@@ -35,7 +35,7 @@ class AuthorNathalie extends React.Component {
 
           <div className="page archives-page">
 
-            <h1 className="page-title">archives : Nathalie</h1>
+            <h1 className="page-title">auteur : Nathalie</h1>
 
             <div className="container archives-container">
 
