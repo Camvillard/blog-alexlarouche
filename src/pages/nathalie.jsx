@@ -30,12 +30,12 @@ class AuthorNathalie extends React.Component {
     const posts = this.props.data.allWordpressPost.edges
     return(
       <React.Fragment>
-        <SEO title="archives" keywords={metadata}/>
+        <SEO title="archives pour l'auteur : Nathalie" keywords={metadata}/>
         <Layout>
 
           <div className="page archives-page">
 
-            <h1 className="page-title">archives</h1>
+            <h1 className="page-title">archives : Nathalie</h1>
 
             <div className="container archives-container">
 

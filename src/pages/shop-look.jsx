@@ -12,6 +12,7 @@ import meta from "../data/meta";
 
 
 const FavorisCard = ({favori}) => {
+  console.log(favori.categories)
   return(
     <div className="favoris-card">
 
@@ -90,6 +91,7 @@ class ShopLook extends React.Component {
   render(){
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
     const allCategory = this.props.data.allWordpressCategory.edges
+    console.log(allFavoris)
     return(
       <Layout>
 
@@ -113,8 +115,6 @@ class ShopLook extends React.Component {
           {this.filterByCategories(allFavoris, this.state.activeTab)
             .map( fav => <FavorisCard favori={fav.node} key={fav.node.id} /> )}
         </div>
-
-
 
       </Layout>
     )
