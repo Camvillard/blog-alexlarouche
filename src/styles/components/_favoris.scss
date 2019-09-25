@@ -75,11 +75,10 @@ p.favoris-sm-card-title {
     width: 88%;
     position: relative;
     margin: -18px auto 0;
-    background: $light-gray;
+    background: $old-pink;
     padding: 6px 4px;
-    color: $medium-gray;
-    display: flex;
-    justify-content: space-around;
+    color: $dark-gray;
+    padding-left: 8px;
     z-index: 4;
   }
 

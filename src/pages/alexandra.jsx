@@ -13,7 +13,7 @@ import RegularPostCard from "../components/regular-post-card"
 // styles & assets
 import '../styles/main.scss';
 
-class ArchivesPage extends React.Component {
+class AuthorAlexandra extends React.Component {
 
   componentDidMount() {
     const allImages = document.querySelectorAll('img')
@@ -30,12 +30,12 @@ class ArchivesPage extends React.Component {
     const posts = this.props.data.allWordpressPost.edges
     return(
       <React.Fragment>
-        <SEO title="archives" keywords={metadata}/>
+        <SEO title="archives pour l'auteur : Alexandra" keywords={metadata}/>
         <Layout>
 
           <div className="page archives-page">
 
-            <h1 className="page-title">archives</h1>
+            <h1 className="page-title">auteur : Alexandra</h1>
 
             <div className="container archives-container">
 
@@ -56,12 +56,12 @@ class ArchivesPage extends React.Component {
   }
 }
 
-export default ArchivesPage
+export default AuthorAlexandra
 
 export const query = graphql`
-query archivesPage {
+query alexandraPage {
   allWordpressPost(
-  limit: 12,
+  filter: {author:  {eq: 2}},
   sort: {fields: [date], order: [DESC] }
   ) {
     edges {
@@ -95,5 +95,4 @@ query archivesPage {
   }
 }
 `
-
 

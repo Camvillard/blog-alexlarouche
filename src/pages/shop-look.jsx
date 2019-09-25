@@ -12,6 +12,7 @@ import meta from "../data/meta";
 
 
 const FavorisCard = ({favori}) => {
+  console.log(favori.categories)
   return(
     <div className="favoris-card">
 
@@ -71,10 +72,23 @@ class ShopLook extends React.Component {
       // we filter them if not, using the category name
       // matching the data attributes
       const filteredCards = cards.filter( card => {
-        return card.node.categories[0].name === category
+        if (card.node.categories) {
+          return card.node.categories[0].name === category
+        }
       })
       return filteredCards
     }
+  }
+
+  assignDefaultCategory = (favoris) => {
+    return favoris.map( fav => {
+      if (!fav.node.categories) {
+        fav.node.categories[0].slug = "all"
+        fav.node.categories[0].name = "tout"
+      }
+      console.log('favoris', favoris)
+    })
+
   }
 
   componentDidMount() {
@@ -88,7 +102,9 @@ class ShopLook extends React.Component {
   }
 
   render(){
+    // const allFavoris = this.assignDefaultCategory(this.props.data.allWordpressWpFavoris.edges)
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
+    console.log(allFavoris)
     const allCategory = this.props.data.allWordpressCategory.edges
     return(
       <Layout>
@@ -113,8 +129,6 @@ class ShopLook extends React.Component {
           {this.filterByCategories(allFavoris, this.state.activeTab)
             .map( fav => <FavorisCard favori={fav.node} key={fav.node.id} /> )}
         </div>
-
-
 
       </Layout>
     )
