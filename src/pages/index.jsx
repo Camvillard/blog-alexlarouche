@@ -108,70 +108,6 @@ class IndexPage extends React.Component {
         </div>
         {/* end of container */}
 
-        <div id="newsletter-section">
-
-          <div id="newsletter-container" className="container">
-            <h3>reçois un courriel à chaque nouvel article</h3>
-            <MailchimpForm id="homepage-mailchimp-form" />
-          </div>
-        </div>
-        {/* end of #newsletter-section */}
-
-          <div id="video-section" className="container">
-
-            <div className="video-card" id="first-video">
-
-              <div className="video-description">
-                <h6 className="rose-dawn">la dernière vidéo</h6>
-                <div dangerouslySetInnerHTML= {{__html: videoText}} />
-              </div>
-
-              <div className="video-container">
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoLink}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen>
-                </iframe>
-                <div className="btn-block">
-                  <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
-                    s'abonner aux vidéos
-                  </a>
-                </div>
-              </div>
-
-            </div>
-            {/* end of video-card */}
-
-           <div className="video-card" id="second-video">
-
-             <div className="video-description">
-                <h6 className="rose-dawn">le dernier vlog</h6>
-                <div dangerouslySetInnerHTML= {{__html: vlogText}} />
-             </div>
-
-             <div className="video-container">
-               <iframe
-                 src={`https://www.youtube.com/embed/${vlogLink}`}
-                 frameBorder="0"
-                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                 allowFullScreen>
-               </iframe>
-               <div className="btn-block">
-                 <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
-                   s'abonner aux vlogs
-                 </a>
-               </div>
-             </div>
-           </div>
-           {/* end of video-card */}
-
-
-          </div>
-        {/* end of video-section */}
-
-
-
         <div id="favoris-section">
           <h3>mes favoris du moment</h3>
 
@@ -210,6 +146,58 @@ class IndexPage extends React.Component {
 
         </div>
         {/* end of #favoris-section */}
+
+        <div id="video-section" className="container">
+
+          <div className="video-card" id="first-video">
+
+            <div className="video-description">
+              <h6 className="rose-dawn">la dernière vidéo</h6>
+              <div dangerouslySetInnerHTML= {{__html: videoText}} />
+            </div>
+
+            <div className="video-container">
+              <iframe
+                src={`https://www.youtube.com/embed/${videoLink}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>
+              </iframe>
+              <div className="btn-block">
+                <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                  s'abonner aux vidéos
+                </a>
+              </div>
+            </div>
+
+          </div>
+          {/* end of video-card */}
+
+         <div className="video-card" id="second-video">
+
+           <div className="video-description">
+              <h6 className="rose-dawn">le dernier vlog</h6>
+              <div dangerouslySetInnerHTML= {{__html: vlogText}} />
+           </div>
+
+           <div className="video-container">
+             <iframe
+               src={`https://www.youtube.com/embed/${vlogLink}`}
+               frameBorder="0"
+               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen>
+             </iframe>
+             <div className="btn-block">
+               <a className="btn-square" href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ" target="_blank"  rel="noopener noreferrer">
+                 s'abonner aux vlogs
+               </a>
+             </div>
+           </div>
+         </div>
+         {/* end of video-card */}
+
+        </div>
+        {/* end of video-section */}
 
         <Instagram />
         <Footer />

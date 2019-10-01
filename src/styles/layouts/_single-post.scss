@@ -16,6 +16,14 @@
   }
 }
 
+.single-post-footer-meta {
+  border-top: 1px solid $old-pink;
+  border-bottom: 1px solid $old-pink;
+  p, a {
+    font-size: 1.2rem;
+  }
+}
+
 
 // POST CONTAINER
 .single-post-container {

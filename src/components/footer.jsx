@@ -22,7 +22,7 @@ export default () => (
     render={data => (
       <footer>
       <div className="footer-left-section">
-        <Link to="/contact">contact</Link> ∙ <Link to="/">infolettre</Link>
+        <Link to="/contact">contact</Link>
         <p>© {new Date().getFullYear()} {data.site.siteMetadata.title} </p>
       </div>
       <div className="footer-right-section">

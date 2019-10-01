@@ -179,6 +179,12 @@ class Post extends React.Component {
 
             <div dangerouslySetInnerHTML= {{__html: post.content}} />
 
+            <div className="single-post-footer-meta">
+              <p>auteur : {post.author === 2 ?
+                <Link to="/alexandra">Alexandra</Link> :
+                <Link to="/nathalie">Nathalie</Link> } </p>
+            </div>
+
           </div>
           {/* end of .single-post-container */}
 
@@ -226,6 +232,7 @@ export const query = graphql`
       date
       content
       slug
+      author
       categories {
         id
         name
