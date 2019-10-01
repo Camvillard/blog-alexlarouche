@@ -45,16 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.error)
       }
 
-      createPaginatedPages({
-        edges: result.data.allWordpressPost.edges,
-        createPage: createPage,
-        pageTemplate: 'src/templates/articles.jsx',
-        pageLength: 8, // This is optional and defaults to 10 if not used
-        pathPrefix: 'articles',
-        buildPath: (index, pathPrefix) =>
-            index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and defaults to an empty string if not used
-        context: {}, // This is optional and defaults to an empty object if not used
-      })
+
 
       // grab the content pulled thanks to the graphql query
       const postEdges = result.data.allWordpressPost.edges

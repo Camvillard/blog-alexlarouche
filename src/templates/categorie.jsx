@@ -40,8 +40,6 @@ class Categorie extends React.Component {
           {blogPosts.map( post => <RegularPostCard post={post.node} key={post.node.id}/> )}
         </div>
 
-        <MailchimpForm />
-
       </Layout>
     )
   }
