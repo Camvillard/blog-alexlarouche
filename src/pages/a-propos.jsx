@@ -25,6 +25,7 @@ class AboutPage extends React.Component {
   render(){
     const meta =  this.props.data.site.siteMetadata.seo
     const data = this.props.data.wordpressPage
+    const image = data.featured_media ? data.featured_media.source_url : "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg"
     return(
       <React.Fragment>
         <SEO title="About" keywords={meta} />
@@ -33,7 +34,7 @@ class AboutPage extends React.Component {
         <div className="columns">
           <div className="column one-half">
             <h1 className="main-page-title">{data.title}</h1>
-            <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="profile alexandra larouche"/>
+            <img src={image} alt="profile alexandra larouche"/>
           </div>
 
           <div className="column one-half">
@@ -63,6 +64,10 @@ query aboutPage {
     id
     title
     content
+    featured_media {
+      id
+      source_url
+    }
   }
   site {
     siteMetadata {
