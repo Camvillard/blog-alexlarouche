@@ -116,7 +116,8 @@ exports.createPages = ({ graphql, actions }) => {
       })
       resolve()
     }) // end of query.then
-  }) // end of createWpPosts
+  }) // end of createWPCategories
+
 
 
 
