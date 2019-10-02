@@ -13,11 +13,15 @@
   .main-page-title {
     text-align: center;
     color: white;
-    margin-bottom: 0.8em;
+    margin-bottom: 2vh;
+  }
+
+  .btn-blob {
+    background: transparent;
   }
 
   .back-button {
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .back-button a{
@@ -25,7 +29,7 @@
   }
 
 }
-//
+
 
 .contact-form {
   width: 92%;
