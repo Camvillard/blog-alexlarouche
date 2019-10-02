@@ -1,7 +1,7 @@
 // reuturns the excerpt of a text
 // @post = String
 const createExcerpt = (post) => {
-  return post.slice(0, 300) + " (...)"
+  return post.slice(0, 240) + " (...)"
 }
 
 

@@ -21,7 +21,7 @@ const FavorisCard = ({favori}) => {
       <img src={favori.featured_media.source_url} alt={favori.title}/>
 
       <div className="favoris-card-content">
-      <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: favori.title}} /></h3>
+        <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: favori.title}} /></h3>
         <p>{favori.acf.nom_marque}</p>
       </div>
 
