@@ -15,8 +15,10 @@ const getToken = () => {
   })
     .then(res => res.json())
     .then( result => {
-      document.cookie = `token=${result.token}`
-      return document.cookie
+      console.log('result', result.token)
+      // document.cookie = `token=${result.token}`
+      // return document.cookie
+      return result.token
     })
 }
 
