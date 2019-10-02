@@ -150,7 +150,11 @@ class Post extends React.Component {
   const postDate = createPrintedDate(post.date)
     return(
       <React.Fragment>
-        <SEO title={`${post.title}`} keywords={seoTags} id={post.slug ? `${post.slug}` : ''} />
+        <SEO
+          title={`${post.title}`}
+          keywords={seoTags}
+          id={post.slug ? `${post.slug}` : ''}
+          image={featuredImage} />
 
         {/* Helmet is used to load library for embedded Instagram posts */}
         <Helmet>

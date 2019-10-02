@@ -16,7 +16,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 // styles & assets
 
-function SEO({ description, lang, meta, keywords, title}) {
+function SEO({ image, description, lang, meta, keywords, title}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,6 +25,7 @@ function SEO({ description, lang, meta, keywords, title}) {
             title
             description
             author
+            defaultImage
           }
         }
       }
@@ -32,7 +33,8 @@ function SEO({ description, lang, meta, keywords, title}) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  // console.log(id)
+  const ogImage = image || site.siteMetadata.defaultImage
+  console.log(ogImage)
 
   return (
     <Helmet
@@ -53,6 +55,10 @@ function SEO({ description, lang, meta, keywords, title}) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: ogImage,
         },
         {
           property: `og:type`,
@@ -97,6 +103,7 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   description: PropTypes.string,
+  image: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),

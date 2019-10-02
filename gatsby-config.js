@@ -8,7 +8,8 @@ module.exports = {
     title: `alexandra larouche`,
     description: `Alexandra Larouche | lifestyle, beauté, mode, famille`,
     author: `camilevillard | cdltbisou`,
-    seo: ['alexandra larouche', 'beauté', 'lifestyle', 'youtube', 'québec']
+    seo: ['alexandra larouche', 'beauté', 'lifestyle', 'youtube', 'québec'],
+    defaultImage: `https://content.alexandralarouche.ca/wp-content/uploads/2019/08/Alexandra_L-50.jpg`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
