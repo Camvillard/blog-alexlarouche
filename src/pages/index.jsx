@@ -141,7 +141,7 @@ class IndexPage extends React.Component {
 
 
          <div className="btn-block">
-          <Link to="/shop-look" className="btn-square">voir tous les favoris</Link>
+          <Link to="/favoris" className="btn-square">voir tous les favoris</Link>
          </div>
 
         </div>

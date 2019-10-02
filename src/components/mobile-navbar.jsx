@@ -51,7 +51,7 @@ class MobileNavbar extends React.Component {
             <ul className={`sub-menu-links ${this.state.categoriesAreOpen ? 'show-sub-menu' :  'hide-sub-menu'} `}>
               {categories.map( d => <li key={d.node.name}><Link to={`/categories/${d.node.slug}`}>{d.node.name}</Link></li>)}
             </ul>
-            <Link to="/shop-look">shop mon look</Link>
+            <Link to="/favoris">mes favoris</Link>
             <Link to="/contact">contact</Link>
             <Link to="/a-propos">à propos</Link>
           </div>
