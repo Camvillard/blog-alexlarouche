@@ -1,15 +1,6 @@
 // external libs
 import React from "react";
-// import { graphql, Link } from "gatsby";
 
-// internal stuff
-
-
-// helpers
-import { getToken } from "../utilities/comments"
-
-
-// styles & assets
 
 class CommentForm extends React.Component {
 

@@ -1,6 +1,6 @@
 // external libs
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 // internal stuff
 import SEO from "../components/seo"
@@ -33,7 +33,6 @@ class MentionsLegales extends React.Component {
           <h1>Mentions légales</h1>
 
           <div dangerouslySetInnerHTML= {{__html: data.content}} />
-
 
         </div>
 

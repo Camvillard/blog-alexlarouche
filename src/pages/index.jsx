@@ -9,13 +9,13 @@ import SocialIcons from "../components/social-icons"
 import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
-import MailchimpForm from "../components/mailchimp-form";
+// import MailchimpForm from "../components/mailchimp-form";
 // import FavorisSmallCard from "../components/favoris-card";
 import Instagram from "../components/instagram";
 import Footer from "../components/footer";
 
 // helpers
-import { truncateWord } from "../utilities/blog-cards";
+// import { truncateWord } from "../utilities/blog-cards";
 
 
 // styles & assets
@@ -159,6 +159,7 @@ class IndexPage extends React.Component {
             <div className="video-container">
               <iframe
                 src={`https://www.youtube.com/embed/${videoLink}`}
+                title="derniere video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen>
@@ -184,6 +185,7 @@ class IndexPage extends React.Component {
              <iframe
                src={`https://www.youtube.com/embed/${vlogLink}`}
                frameBorder="0"
+               title="dernier vlog"
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                allowFullScreen>
              </iframe>

@@ -71,12 +71,12 @@ class ShopLook extends React.Component {
     } else {
       // we filter them if not, using the category name
       // matching the data attributes
-      const filteredCards = cards.filter( card => {
+      return cards.filter( card => {
         if (card.node.categories) {
           return card.node.categories[0].name === category
         }
       })
-      return filteredCards
+      // return filteredCards
     }
   }
 
@@ -86,9 +86,7 @@ class ShopLook extends React.Component {
         fav.node.categories[0].slug = "all"
         fav.node.categories[0].name = "tout"
       }
-      console.log('favoris', favoris)
     })
-
   }
 
   componentDidMount() {

@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 // internal stuff
 import Layout from '../components/layout';
 import RegularPostCard from "../components/regular-post-card"
-import MailchimpForm from "../components/mailchimp-form";
 
 // helpers
 
