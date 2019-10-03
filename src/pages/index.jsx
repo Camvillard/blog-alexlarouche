@@ -43,6 +43,7 @@ class IndexPage extends React.Component {
     const firstSectionPosts = posts.slice(1,3)
     const secondSectionPosts = posts.slice(3,5)
     const aboutContent = data.wordpressPage.acf.a_propos
+    const aboutImage = data.wordpressPage.acf.photo_a_propos.source_url || "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg"
     const videoLink = data.wordpressPage.acf.last_video
     const videoText = data.wordpressPage.acf.last_video_text
     const vlogLink = data.wordpressPage.acf.last_vlog
@@ -90,7 +91,7 @@ class IndexPage extends React.Component {
           <div id="about-section">
 
             <div className="left-section">
-              <img src="https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg" alt="alexandra larouche"/>
+              <img src={aboutImage} alt="alexandra larouche"/>
               <SocialIcons id="homepage-about-icons"/>
             </div>
 
@@ -293,6 +294,10 @@ query homePage {
   wordpressPage(title:  {eq:  "accueil"}) {
     acf {
       a_propos
+      photo_a_propos {
+        id
+        source_url
+      }
       last_video
       last_video_text
       last_vlog
