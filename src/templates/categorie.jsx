@@ -62,6 +62,7 @@ export const query = graphql`
            id
            date
            title
+           slug
            content
            featured_media{
              source_url
