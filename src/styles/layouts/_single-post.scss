@@ -196,8 +196,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin: 16px auto 24px;
+  width: 94%;
 }
 
 .comment-avatar {
@@ -209,6 +209,7 @@
 }
 
 .comment-content {
+  flex-grow: 1;
   margin-left: 8px;
   margin-top: 0;
 
@@ -369,6 +370,7 @@
     flex-direction: row;
     margin-top: 16px;
     margin-bottom: 24px;
+    width: 76%;
   }
 
   .comment-avatar {

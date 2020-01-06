@@ -148,6 +148,7 @@ class Post extends React.Component {
   const featuredImage = this.setFeaturedImage(post)
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
+  console.log("comments", comments)
     return(
       <React.Fragment>
         <SEO
