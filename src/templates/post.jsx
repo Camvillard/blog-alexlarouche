@@ -46,8 +46,8 @@ class Post extends React.Component {
         alert('le clic droit est désactivé pour les photos')
       })
       // append pinterest button
-      // const pinLink = "<div class='pinterest-btn-container'><a class='pinterest-btn' href='https://www.pinterest.com/pin/create/button/' data-pin-round='true' data-pin-do='buttonBookmark'></a></div> ";
-      // img.insertAdjacentHTML('afterend', pinLink )
+      const pinLink = "<div class='pinterest-btn-container'><a class='pinterest-btn' href='https://www.pinterest.com/pin/create/button/' data-pin-round='true' data-pin-do='buttonBookmark'></a></div> ";
+      img.insertAdjacentHTML('afterend', pinLink )
     })
 
     // load  instagram script
@@ -56,11 +56,11 @@ class Post extends React.Component {
     }
 
     // pinterest pin it button
-    // if (!window.doBuild) {
-    //   this.preloadWidgetScript();
-    // } else {
-    //   window.doBuild();
-    // }
+    if (!window.doBuild) {
+      this.preloadWidgetScript();
+    } else {
+      window.doBuild();
+    }
 
     // slider stuff
     const sliderContainer = document.querySelector('.slider-alex')
@@ -148,7 +148,6 @@ class Post extends React.Component {
   const featuredImage = this.setFeaturedImage(post)
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
-  console.log("comments", comments)
     return(
       <React.Fragment>
         <SEO
