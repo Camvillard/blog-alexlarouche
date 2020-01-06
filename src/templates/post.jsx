@@ -146,6 +146,7 @@ class Post extends React.Component {
   const post = this.props.data.wordpressPost
   const seoTags = buildSeoTags(post.acf.seo_tags)
   const featuredImage = this.setFeaturedImage(post)
+  console.log(this.props.data)
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
   console.log("comments", comments)

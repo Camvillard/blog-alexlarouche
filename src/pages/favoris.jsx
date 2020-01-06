@@ -108,7 +108,7 @@ class ShopLook extends React.Component {
       <Layout>
 
         <SEO title="Shop mon look" keywords={meta.seo.keywords} />
-        <h1 className="page-title">shop mon look</h1>
+        <h1 className="page-title">tous mes favoris</h1>
 
         <div className="favoris-filter-tabs">
 
