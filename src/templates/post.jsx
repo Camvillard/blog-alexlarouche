@@ -27,7 +27,9 @@ const CommentItem = ({comment}) => {
       <div className="comment-content">
         <p className="comment-author"><a href={comment.author_url} target="_blank" rel="noopener noreferrer">{comment.author_name}</a></p>
         <p className="comment-date">{createPrintedDate(comment.date)}</p>
-        <p dangerouslySetInnerHTML={{__html: comment.content}}/>
+        <div>
+          <span dangerouslySetInnerHTML={{__html: comment.content}}/>
+        </div>
       </div>
     </div>
   )
@@ -148,7 +150,6 @@ class Post extends React.Component {
   const featuredImage = this.setFeaturedImage(post)
   const comments = this.props.data.allWordpressWpComments.edges
   const postDate = createPrintedDate(post.date)
-  console.log(comments)
     return(
       <React.Fragment>
         <SEO
