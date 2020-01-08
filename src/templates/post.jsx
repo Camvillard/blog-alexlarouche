@@ -198,8 +198,8 @@ class Post extends React.Component {
             <h3>laisser un commentaire</h3>
             <CommentForm post_id={post.wordpress_id} />
             <div id="comment-validation"></div>
-            {comments.length > 1 ? <h3>tous les commentaires</h3> : <h5>il n'y a pas encore  de commentaire</h5>}
-            {comments.length  > 1 ?
+            {comments.length > 0 ? <h3>tous les commentaires</h3> : <h5>il n'y a pas encore  de commentaire</h5>}
+            {comments.length > 0 ?
               comments.map( c => <CommentItem comment={c.node} key={c.node.id} />) :
               "" }
           </div>
