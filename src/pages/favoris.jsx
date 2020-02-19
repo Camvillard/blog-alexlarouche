@@ -12,13 +12,12 @@ import meta from "../data/meta";
 
 
 const FavorisCard = ({favori}) => {
-  console.log(favori.categories)
   return(
     <div className="favoris-card">
 
     <a href={`${favori.acf.url_du_produit}`} target="_blank" rel="noopener noreferrer">
 
-      <img src={favori.featured_media.source_url} alt={favori.title}/>
+      <img src={favori.featured_media.source_url || ''} alt={favori.title}/>
 
       <div className="favoris-card-content">
         <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: favori.title}} /></h3>
@@ -33,10 +32,6 @@ const FavorisCard = ({favori}) => {
 
 }
 
-// 1. need to create a function to filter elements depending on the category name
-
-
-// 2. need to create a li for each one of the categories that exists
 
 
 class ShopLook extends React.Component {
