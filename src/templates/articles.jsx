@@ -1,5 +1,5 @@
 // external libs
-import React from "react";
+import React, {Fragment} from "react";
 import { graphql, Link } from "gatsby";
 
 // internal stuff
@@ -15,14 +15,18 @@ import '../styles/main.scss';
 
 
 const NumberedLinks = props => {
-  Array.from({length: props.pageCount + 1}, (v, k) => {
-    if (k > 0) {
+  return Array.from({length: props.pageCount + 1}, (v, k) => {
+    console.log('v', v)
+    console.log('k', k)
+    if (k <= 0) {
+      return <Fragment key={k} />
+    } else {
       return(
-        <React.Fragment key={k}>
+        <Fragment key={k}>
           {k === 1 ?
             <Link key={k} to={`/articles`}>{k}</Link> :
             <Link key={k} to={`/articles/${k}`}>{k}</Link>}
-        </React.Fragment>
+        </Fragment>
       )
     }
   })
@@ -77,7 +81,7 @@ class ArticlesPage extends React.Component {
 
           </div>
 
-          {/* <div className="pagination-links">
+          <div className="pagination-links">
             <div className="previous-link nav-link">
               <NavLink test={first} url={previousUrl} text="page précédente" />
             </div>
@@ -87,7 +91,7 @@ class ArticlesPage extends React.Component {
             <div className="next-link nav-link">
               <NavLink test={last} url={nextUrl} text="page suivante" />
             </div>
-          </div> */}
+          </div>
 
         </Layout>
       </React.Fragment>
