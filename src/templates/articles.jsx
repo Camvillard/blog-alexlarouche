@@ -24,8 +24,6 @@ const NumberedLinks = props => {
             <Link key={k} to={`/articles/${k}`}>{k}</Link>}
         </React.Fragment>
       )
-    } else {
-      return ''
     }
   })
 }
