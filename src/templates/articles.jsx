@@ -77,7 +77,7 @@ class ArticlesPage extends React.Component {
 
           </div>
 
-          <div className="pagination-links">
+          {/* <div className="pagination-links">
             <div className="previous-link nav-link">
               <NavLink test={first} url={previousUrl} text="page précédente" />
             </div>
@@ -87,7 +87,7 @@ class ArticlesPage extends React.Component {
             <div className="next-link nav-link">
               <NavLink test={last} url={nextUrl} text="page suivante" />
             </div>
-          </div>
+          </div> */}
 
         </Layout>
       </React.Fragment>
