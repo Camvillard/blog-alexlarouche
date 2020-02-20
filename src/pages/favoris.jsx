@@ -12,12 +12,13 @@ import meta from "../data/meta";
 
 
 const FavorisCard = ({favori}) => {
+  console.log('image', favori)
   return(
     <div className="favoris-card">
 
     <a href={`${favori.acf.url_du_produit}`} target="_blank" rel="noopener noreferrer">
 
-      <img src={favori.featured_media.source_url || ''} alt={favori.title}/>
+      <img src={favori.featured_media ? favori.featured_media.source_url : ''} alt={favori.title}/>
 
       <div className="favoris-card-content">
         <h3 className="post-card-title"><span dangerouslySetInnerHTML={{__html: favori.title}} /></h3>
@@ -25,11 +26,8 @@ const FavorisCard = ({favori}) => {
       </div>
 
     </a>
-
-
     </div>
   )
-
 }
 
 
@@ -66,23 +64,12 @@ class ShopLook extends React.Component {
     } else {
       // we filter them if not, using the category name
       // matching the data attributes
-      return cards.filter( card => {
-        if (card.node.categories) {
-          return card.node.categories[0].name === category
-        }
-      })
-      // return filteredCards
+      return cards.filter( card => 
+        card.node.categories && card.node.categories[0].name === category
+      )
     }
   }
 
-  assignDefaultCategory = (favoris) => {
-    return favoris.map( fav => {
-      if (!fav.node.categories) {
-        fav.node.categories[0].slug = "all"
-        fav.node.categories[0].name = "tout"
-      }
-    })
-  }
 
   componentDidMount() {
     const allImages = document.querySelectorAll('img')
@@ -97,7 +84,6 @@ class ShopLook extends React.Component {
   render(){
     // const allFavoris = this.assignDefaultCategory(this.props.data.allWordpressWpFavoris.edges)
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
-    console.log(allFavoris)
     const allCategory = this.props.data.allWordpressCategory.edges
     return(
       <Layout>

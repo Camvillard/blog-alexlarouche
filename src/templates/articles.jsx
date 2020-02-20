@@ -15,7 +15,7 @@ import '../styles/main.scss';
 
 
 const NumberedLinks = props => {
-  return Array.from({length: props.pageCount + 1}, (v, k) => {
+  Array.from({length: props.pageCount + 1}, (v, k) => {
     if (k > 0) {
       return(
         <React.Fragment key={k}>
@@ -24,6 +24,8 @@ const NumberedLinks = props => {
             <Link key={k} to={`/articles/${k}`}>{k}</Link>}
         </React.Fragment>
       )
+    } else {
+      return ''
     }
   })
 }
