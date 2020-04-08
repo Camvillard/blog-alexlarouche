@@ -1,4 +1,3 @@
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -9,8 +8,8 @@ module.exports = {
     title: `alexandra larouche`,
     description: `Alexandra Larouche | lifestyle, beauté, mode, famille`,
     author: `camilevillard | cdltbisou`,
-    seo: ['alexandra larouche', 'beauté', 'lifestyle', 'youtube', 'québec'],
-    image: `https://content.alexandralarouche.ca/wp-content/uploads/2019/08/Alexandra_L-50.jpg`
+    seo: ["alexandra larouche", "beauté", "lifestyle", "youtube", "québec"],
+    image: `https://content.alexandralarouche.ca/wp-content/uploads/2019/08/Alexandra_L-50.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,26 +23,26 @@ module.exports = {
     // sass styles
     `gatsby-plugin-sass`,
     {
-     resolve: `gatsby-source-wordpress`,
-     options: {
-       baseUrl: 'content.alexandralarouche.ca',
-       protocol: 'https',
-       hostingWPCOM: false,
-       useACF: true,
-       verboseOutput: true,
-       auth: {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: "content.alexandralarouche.ca",
+        protocol: "https",
+        hostingWPCOM: false,
+        useACF: true,
+        verboseOutput: false,
+        auth: {
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
           jwt_base_path: "/jwt-auth/v1/token",
-       },
-       includedRoutes: [
-         "**/categories",
-         "**/posts",
-         "**/pages",
-         "**/comments",
-         "**/favoris",
-         "**/media",
-       ],
+        },
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/comments",
+          "**/favoris",
+          "**/media",
+        ],
       },
     },
     `gatsby-transformer-sharp`,
@@ -70,14 +69,15 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /images/
-        }
-      }
+          include: /images/,
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-mailchimp',
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-          endpoint: 'https://gmail.us3.list-manage.com/subscribe/post?u=9978552546769cd4ebb279197&amp;id=908fed04bb'
+        endpoint:
+          "https://gmail.us3.list-manage.com/subscribe/post?u=9978552546769cd4ebb279197&amp;id=908fed04bb",
       },
     },
     // {
