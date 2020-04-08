@@ -1,29 +1,28 @@
 const getToken = () => {
-  const fetch = require('isomorphic-fetch')
-  typeof window !== 'undefined' && window.fetch('https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token', {
-    method: 'POST',
-    body: JSON.stringify( {
-            // Username of a user on the WordPress website in which the REST API request
-            // is being made to.
-            username: process.env.JWT_USER,
-            // And the above user's password.
-            password: process.env.JWT_PASSWORD
-        } ),
-    headers:{
-      'Content-Type': 'application/json'
-    }
-  })
-    .then(res => res.json())
-    .then( result => {
-      console.log('result', result.token)
-      // document.cookie = `token=${result.token}`
-      // return document.cookie
-      return result.token
-    })
+  const fetch = require("isomorphic-fetch")
+  typeof window !== "undefined" &&
+    window
+      .fetch("https://content.alexandralarouche.ca/wp-json/jwt-auth/v1/token", {
+        method: "POST",
+        body: JSON.stringify({
+          // Username of a user on the WordPress website in which the REST API request
+          // is being made to.
+          username: process.env.JWT_USER,
+          // And the above user's password.
+          password: process.env.JWT_PASSWORD,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(res => res.json())
+      .then(result => {
+        return result.token
+      })
 }
 
 const getCookie = () => {
-  const fetch = require('isomorphic-fetch')
+  const fetch = require("isomorphic-fetch")
   // initialize a map object to store the cookies
   // in an accessible way for later
   let cookiesObject = new Map()
@@ -32,15 +31,14 @@ const getCookie = () => {
     // document.cookie is a string build with key/value pairs
     // assigned to each other with = sign
     // and separated with ;
-    const cookiesArray = cookies.split(';')
+    const cookiesArray = cookies.split(";")
     // for each one of the elements of that array
     // we can store them in a new key/value pair in the map created
-    cookiesArray.forEach( cookie => {
-      cookiesObject.set(cookie.split('=')[0], cookie.split('=')[1] )
+    cookiesArray.forEach(cookie => {
+      cookiesObject.set(cookie.split("=")[0], cookie.split("=")[1])
     })
   }
   return cookiesObject
-};
+}
 
-export { getToken, getCookie };
-
+export { getToken, getCookie }

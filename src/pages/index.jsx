@@ -28,7 +28,6 @@ class IndexPage extends React.Component {
 
   render() {
     const data = this.props.data
-    console.log("data", data)
     const metadata = data.site.siteMetadata
     const posts = data.allWordpressPost.edges
     const lastPost = posts[0].node

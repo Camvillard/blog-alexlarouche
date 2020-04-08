@@ -12,6 +12,11 @@
     font-size: 1rem;
     text-transform: uppercase;
   }
+
+  .favoris-disclaimer {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
 
 
@@ -53,6 +58,10 @@
 
     li:hover {
       cursor: pointer;
+    }
+
+    .favoris-disclaimer {
+      font-size: 1.4rem;
     }
   }
 

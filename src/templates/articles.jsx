@@ -1,31 +1,33 @@
 // external libs
-import React, {Fragment} from "react";
-import { graphql, Link } from "gatsby";
+import React, { Fragment } from "react"
+import { graphql, Link } from "gatsby"
 
 // internal stuff
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import RegularPostCard from "../components/regular-post-card"
 
 // helpers
 
-
 // styles & assets
-import '../styles/main.scss';
-
+import "../styles/main.scss"
 
 const NumberedLinks = props => {
-  return Array.from({length: props.pageCount + 1}, (v, k) => {
-    console.log('v', v)
-    console.log('k', k)
+  return Array.from({ length: props.pageCount + 1 }, (v, k) => {
     if (k <= 0) {
       return <Fragment key={k} />
     } else {
-      return(
+      return (
         <Fragment key={k}>
-          {k === 1 ?
-            <Link key={k} to={`/articles`}>{k}</Link> :
-            <Link key={k} to={`/articles/${k}`}>{k}</Link>}
+          {k === 1 ? (
+            <Link key={k} to={`/articles`}>
+              {k}
+            </Link>
+          ) : (
+            <Link key={k} to={`/articles/${k}`}>
+              {k}
+            </Link>
+          )}
         </Fragment>
       )
     }
@@ -40,15 +42,13 @@ const NavLink = props => {
   }
 }
 
-
 class ArticlesPage extends React.Component {
-
   componentDidMount() {
-    const allImages = document.querySelectorAll('img')
-    allImages.forEach( img => {
-      img.addEventListener('contextmenu', e => {
+    const allImages = document.querySelectorAll("img")
+    allImages.forEach(img => {
+      img.addEventListener("contextmenu", e => {
         e.preventDefault()
-        alert('le clic droit est désactivé pour les photos')
+        alert("le clic droit est désactivé pour les photos")
       })
     })
   }
@@ -56,29 +56,23 @@ class ArticlesPage extends React.Component {
   render() {
     const { group, index, first, last, pageCount } = this.props.pageContext
     const posts = group
-    const previousUrl = index - 1 === 1 ? '/articles' : `/articles/${(index - 1).toString()}`
+    const previousUrl =
+      index - 1 === 1 ? "/articles" : `/articles/${(index - 1).toString()}`
     const nextUrl = `/articles/${(index + 1).toString()}`
     const metadata = this.props.data.site.siteMetadata.seo
-    return(
+    return (
       <React.Fragment>
-        <SEO title="archives" keywords={metadata}/>
+        <SEO title="archives" keywords={metadata} />
         <Layout>
-
-
           <div className="page archives-page">
-
             <h1 className="page-title">archives</h1>
 
             <div className="container archives-container">
-
-              {posts && (
-                posts.map( post => {
+              {posts &&
+                posts.map(post => {
                   return <RegularPostCard post={post.node} key={post.node.id} />
-                })
-              )}
-
+                })}
             </div>
-
           </div>
 
           <div className="pagination-links">
@@ -92,7 +86,6 @@ class ArticlesPage extends React.Component {
               <NavLink test={last} url={nextUrl} text="page suivante" />
             </div>
           </div>
-
         </Layout>
       </React.Fragment>
     )
@@ -102,40 +95,36 @@ class ArticlesPage extends React.Component {
 export default ArticlesPage
 
 export const query = graphql`
-query articlesPage {
-  allWordpressPost(
-  sort: {fields: [date], order: [DESC] }
-  ) {
-    edges {
-      node {
-        id
-        content
-        title
-        slug
-        date
-
-        categories {
-          name
-          slug
-        }
-
-        acf {
-          seo_tags
-        }
-
-        featured_media {
+  query articlesPage {
+    allWordpressPost(sort: { fields: [date], order: [DESC] }) {
+      edges {
+        node {
           id
-          source_url
+          content
+          title
+          slug
+          date
+
+          categories {
+            name
+            slug
+          }
+
+          acf {
+            seo_tags
+          }
+
+          featured_media {
+            id
+            source_url
+          }
         }
       }
     }
-  }
-  site {
-    siteMetadata {
-      seo
+    site {
+      siteMetadata {
+        seo
+      }
     }
   }
-}
 `
-
-

@@ -33,7 +33,7 @@ const FavorisCard = ({ favori }) => {
   )
 }
 
-class ShopLook extends React.Component {
+class FavorisPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -82,7 +82,6 @@ class ShopLook extends React.Component {
   }
 
   render() {
-    // const allFavoris = this.assignDefaultCategory(this.props.data.allWordpressWpFavoris.edges)
     const allFavoris = this.props.data.allWordpressWpFavoris.edges
     const allCategory = this.props.data.allWordpressCategory.edges
     return (
@@ -107,6 +106,9 @@ class ShopLook extends React.Component {
               )
             })}
           </ul>
+          <p class="favoris-disclaimer">
+            (certains liens peuvent être affiliés)
+          </p>
         </div>
 
         <div className="favoris-container">
@@ -121,11 +123,13 @@ class ShopLook extends React.Component {
   }
 }
 
-export default ShopLook
+export default FavorisPage
 
 export const query = graphql`
   query favorisPage {
-    allWordpressWpFavoris {
+    allWordpressWpFavoris(
+      filter: { categories: { elemMatch: { name: { ne: "favoris" } } } }
+    ) {
       edges {
         node {
           id
@@ -148,7 +152,7 @@ export const query = graphql`
       }
     }
 
-    allWordpressCategory {
+    allWordpressCategory(filter: { name: { ne: "favoris" } }) {
       edges {
         node {
           id
