@@ -1,6 +1,5 @@
 /*----- LAYOUTS : SINGLE POST ----- */
 
-
 // META TAGS
 
 .single-post-meta {
@@ -9,7 +8,8 @@
   span {
     font-weight: 600;
   }
-  p, a {
+  p,
+  a {
     margin: 0 auto;
     font-size: 1.2rem;
     color: $medium-gray;
@@ -19,11 +19,11 @@
 .single-post-footer-meta {
   border-top: 1px solid $old-pink;
   border-bottom: 1px solid $old-pink;
-  p, a {
+  p,
+  a {
     font-size: 1.2rem;
   }
 }
-
 
 // POST CONTAINER
 .single-post-container {
@@ -49,7 +49,7 @@
   }
 
   .single-post-meta .categories a {
-    padding-right:  4px;
+    padding-right: 4px;
   }
 
   h4 {
@@ -68,7 +68,6 @@
     margin-top: 32px;
     margin-bottom: 24px;
   }
-
 
   .legende-foncee figcaption {
     position: relative;
@@ -133,7 +132,7 @@
   grid-gap: 16px;
   justify-items: center;
   width: 94%;
-  margin:auto;
+  margin: auto;
   list-style: none;
   padding-left: 0;
 
@@ -141,14 +140,13 @@
     margin: 0;
   }
 
-  .hide-slide{
+  .hide-slide {
     display: none;
   }
-
 }
 
 .slider-nav {
-  margin-top:  -12px;
+  margin-top: -12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,30 +164,28 @@
   }
 }
 
-
-
 // COMMENTS
 
-.comments-container  {
+.comments-container {
   margin-top: 80px;
   padding: 24px 16px;
   background: $old-pink;
   background-repeat: repeat;
 
-  h3, h5 {
+  h3,
+  h5 {
     text-align: center;
     font-family: $headers-font;
     text-transform: none;
   }
-
 }
 
-#comment-validation p{
+#comment-validation p {
   width: 80%;
   margin: 32px auto;
   border: 2px solid white;
   font-size: 1.4rem;
-  text-align:  center;
+  text-align: center;
 }
 
 .comment-item {
@@ -226,7 +222,6 @@
   .comment-date {
     margin-bottom: 8px;
   }
-
 }
 
 // COMMENTS IF LOGGED
@@ -235,7 +230,6 @@
   background: $light-gray;
   padding: 8px;
 }
-
 
 @media (min-width: $xsm-screen) {
 } // end of xsm-screen - 576px
@@ -250,7 +244,8 @@
   // META TAGS
 
   .single-post-meta {
-    p, a {
+    p,
+    a {
       font-size: 1.3rem;
     }
   }
@@ -258,7 +253,6 @@
   // CONTENT
 
   .single-post-container {
-
     h2 {
       font-size: 4rem;
     }
@@ -286,7 +280,7 @@
     .legende-claire {
       display: flex;
       align-items: flex-end;
-      justify-content: space-between
+      justify-content: space-between;
     }
 
     .legende-claire img {
@@ -309,14 +303,12 @@
       font-size: 1.1rem;
       // z-index: 3;
     }
-
   }
   // CAROUSEL
 
-
   .slider-alex {
     width: 92%;
-    margin:auto;
+    margin: auto;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -324,7 +316,7 @@
     position: relative;
     padding-left: 0;
 
-    .hide-slide{
+    .hide-slide {
       display: none;
     }
 
@@ -336,7 +328,6 @@
       right: -24px;
     }
   }
-
 
   // .slider-alex:before{
   //   content: '';
@@ -360,8 +351,7 @@
 
   // COMMENTS
 
-
-  #comment-validation p{
+  #comment-validation p {
     width: 50%;
     font-size: 1.8rem;
   }
@@ -398,7 +388,6 @@
     .comment-date {
       margin-bottom: 8px;
     }
-
   }
 
   // COMMENTS IF LOGGED
@@ -420,9 +409,17 @@
     }
   }
 
+  .wp-block-media-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  .wp-block-media-text__content {
+    flex-grow: 0;
+    width: 100%;
+  }
 } // end of lg-screen - 1200px
 
 @media (min-width: $hg-screen) {
 } // end of hg-screen - 1440px
-
