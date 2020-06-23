@@ -22,12 +22,11 @@ const Layout = ({ children, props }) => (
       }
     `}
     render={data => (
-      <div className='layout-container'>
+      <div className="layout-container">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="container">
           <main>{children}</main>
         </div>
-        <Instagram />
         <Footer />
       </div>
     )}

@@ -217,7 +217,6 @@ class IndexPage extends React.Component {
         </div>
         {/* end of video-section */}
 
-        <Instagram />
         <Footer />
       </div>
     )
