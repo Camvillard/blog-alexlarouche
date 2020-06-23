@@ -9,7 +9,6 @@ import SocialIcons from "../components/social-icons"
 import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
-import Instagram from "../components/instagram"
 import Footer from "../components/footer"
 
 // styles & assets
