@@ -18,7 +18,7 @@ const FavorisCard = ({ favori }) => {
         rel="noopener noreferrer"
       >
         <img
-          src={favori.featured_media ? favori.featured_media.source_url : ""}
+          src={favori.featured_media ? favori.featured_media?.source_url : ""}
           alt={favori.title}
         />
 

@@ -104,49 +104,52 @@ class IndexPage extends React.Component {
           <h3>mes favoris du moment</h3>
 
           <div className="container">
-            <div className="favoris-sm-card" id="homepage-premier-favori">
-              <img
-                src={favorisUn.featured_media.source_url}
-                alt={favorisUn.acf.nom_marque}
-              />
-              <div className="favoris-sm-card-content">
-                <p className="favoris-sm-card-title">
-                  <span dangerouslySetInnerHTML={{ __html: favorisUn.title }} />
-                </p>
-                <p>{favorisUn.acf.nom_marque}</p>
-                <a
-                  href={favorisUn.acf.url_du_produit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  à retrouver ici
-                </a>
+            {favorisUn.featured_media && (
+              <div className="favoris-sm-card" id="homepage-premier-favori">
+                <img
+                  src={favorisUn.featured_media.source_url}
+                  alt={favorisUn.acf.nom_marque}
+                />
+                <div className="favoris-sm-card-content">
+                  <p className="favoris-sm-card-title">
+                    <span
+                      dangerouslySetInnerHTML={{ __html: favorisUn.title }}
+                    />
+                  </p>
+                  <p>{favorisUn.acf.nom_marque}</p>
+                  <a
+                    href={favorisUn.acf.url_du_produit}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    à retrouver ici
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* end of #premier favori */}
-
-            <div className="favoris-sm-card" id="homepage-deuxieme-favori">
-              <img
-                src={favorisDeux.featured_media.source_url}
-                alt={favorisDeux.acf.nom_marque}
-              />
-              <div className="favoris-sm-card-content">
-                <p className="favoris-sm-card-title">
-                  <span
-                    dangerouslySetInnerHTML={{ __html: favorisDeux.title }}
-                  />
-                </p>
-                <p>{favorisDeux.acf.nom_marque}</p>
-                <a
-                  href={favorisDeux.acf.url_du_produit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  à retrouver ici
-                </a>
+            )}
+            {favorisDeux.featured_media && (
+              <div className="favoris-sm-card" id="homepage-deuxieme-favori">
+                <img
+                  src={favorisDeux.featured_media?.source_url}
+                  alt={favorisDeux.acf.nom_marque}
+                />
+                <div className="favoris-sm-card-content">
+                  <p className="favoris-sm-card-title">
+                    <span
+                      dangerouslySetInnerHTML={{ __html: favorisDeux.title }}
+                    />
+                  </p>
+                  <p>{favorisDeux.acf.nom_marque}</p>
+                  <a
+                    href={favorisDeux.acf.url_du_produit}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    à retrouver ici
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* end of #deuxieme favori */}
+            )}
           </div>
 
           <div className="btn-block">
