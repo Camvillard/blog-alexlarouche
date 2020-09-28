@@ -60,12 +60,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `alexandralarouche`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
