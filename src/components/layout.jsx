@@ -6,7 +6,6 @@ import { StaticQuery, graphql } from "gatsby"
 // internal stuff
 import Header from "./header"
 import Footer from "./footer"
-import Instagram from "./instagram"
 
 // styles & assets
 

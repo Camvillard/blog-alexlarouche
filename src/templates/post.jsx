@@ -7,7 +7,6 @@ import Helmet from "react-helmet"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import Instagram from "../components/instagram"
 import CommentForm from "../components/comment-form"
 
 // helpers

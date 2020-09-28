@@ -2,8 +2,6 @@ import React from "react"
 import styled, { css } from "styled-components"
 import { Search } from "styled-icons/fa-solid/Search"
 import { Algolia } from "styled-icons/fa-brands/Algolia"
-// import { FaInstagram, FaYoutube} from "react-icons/fa";
-
 
 export const Root = styled.div`
   position: relative;
@@ -20,12 +18,12 @@ const focus = css`
 const collapse = css`
   width: 60vw;
   cursor: pointer;
-  color: #AC7970;
+  color: #ac7970;
   ${props => props.focus && focus}
   margin-left: 0;
   padding-left: 32px;
   ::placeholder {
-    color: #AC7970;
+    color: #ac7970;
     opacity: 0.9;
   }
 `
@@ -91,17 +89,17 @@ export const HitsWrapper = styled.div`
   }
   mark {
     color: white;
-    background: #C99086;
+    background: #c99086;
   }
   header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.3em;
     h4 {
-      font-family: 'freight-sans-pro', sans-serif;
+      font-family: "freight-sans-pro", sans-serif;
       font-size: 2rem;
       text-transform: uppercase;
-      color: #C99086;
+      color: #c99086;
       background: ${props => props.theme.gray};
     }
   }

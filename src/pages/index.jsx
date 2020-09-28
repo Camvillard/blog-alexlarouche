@@ -9,7 +9,6 @@ import SocialIcons from "../components/social-icons"
 import LastPostCard from "../components/last-post-card"
 import RegularPostCard from "../components/regular-post-card"
 import FeaturedPost from "../components/featured-post"
-import Instagram from "../components/instagram"
 import Footer from "../components/footer"
 
 // styles & assets
@@ -38,8 +37,6 @@ class IndexPage extends React.Component {
     const aboutImage =
       data.wordpressPage.acf.photo_a_propos.source_url ||
       "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/alex_larouche.jpg"
-    const videoLink = data.wordpressPage.acf.last_video
-    const videoText = data.wordpressPage.acf.last_video_text
     const vlogLink = data.wordpressPage.acf.last_vlog
     const vlogText = data.wordpressPage.acf.last_vlog_text
     const favorisUn = data.allWordpressWpFavoris.edges[0].node
@@ -159,34 +156,6 @@ class IndexPage extends React.Component {
         {/* end of #favoris-section */}
 
         <div id="video-section" className="container">
-          <div className="video-card" id="first-video">
-            <div className="video-description">
-              <h6 className="rose-dawn">la dernière vidéo</h6>
-              <div dangerouslySetInnerHTML={{ __html: videoText }} />
-            </div>
-
-            <div className="video-container">
-              <iframe
-                src={`https://www.youtube.com/embed/${videoLink}`}
-                title="derniere video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <div className="btn-block">
-                <a
-                  className="btn-square"
-                  href="https://www.youtube.com/channel/UCUCkH561i3VjDQPJrGdGFQQ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  s'abonner aux vidéos
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* end of video-card */}
-
           <div className="video-card" id="second-video">
             <div className="video-description">
               <h6 className="rose-dawn">le dernier vlog</h6>
@@ -305,8 +274,6 @@ export const query = graphql`
           id
           source_url
         }
-        last_video
-        last_video_text
         last_vlog
         last_vlog_text
         seo_tags
