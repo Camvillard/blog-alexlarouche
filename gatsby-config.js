@@ -22,29 +22,6 @@ module.exports = {
     },
     // sass styles
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        baseUrl: "content.alexandralarouche.ca",
-        protocol: "https",
-        hostingWPCOM: false,
-        useACF: true,
-        verboseOutput: false,
-        auth: {
-          jwt_user: process.env.JWT_USER,
-          jwt_pass: process.env.JWT_PASSWORD,
-          jwt_base_path: "/jwt-auth/v1/token",
-        },
-        includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/comments",
-          "**/favoris",
-          "**/media",
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
