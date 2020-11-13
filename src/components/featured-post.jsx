@@ -4,25 +4,23 @@ import { Link } from "gatsby"
 
 // internal stuff
 import { createExcerpt, createPrintedDate } from "../utilities/blog-cards"
+import { placeholderLink } from "../utilities/placeholder"
 
 // styles & assets
 import "../styles/main.scss"
 
 const FeaturedPost = ({ post }) => {
   const { acf, title } = post
+  const featured = post.featured_media?.source_url || placeholderLink
   return post ? (
     <div className="featured-post-card">
       <div className="featured-post-images">
         <p className="post-description">en ce moment</p>
-        <img
-          id="first-img-featured"
-          src={post.featured_media.source_url}
-          alt={post.title}
-        />
+        <img id="first-img-featured" src={featured} alt={post.title} />
         {acf && acf.image_supplementaire && (
           <img
             id="second-img-featured"
-            src={acf.image_supplementaire.source_url}
+            src={acf.image_supplementaire?.source_url}
             alt={title}
           />
         )}

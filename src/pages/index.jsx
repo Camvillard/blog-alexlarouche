@@ -104,7 +104,7 @@ class IndexPage extends React.Component {
           <div className="container">
             <div className="favoris-sm-card" id="homepage-premier-favori">
               <img
-                src={favorisUn.featured_media.source_url}
+                src={favorisUn.featured_media?.source_url}
                 alt={favorisUn.acf.nom_marque}
               />
               <div className="favoris-sm-card-content">
@@ -125,7 +125,7 @@ class IndexPage extends React.Component {
 
             <div className="favoris-sm-card" id="homepage-deuxieme-favori">
               <img
-                src={favorisDeux.featured_media.source_url}
+                src={favorisDeux.featured_media?.source_url}
                 alt={favorisDeux.acf.nom_marque}
               />
               <div className="favoris-sm-card-content">

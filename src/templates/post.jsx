@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import CommentForm from "../components/comment-form"
+import { placeholderLink } from "../utilities/placeholder"
 
 // helpers
 import { buildSeoTags } from "../utilities/seo"
@@ -143,24 +144,10 @@ class Post extends React.Component {
     }) //  end of  event listener
   } //  end of loadCarousel()
 
-  // used to check if there is a fetured image set in wordpress
-  // if not, assign a geatured image  to a placeholder
-  // @post is the data pulled from Wordpress
-  setFeaturedImage = post => {
-    let featuredImage
-    if (post.featured_media) {
-      featuredImage = post.featured_media.source_url
-    } else {
-      featuredImage =
-        "https://content.alexandralarouche.ca/wp-content/uploads/2019/06/placeholder-10.jpg"
-    }
-    return featuredImage
-  }
-
   render() {
     const post = this.props.data.wordpressPost
     const seoTags = buildSeoTags(post.acf.seo_tags)
-    const featuredImage = this.setFeaturedImage(post)
+    const featuredImage = post.featured_media?.source_url || placeholderLink
     const comments = this.props.data.allWordpressWpComments.edges
     const postDate = createPrintedDate(post.date)
     return (
